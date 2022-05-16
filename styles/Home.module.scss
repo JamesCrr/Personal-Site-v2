@@ -1,0 +1,27 @@
+.container {
+	transition: background 0.5s;
+	background: var(--color-background);
+}
+.testingText {
+	transition: color 0.5s;
+	color: var(--color-primary);
+}
+.imageContainer {
+	width: 300px;
+	height: 300px;
+	position: relative;
+	transition: background 0.5s;
+	background: var(--color-background);
+}
+.themeBtn {
+	transition: background 0.5s, color 0.5s;
+	background: var(--color-background);
+	color: var(--color-primary);
+}
+
+/* @media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  } 
+}*/
