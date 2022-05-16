@@ -1,3 +1,8 @@
+/**
+* Should be empty, since spliting up page into sections
+* Styling should be contained in their own sections
+*/
+
 .container {
 	transition: background 0.5s;
 	background: var(--color-background);
@@ -15,7 +20,7 @@
 }
 .themeBtn {
 	transition: background 0.5s, color 0.5s;
-	background: var(--color-background);
+	background: var(--color-button);
 	color: var(--color-primary);
 }
 

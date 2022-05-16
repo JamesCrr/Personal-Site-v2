@@ -5,6 +5,7 @@ export const ThemeContext = createContext();
 const OwnThemeProvider = (props) => {
 	const [darkMode, setDarkMode] = useState(undefined);
 
+	// Modify Theme
 	const setThemeValue = (newDarkMode) => setDarkMode(newDarkMode);
 	const toggleThemeValue = () => setDarkMode(!darkMode);
 
@@ -24,7 +25,7 @@ const OwnThemeProvider = (props) => {
 	useEffect(() => {
 		// Fetch initial preferences and setState
 		const initialColorValue = document.documentElement.style.getPropertyValue("--initial-color-mode");
-		setDarkMode(initialColorValue === "light");
+		setDarkMode(initialColorValue === "dark");
 	}, []);
 
 	return <ThemeContext.Provider value={{ darkMode, setThemeValue, toggleThemeValue }}>{props.children}</ThemeContext.Provider>;

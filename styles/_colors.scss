@@ -1,20 +1,28 @@
 /* declaring the css variables colors */
 :root {
-	--color-primary: #000;
+	--color-primary: #2614c7;
 	--color-primary-accent: #2614c7;
-	--color-paragraph: #797979;
+	--color-secondary: #00ff4c;
+
+	--color-text-primary: #292828;
+	--color-text-highlight: #292828;
+
 	--color-button: #3d486c;
 	--color-button-text: rgb(255, 255, 255);
+
 	--color-background: #fff;
-	--color-anchor: #000aff;
 }
 
 [data-theme="dark"] {
-	--color-primary: #fff;
-	--color-primary-accent: #00ff4c;
-	--color-paragraph: #8a8a8a;
-	--color-button: #00ff4c;
+	--color-primary: #2614c7;
+	--color-primary-accent: #2614c7;
+	--color-secondary: #00ff4c;
+
+	--color-text-primary: #dfdef6;
+	--color-text-highlight: #dfdef6;
+
+	--color-button: #50d478;
 	--color-button-text: rgb(0, 0, 0);
-	--color-background: #22212b;
-	--color-anchor: #00ff4c;
+
+	--color-background: #131314;
 }
