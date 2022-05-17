@@ -1,0 +1,191 @@
+@use "mixins";
+
+$iconMarginSize: 6px;
+
+.navbarDiv {
+	background: blue;
+	position: fixed;
+	width: 100%;
+	height: 80px;
+	padding: 20px 20px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.navbarEndContent {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+// Horizontial Color Icon Div
+.colorModeIcon_HorizontialDiv {
+	transform: scale(1.7);
+	margin-right: 40px;
+	position: relative;
+	cursor: pointer;
+
+	@include mixins.maxMediaQuery(sm) {
+		display: none;
+	}
+}
+
+// This is shared by both Horizontial AND Vertical color icon
+.colorModeIcon {
+	$transitionTime: 0.3s;
+
+	transition: opacity $transitionTime, transform $transitionTime;
+	fill: var(--color-background);
+	position: absolute;
+	bottom: 0;
+
+	// Vertical here
+	@include mixins.maxMediaQuery(sm) {
+		top: #{$iconMarginSize * 2 + 4px};
+		right: $iconMarginSize * 2;
+	}
+}
+.colorModeIcon_Fade {
+	opacity: 0;
+	transform: rotate(180deg);
+}
+// Horizontial Links
+.hLinksParent {
+	list-style: none;
+	display: flex;
+	justify-content: flex-end;
+
+	@include mixins.maxMediaQuery(sm) {
+		display: none;
+	}
+}
+.hLinkItem {
+	font-size: 1.5rem;
+	padding: 0px 10px;
+	cursor: pointer;
+
+	:hover {
+		background: grey;
+	}
+}
+
+/*************************************
+*	To close the Mobile Menu,
+* 	mobileMenuDiv.visibility : hidden, If not will still register inputs as not all children are hidden
+* 	vLinksParent.width : 0%,
+*	vLinksParent.opacity : 0%, Hide text and growing animation
+*
+**************************************/
+$zIndexTop: 100;
+$mobileMenuCloseTime: 0.2s;
+// Mobile Menu Div
+.mobileMenuDiv {
+	position: fixed;
+	right: 0;
+	visibility: hidden;
+	transition: visibility $mobileMenuCloseTime;
+
+	@include mixins.maxMediaQuery(sm) {
+		visibility: visible;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-end;
+	}
+}
+.mobileMenuDiv_Close {
+	visibility: hidden;
+}
+// Mobile Menu and Colors Icons Div
+.mobileMenuIconsDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+// Vertical Color Icon Div
+.colorModeIcon_VerticalDiv {
+	@extend .colorModeIcon_HorizontialDiv;
+	display: none;
+	z-index: #{$zIndexTop - 3};
+	@include mixins.maxMediaQuery(sm) {
+		visibility: visible;
+		display: block;
+	}
+}
+// Mobile Menu Icon Div
+.mobileMenuIconDiv {
+	display: none;
+	z-index: $zIndexTop;
+	transform: scale(2);
+	position: relative;
+
+	@include mixins.maxMediaQuery(sm) {
+		display: flex;
+		align-content: center;
+		visibility: visible;
+	}
+}
+.mobileMenuIcon {
+	$transitionTime: 0.3s;
+
+	transition: opacity $transitionTime, transform $transitionTime;
+	position: absolute;
+	margin-right: 5px;
+	right: 0;
+	top: $iconMarginSize * 2;
+	fill: var(--color-background);
+}
+.mobileMenuIcon_Fade {
+	@extend .colorModeIcon_Fade;
+}
+// Vertical Links
+.vLinksParent {
+	z-index: #{$zIndexTop - 1};
+	width: 0%;
+	opacity: 0;
+	height: 100vh;
+	background: rgb(72, 17, 17);
+	transition: width $mobileMenuCloseTime, opacity $mobileMenuCloseTime;
+
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+
+	@include mixins.maxMediaQuery(sm) {
+		width: 60vw;
+		opacity: 1;
+	}
+}
+.vLinksParent_Close {
+	width: 0%;
+	opacity: 0;
+}
+.vLinkItem {
+	@extend .hLinkItem;
+	text-align: center;
+	font-size: 2rem;
+}
+// Mobile Menu Background
+.mobileMenuBackground {
+	z-index: #{$zIndexTop - 2};
+	position: fixed;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	transition: all $mobileMenuCloseTime;
+	background: black;
+	// Blur Effect
+	$blurStrength: 100px;
+	filter: blur($blurStrength);
+	-webkit-filter: blur($blurStrength);
+
+	@include mixins.maxMediaQuery(sm) {
+		opacity: 0.5;
+	}
+}
+.mobileMenuBackground_Close {
+	opacity: 0;
+}

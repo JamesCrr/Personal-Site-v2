@@ -1,3 +1,26 @@
-.container {
-	background: red;
+.landingContainer {
+	$paddingSize: 5%;
+	height: 100vh;
+	background: var(--color-background);
+	padding: 150px $paddingSize 0px $paddingSize;
+}
+
+.textContainer {
+	text-align: left;
+	color: var(--color-text-primary);
+}
+
+.txtHello {
+	font-weight: normal;
+	font-size: 1.5rem;
+}
+.txtName {
+	font-weight: 400;
+	font-size: 6rem;
+	line-height: 0.8;
+}
+.txtWhatIDo {
+	font-weight: 500;
+	font-size: 5rem;
+	line-height: 1;
 }

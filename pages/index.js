@@ -2,17 +2,19 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.scss";
-import { useContext } from "react";
-import { ThemeContext } from "../Components/Theme/OwnThemeProvider";
+import { useRef } from "react";
 import LandingSection from "../Components/Sections/Landing";
+import Navbar from "../Components/Navbar/Navbar";
+import AboutSection from "../Components/Sections/About";
+import ProjectsSection from "../Components/Sections/Projects";
+import ExperienceSection from "../Components/Sections/Experience";
 
 export default function Home() {
-	const { darkMode, toggleThemeValue } = useContext(ThemeContext);
-
-	const switchTheme = () => {
-		console.log("switch theme");
-		toggleThemeValue();
-	};
+	// Section Refs for scrolling
+	const aboutSectionRef = useRef();
+	const experienceSectionRef = useRef();
+	const projectsSectionRef = useRef();
+	const contactSectionRef = useRef();
 
 	return (
 		// <div className={styles.container}>
@@ -36,8 +38,18 @@ export default function Home() {
 		// 		<Link href="/projects-archive">Archive</Link>
 		// 	</button>
 		// </div>
-		<>
+		<div className={styles.pageContainer}>
+			<Navbar aboutSectionRef={aboutSectionRef} experienceSectionRef={experienceSectionRef} projectsSectionRef={projectsSectionRef} />
 			<LandingSection />
-		</>
+			<div ref={aboutSectionRef}>
+				<AboutSection />
+			</div>
+			<div ref={experienceSectionRef}>
+				<ExperienceSection />
+			</div>
+			<div ref={projectsSectionRef}>
+				<ProjectsSection />
+			</div>
+		</div>
 	);
 }

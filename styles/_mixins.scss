@@ -1,0 +1,36 @@
+@use "sass:map";
+
+$breakpoints: (
+	xs: 0px,
+	sm: 600px,
+	md: 900px,
+	lg: 1200px,
+	xl: 1536px,
+);
+
+// @media only screen and (max-width: $size)
+// @content active when width is UNDER $size
+@mixin maxMediaQuery($key) {
+	$size: map.get($breakpoints, $key);
+	@media only screen and (max-width: $size) {
+		@content;
+	}
+}
+@mixin maxMediaQueryPX($key) {
+	@media only screen and (max-width: $key) {
+		@content;
+	}
+}
+// @media only screen and (min-width: $size)
+// @content active when width is ABOVE $size
+@mixin minMediaQuery($key) {
+	$size: map.get($breakpoints, $key);
+	@media only screen and (min-width: $size) {
+		@content;
+	}
+}
+@mixin minMediaQueryPX($key) {
+	@media only screen and (min-width: $key) {
+		@content;
+	}
+}
