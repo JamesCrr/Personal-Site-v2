@@ -1,0 +1,26 @@
+.ungrown {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		content: "";
+		border-radius: 5px;
+		width: 0%;
+		height: 10%;
+		background: blueviolet;
+		bottom: 0;
+		left: 0;
+	}
+}
+.grow {
+	@extend .ungrown;
+
+	// Default values, incase you don't override in EffectsHelper
+	--growspeed: 0.8s;
+	--growwidth: 120%;
+
+	&::before {
+		transition: width var(--growspeed) ease-in-out;
+		width: var(--growwidth);
+	}
+}

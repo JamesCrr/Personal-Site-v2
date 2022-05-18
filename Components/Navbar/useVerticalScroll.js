@@ -26,6 +26,10 @@ const useVerticalScroll = (threshold = 100) => {
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
 
-	return { lastThresholdValue: scrollObject.currentScroll, isScrollingUp: getScrollChange() < 0, isScrollingDown: getScrollChange() > 0 };
+	return {
+		lastThresholdValue: scrollObject.currentScroll,
+		isScrollingUp: getScrollChange() < 0,
+		isScrollingDown: getScrollChange() > 0,
+	};
 };
 export default useVerticalScroll;

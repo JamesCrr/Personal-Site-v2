@@ -1,24 +1,25 @@
 /** CSS variables */
+/* https://www.canva.com/colors/color-wheel/ */
 :root {
-	--color-primary: #2614c7;
-	--color-primary-accent: #2614c7;
+	--color-primary: #272789;
+	--color-primary-light: #8888e8;
+	--color-primary-dark: #141446;
 	--color-secondary: #00ff4c;
 
 	--color-text-primary: #292828;
-	--color-text-highlight: #292828;
 
 	--color-button: #3d486c;
 	--color-button-text: rgb(255, 255, 255);
 
-	--color-background: #f5f5dc;
+	--color-background: #fefef5;
 }
 [data-theme="dark"] {
-	--color-primary: #2614c7;
-	--color-primary-accent: #2614c7;
+	--color-primary: #4747cb;
+	--color-primary-light: #7676ef;
+	--color-primary-dark: #2727b7;
 	--color-secondary: #00ff4c;
 
 	--color-text-primary: #dfdef6;
-	--color-text-highlight: #dfdef6;
 
 	--color-button: #50d478;
 	--color-button-text: rgb(0, 0, 0);

@@ -2,7 +2,7 @@ import styles from "../../styles/Navbar.module.scss";
 
 const MobileMenu = (props) => {
 	/**
-	 * Section Link clicked
+	 * Nav Link clicked, scroll to that section
 	 * @param {Number} idClicked ID of section to navigate to
 	 */
 	const navLinkClicked = (idClicked) => {

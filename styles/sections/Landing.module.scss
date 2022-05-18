@@ -6,11 +6,12 @@
 	background: var(--color-background);
 	padding: 150px $paddingSize 0px $paddingSize;
 
-	transition: background globalVariables.$colorTransitionTime, color globalVariables.$colorTransitionTime;
+	transition: background globalVariables.$colorTransitionTime;
 }
 
 .textContainer {
 	text-align: left;
+	transition: color globalVariables.$colorTransitionTime;
 	color: var(--color-text-primary);
 }
 
@@ -22,9 +23,13 @@
 	font-weight: 400;
 	font-size: 6rem;
 	line-height: 0.8;
+
+	color: var(--color-primary);
 }
 .txtWhatIDo {
 	font-weight: 500;
 	font-size: 5rem;
 	line-height: 1;
+
+	// text-shadow: 4px 4px 1px var(--color-primary);
 }

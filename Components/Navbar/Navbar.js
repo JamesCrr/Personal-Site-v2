@@ -10,17 +10,17 @@ import { VscChromeClose } from "react-icons/vsc";
 
 const Navbar = (props) => {
 	const { darkMode, toggleThemeValue } = useThemeContext(); // Color Mode
-	const { isScrollingUp, isScrollingDown } = useVerticalScroll(50); // Scrolling
-	// useEffect(() => console.log("Up:", isScrollingUp, "Down:", isScrollingDown));
+	const { lastThresholdValue, isScrollingUp, isScrollingDown } = useVerticalScroll(10); // Scrolling
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // Mobile Menu
 
 	/**
 	 * Switch the Color mode
 	 */
 	const switchColorMode = () => {
-		console.log("switch color mode");
+		// console.log("switch color mode");
 		toggleThemeValue();
 	};
+
 	/**
 	 * Scrolls the page to the corresponding section
 	 * @param {Number} sectionID what section to scroll to
@@ -48,15 +48,25 @@ const Navbar = (props) => {
 		// Scroll to selected section
 		window.scrollTo(scrollOptions);
 	};
+	/**
+	 * Decides whether Navbar should be active
+	 * @returns Navbar active
+	 */
+	const shouldNavbarBeActive = () => {
+		let result = isScrollingDown ? false : isScrollingUp ? true : false;
+		if (lastThresholdValue < 20) result = true;
+		// console.log(lastThresholdValue, result);
+		return result;
+	};
 
 	/**
 	 * Mobile Menu Icon was clicked
 	 */
 	const mobileMenuIconClicked = () => {
-		console.log("MobileMenu Clicked");
 		setMobileMenuOpen(!mobileMenuOpen);
 		// Toggle styling to lock scrolling
 		document.body.classList.toggle("lockScroll");
+		// console.log("MobileMenu Clicked");
 	};
 	/**
 	 * Closes the Mobile Menu
@@ -80,9 +90,10 @@ const Navbar = (props) => {
 	}, [mobileMenuOpen]);
 
 	return (
-		<div className={isScrollingUp ? styles.navbarDiv : styles.navbarDiv}>
+		<div className={shouldNavbarBeActive() ? styles.navbarDiv : styles.navbarDiv_Close}>
 			<ImSun />
 			<div className={styles.hNavbarEndContent}>
+				{/* Icons Div */}
 				<div className={styles.iconsDiv}>
 					{/* Color Mode Icon */}
 					<div className={styles.colorModeIconDiv} onClick={switchColorMode}>
@@ -98,13 +109,13 @@ const Navbar = (props) => {
 				{/* Horizontial Navbar Links */}
 				<ul className={styles.hLinksParent}>
 					<li onClick={() => scrollToSection(0)} className={styles.hLinkItem}>
-						<a>0/ About Me.</a>
+						<a>About Me.</a>
 					</li>
 					<li onClick={() => scrollToSection(1)} className={styles.hLinkItem}>
-						<a>1/ Experience.</a>
+						<a>Experience.</a>
 					</li>
 					<li onClick={() => scrollToSection(2)} className={styles.hLinkItem}>
-						<a>2/ Projects.</a>
+						<a>Projects.</a>
 					</li>
 				</ul>
 			</div>

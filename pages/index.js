@@ -41,13 +41,13 @@ export default function Home() {
 		<div className={styles.pageContainer}>
 			<Navbar aboutSectionRef={aboutSectionRef} experienceSectionRef={experienceSectionRef} projectsSectionRef={projectsSectionRef} />
 			<LandingSection />
-			<div ref={aboutSectionRef}>
+			<div id="about-section" ref={aboutSectionRef}>
 				<AboutSection />
 			</div>
-			<div ref={experienceSectionRef}>
+			<div id="experience-section" ref={experienceSectionRef}>
 				<ExperienceSection />
 			</div>
-			<div ref={projectsSectionRef}>
+			<div id="projects-section" ref={projectsSectionRef}>
 				<ProjectsSection />
 			</div>
 		</div>
