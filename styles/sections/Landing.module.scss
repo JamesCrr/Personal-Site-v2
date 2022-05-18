@@ -1,8 +1,12 @@
+@use "../modules/globalVariables";
+
 .landingContainer {
 	$paddingSize: 5%;
 	height: 100vh;
 	background: var(--color-background);
 	padding: 150px $paddingSize 0px $paddingSize;
+
+	transition: background globalVariables.$colorTransitionTime, color globalVariables.$colorTransitionTime;
 }
 
 .textContainer {

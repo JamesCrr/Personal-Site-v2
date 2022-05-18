@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import { useThemeContext } from "../Theme/OwnThemeProvider";
-import styles from "../../styles//Navbar.module.scss";
+import styles from "../../styles/Navbar.module.scss";
 import useVerticalScroll from "./useVerticalScroll";
+import MobileMenu from "./MobileMenu";
 import { ImSun } from "react-icons/im";
 import { FaMoon } from "react-icons/fa";
-import MobileMenu from "./MobileMenu";
+import { RiMenu4Fill } from "react-icons/ri";
+import { VscChromeClose } from "react-icons/vsc";
 
 const Navbar = (props) => {
 	const { darkMode, toggleThemeValue } = useThemeContext(); // Color Mode
 	const { isScrollingUp, isScrollingDown } = useVerticalScroll(50); // Scrolling
 	// useEffect(() => console.log("Up:", isScrollingUp, "Down:", isScrollingDown));
+	const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // Mobile Menu
 
 	/**
 	 * Switch the Color mode
@@ -46,32 +49,69 @@ const Navbar = (props) => {
 		window.scrollTo(scrollOptions);
 	};
 
+	/**
+	 * Mobile Menu Icon was clicked
+	 */
+	const mobileMenuIconClicked = () => {
+		console.log("MobileMenu Clicked");
+		setMobileMenuOpen(!mobileMenuOpen);
+		// Toggle styling to lock scrolling
+		document.body.classList.toggle("lockScroll");
+	};
+	/**
+	 * Closes the Mobile Menu
+	 */
+	const closeMobileMenu = () => {
+		setMobileMenuOpen(false);
+		document.body.classList.remove("lockScroll");
+	};
+	/**
+	 * Ensures the Mobile Menu is closed if users change
+	 * from portrait to landspace mode when menu is still open
+	 */
+	useEffect(() => {
+		if (!mobileMenuOpen) return;
+		// console.log("SUBBB");
+		window.addEventListener("resize", closeMobileMenu);
+		return () => {
+			// console.log("UNSUBBB");
+			window.removeEventListener("resize", closeMobileMenu);
+		};
+	}, [mobileMenuOpen]);
+
 	return (
-		<>
-			<div className={styles.navbarDiv}>
-				<p>navbar rendered</p>
-				<div className={styles.navbarEndContent}>
+		<div className={isScrollingUp ? styles.navbarDiv : styles.navbarDiv}>
+			<ImSun />
+			<div className={styles.hNavbarEndContent}>
+				<div className={styles.iconsDiv}>
 					{/* Color Mode Icon */}
-					<div className={styles.colorModeIcon_HorizontialDiv} onClick={switchColorMode}>
-						<ImSun className={!darkMode ? styles.colorModeIcon : `${styles.colorModeIcon} ${styles.colorModeIcon_Fade}`} />
-						<FaMoon className={darkMode ? styles.colorModeIcon : `${styles.colorModeIcon} ${styles.colorModeIcon_Fade}`} />
+					<div className={styles.colorModeIconDiv} onClick={switchColorMode}>
+						<ImSun className={!darkMode ? styles.colorModeIcon : styles.colorModeIcon_Fade} />
+						<FaMoon className={darkMode ? styles.colorModeIcon : styles.colorModeIcon_Fade} />
 					</div>
-					{/* Horizontial Navbar Links */}
-					<ul className={styles.hLinksParent}>
-						<li onClick={() => scrollToSection(0)} className={styles.hLinkItem}>
-							<a>0/ About Me.</a>
-						</li>
-						<li onClick={() => scrollToSection(1)} className={styles.hLinkItem}>
-							<a>1/ Experience.</a>
-						</li>
-						<li onClick={() => scrollToSection(2)} className={styles.hLinkItem}>
-							<a>2/ Projects.</a>
-						</li>
-					</ul>
+					{/* Mobile Menu Icon */}
+					<div className={styles.mobileMenuIconDiv} onClick={mobileMenuIconClicked}>
+						<RiMenu4Fill className={!mobileMenuOpen ? styles.mobileMenuIcon : styles.mobileMenuIcon_Fade} />
+						<VscChromeClose className={mobileMenuOpen ? styles.mobileMenuIcon : styles.mobileMenuIcon_Fade} />
+					</div>
 				</div>
+				{/* Horizontial Navbar Links */}
+				<ul className={styles.hLinksParent}>
+					<li onClick={() => scrollToSection(0)} className={styles.hLinkItem}>
+						<a>0/ About Me.</a>
+					</li>
+					<li onClick={() => scrollToSection(1)} className={styles.hLinkItem}>
+						<a>1/ Experience.</a>
+					</li>
+					<li onClick={() => scrollToSection(2)} className={styles.hLinkItem}>
+						<a>2/ Projects.</a>
+					</li>
+				</ul>
 			</div>
-			<MobileMenu scrollToSection={scrollToSection} />
-		</>
+
+			{/* Mobile Menu */}
+			<MobileMenu scrollToSection={scrollToSection} mobileMenuOpen={mobileMenuOpen} closeMobileMenuFunc={closeMobileMenu} />
+		</div>
 	);
 };
 

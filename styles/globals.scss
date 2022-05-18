@@ -1,4 +1,4 @@
-@use "colors";
+@use "./modules//mixins";
 
 * {
 	padding: 0;
@@ -11,7 +11,19 @@ body {
 	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-// a {
-// 	color: inherit;
-// 	text-decoration: none;
-// }
+// Prevent scrolling for mobile view
+.lockScroll {
+	// overflow: null;
+	// // Only locks when in mobile view so even if user switches
+	// // to landscape mode when menu is open, use can still scroll.
+	// @include mixins.maxMediaQuery(sm) {
+	// 	overflow: hidden;
+	// }
+
+	overflow: hidden;
+}
+
+/* a {
+	color: inherit;
+	text-decoration: none;
+} */

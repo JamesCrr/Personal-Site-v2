@@ -1,17 +1,17 @@
+@use "./modules/globalVariables";
+
 .listContainer {
-	transition: background 0.5s;
+	transition: background globalVariables.$colorTransitionTime, color globalVariables.$colorTransitionTime;
 	background: var(--color-background);
 }
 .title {
-	transition: color 0.5s;
 	color: var(--color-primary);
 }
 .projectListItem {
-	transition: color 0.5s;
 	color: var(--color-primary);
 }
 .backBtn {
-	transition: background 0.5s, color 0.5s;
+	transition: background globalVariables.$colorTransitionTime, color globalVariables.$colorTransitionTime;
 	background: var(--color-button);
 	color: var(--color-primary);
 }

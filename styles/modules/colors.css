@@ -1,4 +1,4 @@
-/* declaring the css variables colors */
+/** CSS variables */
 :root {
 	--color-primary: #2614c7;
 	--color-primary-accent: #2614c7;
@@ -12,7 +12,6 @@
 
 	--color-background: #f5f5dc;
 }
-
 [data-theme="dark"] {
 	--color-primary: #2614c7;
 	--color-primary-accent: #2614c7;

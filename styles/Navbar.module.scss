@@ -1,53 +1,90 @@
-@use "mixins";
+@use "./modules/mixins";
+@use "./modules/globalVariables";
 
-$iconMarginSize: 6px;
+$zIndexTop: 100; // zIndex
 
+// Nav Menu Div
 .navbarDiv {
-	background: blue;
+	$hDivLinksPadding: 20px;
 	position: fixed;
+	transition: transform 0.2s;
+
+	background: blue;
 	width: 100%;
 	height: 80px;
-	padding: 20px 20px;
+	padding: $hDivLinksPadding $hDivLinksPadding;
 
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
-.navbarEndContent {
+.navbarDiv_Fade {
+	@extend .navbarDiv;
+	transform: translateY(-120px);
+}
+.hNavbarEndContent {
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
 }
-// Horizontial Color Icon Div
-.colorModeIcon_HorizontialDiv {
-	transform: scale(1.7);
-	margin-right: 40px;
+// Icons Div
+$iconMarginSize: 7px; // Margin for Navbar Icons
+.iconsDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	position: relative;
+	margin-right: 40px;
+}
+// Color Icon Div
+.colorModeIconDiv {
+	transform: scale(1.7);
 	cursor: pointer;
+}
+// Mobile Menu Icon Div
+.mobileMenuIconDiv {
+	z-index: $zIndexTop; // MobileMenuIcon should be at very top
+	display: none;
+	transform: scale(2);
 
 	@include mixins.maxMediaQuery(sm) {
-		display: none;
+		display: block;
 	}
 }
-
-// This is shared by both Horizontial AND Vertical color icon
+// Icon themselves
 .colorModeIcon {
-	$transitionTime: 0.3s;
+	$iconSwitchTime: 0.3s;
 
-	transition: opacity $transitionTime, transform $transitionTime;
+	transition: opacity $iconSwitchTime, transform #{$iconSwitchTime + 0.2s}, fill globalVariables.$colorTransitionTime;
 	fill: var(--color-background);
 	position: absolute;
 	bottom: 0;
 
-	// Vertical here
 	@include mixins.maxMediaQuery(sm) {
-		top: #{$iconMarginSize * 2 + 4px};
-		right: $iconMarginSize * 2;
+		bottom: #{-$iconMarginSize - 2px};
+		right: #{$iconMarginSize - 2px};
 	}
 }
+.mobileMenuIcon {
+	$iconSwitchTime: 0.3s;
+
+	transition: opacity $iconSwitchTime, transform $iconSwitchTime, fill globalVariables.$colorTransitionTime;
+	fill: var(--color-background);
+	position: absolute;
+
+	left: $iconMarginSize;
+	top: -$iconMarginSize;
+}
+// Animations
 .colorModeIcon_Fade {
+	@extend .colorModeIcon;
+
 	opacity: 0;
 	transform: rotate(180deg);
+}
+.mobileMenuIcon_Fade {
+	@extend .colorModeIcon_Fade;
+	@extend .mobileMenuIcon;
 }
 // Horizontial Links
 .hLinksParent {
@@ -72,16 +109,18 @@ $iconMarginSize: 6px;
 /*************************************
 *	To close the Mobile Menu,
 * 	mobileMenuDiv.visibility : hidden, If not will still register inputs as not all children are hidden
-* 	vLinksParent.width : 0%,
-*	vLinksParent.opacity : 0%, Hide text and growing animation
+*								also closes the menu if if user changes to landscape mode..
+* 	vLinksParent.width : 0%, Hide text and growing animation
+*	vLinksParent.opacity : 0%
 *
 **************************************/
-$zIndexTop: 100;
-$mobileMenuCloseTime: 0.2s;
+$mobileMenuCloseTime: 0.3s;
 // Mobile Menu Div
 .mobileMenuDiv {
 	position: fixed;
 	right: 0;
+	top: 0;
+	bottom: 0;
 	visibility: hidden;
 	transition: visibility $mobileMenuCloseTime;
 
@@ -95,56 +134,16 @@ $mobileMenuCloseTime: 0.2s;
 	}
 }
 .mobileMenuDiv_Close {
+	@extend .mobileMenuDiv;
+
 	visibility: hidden;
-}
-// Mobile Menu and Colors Icons Div
-.mobileMenuIconsDiv {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-// Vertical Color Icon Div
-.colorModeIcon_VerticalDiv {
-	@extend .colorModeIcon_HorizontialDiv;
-	display: none;
-	z-index: #{$zIndexTop - 3};
-	@include mixins.maxMediaQuery(sm) {
-		visibility: visible;
-		display: block;
-	}
-}
-// Mobile Menu Icon Div
-.mobileMenuIconDiv {
-	display: none;
-	z-index: $zIndexTop;
-	transform: scale(2);
-	position: relative;
-
-	@include mixins.maxMediaQuery(sm) {
-		display: flex;
-		align-content: center;
-		visibility: visible;
-	}
-}
-.mobileMenuIcon {
-	$transitionTime: 0.3s;
-
-	transition: opacity $transitionTime, transform $transitionTime;
-	position: absolute;
-	margin-right: 5px;
-	right: 0;
-	top: $iconMarginSize * 2;
-	fill: var(--color-background);
-}
-.mobileMenuIcon_Fade {
-	@extend .colorModeIcon_Fade;
 }
 // Vertical Links
 .vLinksParent {
 	z-index: #{$zIndexTop - 1};
 	width: 0%;
+	height: 100%;
 	opacity: 0;
-	height: 100vh;
 	background: rgb(72, 17, 17);
 	transition: width $mobileMenuCloseTime, opacity $mobileMenuCloseTime;
 
@@ -160,6 +159,8 @@ $mobileMenuCloseTime: 0.2s;
 	}
 }
 .vLinksParent_Close {
+	@extend .vLinksParent;
+
 	width: 0%;
 	opacity: 0;
 }
@@ -175,7 +176,7 @@ $mobileMenuCloseTime: 0.2s;
 	opacity: 0;
 	width: 100%;
 	height: 100%;
-	transition: all $mobileMenuCloseTime;
+	transition: opacity $mobileMenuCloseTime;
 	background: black;
 	// Blur Effect
 	$blurStrength: 100px;
@@ -187,5 +188,7 @@ $mobileMenuCloseTime: 0.2s;
 	}
 }
 .mobileMenuBackground_Close {
+	@extend .mobileMenuBackground;
+
 	opacity: 0;
 }
