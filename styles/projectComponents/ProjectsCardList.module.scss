@@ -1,0 +1,13 @@
+@use "../modules/globalVariables" as gvar;
+
+.cardedProjectsDiv {
+	$extraPadding: 5%;
+	margin-left: $extraPadding;
+	margin-right: $extraPadding;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+	background: rebeccapurple;
+}

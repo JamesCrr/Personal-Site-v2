@@ -1,18 +1,20 @@
-.landingContainer {
-	$marginSize: 5%;
-	height: 100vh;
-	// background: var(--color-background);
-	background: red;
-	padding: #{$marginSize} $marginSize 0px $marginSize;
+@use "./sectionStyles" as ss;
+
+.sectionContainer {
+	border: 1px solid red;
+	$extraPadding: 8%;
+	padding: 2% $extraPadding 5% $extraPadding;
 }
 
-.textContainer {
-	text-align: left;
-	color: var(--color-text-primary);
+.sectionTitle {
+	text-align: right;
 }
 
-.txtName {
-	font-weight: 400;
-	font-size: 6rem;
-	line-height: 0.8;
+.sectionContentDiv {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+.textAbout {
+	font-size: 1.7rem;
 }

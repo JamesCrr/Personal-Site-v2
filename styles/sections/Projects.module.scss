@@ -1,18 +1,26 @@
-.landingContainer {
-	$marginSize: 5%;
-	height: 100vh;
-	// background: var(--color-background);
-	background: aqua;
-	padding: #{$marginSize + 5%} $marginSize 0px $marginSize;
+@use "./sectionStyles" as ss;
+@use "../modules/globalVariables" as gvar;
+
+.sectionContainer {
 }
 
-.textContainer {
-	text-align: left;
+.sectionTitleDiv {
+}
+
+.sectionTitle {
+}
+
+.sectionContentDiv {
+}
+
+.featuredProjectsDiv {
+}
+
+.otherProjectsDiv {
+	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary);
 }
-
-.txtName {
-	font-weight: 400;
-	font-size: 6rem;
-	line-height: 0.8;
+.otherProjectsTitle {
+	font-size: 2rem;
+	text-align: center;
 }

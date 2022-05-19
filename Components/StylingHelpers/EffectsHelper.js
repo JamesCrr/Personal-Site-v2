@@ -1,7 +1,7 @@
 /**
  * Wraps a <span> element around the children and styles the element using
  * sheets also attaching any localVars to element.
- * @param {String} sheets Generated Style Sheets to be used for styling
+ * @param {String} sheets Generated Style Sheets of the effects
  * @param {Object} localVars Any additional --var() to attach to the generated stylesheet
  */
 const EffectsHelper = ({ sheets, localVars, children }) => {

@@ -1,0 +1,14 @@
+@use "../modules/globalVariables" as gvar;
+@use "sass:color";
+
+.cardDiv {
+	$marginSide: 20px;
+	margin-right: $marginSide;
+	margin-left: $marginSide;
+
+	background: linear-gradient(var(--color-backgroundfade), var(--color-backgroundfade)), var(--bgurl);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 190px;
+}

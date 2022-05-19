@@ -1,6 +1,19 @@
 /** CSS variables */
 /* https://www.canva.com/colors/color-wheel/ */
+
+/**
+ * https://stackoverflow.com/questions/40010597/how-do-i-apply-opacity-to-a-css-color-variable
+ * https://github.com/sass/node-sass/issues/2251
+ * https://stackoverflow.com/questions/63192030/scss-rgba-and-loading-from-css-vars
+ * 
+ * Reason why need to define opacity set variables is because SASS has it's own
+ * rgba() function and I simply cannot figure out how to override it with CSS's own rgba() function.
+ * I have tried all methods above even making SASS call CSS using interpolation #{'rgba()'}.
+ * Thus I have resorted to doing this
+ */
+
 :root {
+	--color-primary: #272789;
 	--color-primary: #272789;
 	--color-primary-light: #8888e8;
 	--color-primary-dark: #141446;
@@ -12,6 +25,7 @@
 	--color-button-text: rgb(255, 255, 255);
 
 	--color-background: #fefef5;
+	--color-backgroundfade: #fefef5b3;
 }
 [data-theme="dark"] {
 	--color-primary: #4747cb;
@@ -25,4 +39,5 @@
 	--color-button-text: rgb(0, 0, 0);
 
 	--color-background: #131314;
+	--color-backgroundfade: #131314b3;
 }

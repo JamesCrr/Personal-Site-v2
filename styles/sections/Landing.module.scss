@@ -9,7 +9,7 @@
 	transition: background globalVariables.$colorTransitionTime;
 }
 
-.textContainer {
+.textDiv {
 	text-align: left;
 	transition: color globalVariables.$colorTransitionTime;
 	color: var(--color-text-primary);

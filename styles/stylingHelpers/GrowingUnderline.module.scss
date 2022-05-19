@@ -1,26 +1,40 @@
+@use "../modules/globalVariables" as gvar;
+
 .ungrown {
+	// Default values, incase you don't override in EffectsHelper
+	--growspeed: 1s;
+	--growwidth: 120%;
+
 	position: relative;
 
 	&::before {
 		position: absolute;
 		content: "";
+		width: 100%;
+		transform: scaleX(0);
+
+		background: var(--color-primary-light);
 		border-radius: 5px;
-		width: 0%;
-		height: 10%;
-		background: blueviolet;
+		height: 7%;
 		bottom: 0;
 		left: 0;
 	}
 }
-.grow {
+.growLeft {
 	@extend .ungrown;
 
-	// Default values, incase you don't override in EffectsHelper
-	--growspeed: 0.8s;
-	--growwidth: 120%;
+	&::before {
+		transition: transform var(--growspeed) ease-out, background gvar.$colorTransitionTime;
+		transform: scaleX(var(--growwidth));
+		transform-origin: left;
+	}
+}
+.growRight {
+	@extend .ungrown;
 
 	&::before {
-		transition: width var(--growspeed) ease-in-out;
-		width: var(--growwidth);
+		transform-origin: right;
+		transition: transform var(--growspeed) ease-in-out, background gvar.$colorTransitionTime;
+		transform: scaleX(var(--growwidth));
 	}
 }
