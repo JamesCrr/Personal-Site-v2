@@ -5,10 +5,76 @@
 	$marginSide: 20px;
 	margin-right: $marginSide;
 	margin-left: $marginSide;
+	border-radius: 10px;
 
-	background: linear-gradient(var(--color-backgroundfade), var(--color-backgroundfade)), var(--bgurl);
+	transition: background gvar.$colorTransitionTime;
+	background: linear-gradient(var(--color-backgroundclear), var(--color-backgroundclear)), var(--bgurl);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	height: 190px;
+	min-height: 250px;
+	height: auto;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+.cardTextDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+.cardTitle {
+	transition: color gvar.$colorTransitionTime;
+	color: var(--color-text-primary);
+
+	font-size: 1.4rem;
+	font-weight: 500;
+	margin-top: 10px;
+}
+.cardDescription {
+	transition: color gvar.$colorTransitionTime;
+	color: var(--color-text-primary);
+
+	text-align: center;
+	padding: 10px;
+}
+// Tags
+.cardTagsListDiv {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	padding-bottom: 10px;
+}
+.cardTagDiv {
+	$tagSpacing: 5px;
+	padding-left: $tagSpacing;
+	padding-right: $tagSpacing;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	& > svg {
+		transition: fill gvar.$colorTransitionTime;
+		fill: var(--color-text-primary);
+		transform: scale(2.5);
+
+		// Hover Icon
+		&:hover {
+			// <p> sibling
+			& + p {
+				opacity: 1;
+			}
+		}
+	}
+}
+.cardTagName {
+	padding-top: 20px;
+	transition: color gvar.$colorTransitionTime, opacity 0.3s;
+	opacity: 0;
+	color: var(--color-text-primary);
 }

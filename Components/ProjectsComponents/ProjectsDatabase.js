@@ -14,7 +14,7 @@ const ProjectDatabase = () => {
 		"Computer Graphics": {
 			description: "Computer graphics, Computer graphics, Computer graphics, Computer graphics, Computer graphics, Computer graphics, pop.",
 			image: "/project-imgs/CG_3.webp",
-			tags: [],
+			tags: ["OpenGL", "C++"],
 			linkGithub: "",
 			linkDemo: "",
 		},
@@ -32,9 +32,17 @@ const ProjectDatabase = () => {
 			linkGithub: "",
 			linkDemo: "",
 		},
+		Infestation: {
+			description:
+				"Infestation Infestation, Infestation Infestation, Infestation Infestation, Infestation Infestation, Infestation Infestation, Infestation Infestation, pop.",
+			image: "/project-imgs/Infestation.webp",
+			tags: [],
+			linkGithub: "",
+			linkDemo: "",
+		},
 	};
 	Object.freeze(data);
-	const cards = ["Computer Graphics", "Robot_2", "The Druid"];
+	const cards = ["Computer Graphics", "Robot_2", "The Druid", "Infestation"];
 
 	/**
 	 *
