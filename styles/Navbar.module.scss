@@ -8,8 +8,8 @@ $zIndexTop: 100; // zIndex
 	$hDivLinksPadding: 20px;
 	position: fixed;
 	transition: transform 0.3s, background gvar.$colorTransitionTime;
+	z-index: #{$zIndexTop - 10}; // Under all of MobileMenu, but still above everything else
 
-	// Use RGBA once get primary color
 	background: var(--color-background);
 	width: 100%;
 	height: 80px;

@@ -12,32 +12,33 @@
 const ProjectDatabase = () => {
 	const data = {
 		"Computer Graphics": {
-			description: "Computer graphics, Computer graphics, Computer graphics, Computer graphics, Computer graphics, Computer graphics, pop.",
+			description:
+				"Project to learn more about OpenGL. Shaders, Heightmaps, OpenGL Buffers, Hierarchy modelling, Particle effects and importing of Meshes.",
 			image: "/project-imgs/CG_3.webp",
 			tags: ["OpenGL", "C++"],
-			linkGithub: "",
-			linkDemo: "",
+			linkGithub: "w",
+			linkDemo: "w",
 		},
 		Robot_2: {
 			description: "RobotRobot Robot, RobotRobot Robot, RobotRobot Robot, RobotRobot Robot, RobotRobot Robot, RobotRobot Robot, pop.",
 			image: "/project-imgs/Robot_2.webp",
 			tags: [],
-			linkGithub: "",
-			linkDemo: "",
+			linkGithub: "w",
+			linkDemo: "w",
 		},
 		"The Druid": {
 			description: "DruidDruid Druid, DruidDruid Druid, DruidDruid Druid, DruidDruid Druid, DruidDruid Druid, DruidDruid Druid, pop.",
-			image: "/project-imgs/Druid.webp",
+			image: "/project-imgs/Root_2.webp",
 			tags: [],
-			linkGithub: "",
+			linkGithub: "w",
 			linkDemo: "",
 		},
 		Infestation: {
 			description:
 				"Infestation Infestation, Infestation Infestation, Infestation Infestation, Infestation Infestation, Infestation Infestation, Infestation Infestation, pop.",
-			image: "/project-imgs/Infestation.webp",
+			image: "/project-imgs/Robot_2.webp",
 			tags: [],
-			linkGithub: "",
+			linkGithub: "w",
 			linkDemo: "",
 		},
 	};

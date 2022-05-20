@@ -1,19 +1,18 @@
 import { useRef } from "react";
 import styles from "../../styles/sections/About.module.scss";
-import stylesUnderline from "../../styles/stylingHelpers/GrowingUnderline.module.scss";
-import EffectsHelper from "../StylingHelpers/EffectsHelper";
+import stylesUnderline from "../../styles/customEffects/underlineEffect.module.scss";
+import StyleWrapper from "../StylingHelpers/StyleWrapper";
 import useOnceInViewport from "../StylingHelpers/useOnceInViewport";
 
 const AboutSection = () => {
 	const aboutContainerRef = useRef();
-	const isVisible = useOnceInViewport(aboutContainerRef, "-100px");
+	const isVisible = useOnceInViewport(aboutContainerRef, "-150px");
 
 	return (
 		<div ref={aboutContainerRef} className={styles.sectionContainer}>
 			<div className={styles.sectionTitleDiv}>
 				<h2 className={styles.sectionTitle}>
-					{/* <EffectsHelper sheets={isVisible ? stylesUnderline.grow : stylesUnderline.ungrown} localVars={{ growspeed: "1.2s", growwidth: "30%" }}> */}
-					<EffectsHelper sheets={isVisible ? stylesUnderline.growRight : stylesUnderline.ungrown}>About Me.</EffectsHelper>
+					<StyleWrapper sheets={isVisible ? stylesUnderline.growRight : stylesUnderline.ungrown}>About Me.</StyleWrapper>
 				</h2>
 			</div>
 			<div className={styles.sectionContentDiv}>

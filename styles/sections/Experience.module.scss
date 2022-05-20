@@ -1,1 +1,16 @@
 @use "./sectionStyles" as ss;
+@use "../modules//mixins" as mx;
+
+.sectionContainer {
+}
+
+.sectionTitleDiv {
+}
+.sectionTitle {
+	@include mx.maxMediaQuery(xs) {
+		font-size: 2.4rem;
+	}
+}
+
+.sectionContentDiv {
+}

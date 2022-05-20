@@ -1,5 +1,6 @@
 @use "./sectionStyles" as ss;
 @use "../modules/globalVariables" as gvar;
+@use "../modules/mixins" as mx;
 
 .sectionContainer {
 }
@@ -8,19 +9,48 @@
 }
 
 .sectionTitle {
+	margin-left: 6%;
+	@include mx.maxMediaQuery(xs) {
+		margin: 0%;
+	}
 }
 
 .sectionContentDiv {
 }
 
 .featuredProjectsDiv {
+	margin-bottom: 400px;
 }
 
 .otherProjectsDiv {
 	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary);
+
+	$extraMargin: 10%;
+	padding-left: $extraMargin;
+	padding-right: $extraMargin;
+
+	@include mx.maxMediaQuery(sm) {
+		padding: 0px 3% 0px 3%;
+	}
+	@include mx.maxMediaQuery(xs) {
+		padding: 0px;
+	}
 }
 .otherProjectsTitle {
-	font-size: 2rem;
+	font-size: 2.5rem;
+	font-weight: 450;
 	text-align: center;
+
+	@include mx.maxMediaQuery(sm) {
+		font-size: 2.3rem;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: 2.1rem;
+	}
+}
+.archiveLinkDiv {
+	font-size: 0.9rem;
+	text-align: center;
+	margin-bottom: 70px;
 }

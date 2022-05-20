@@ -1,4 +1,5 @@
 @use "../modules/globalVariables" as gvar;
+@use "../modules/mixins" as mx;
 
 .ungrown {
 	// Default values, incase you don't override in EffectsHelper
@@ -27,6 +28,11 @@
 		transition: transform var(--growspeed) ease-out, background gvar.$colorTransitionTime;
 		transform: scaleX(var(--growwidth));
 		transform-origin: left;
+
+		// Prevent Overflowing page
+		@include mx.maxMediaQuery(xs) {
+			transform: scaleX(1);
+		}
 	}
 }
 .growRight {
@@ -36,5 +42,10 @@
 		transform-origin: right;
 		transition: transform var(--growspeed) ease-in-out, background gvar.$colorTransitionTime;
 		transform: scaleX(var(--growwidth));
+
+		// Prevent Overflowing page
+		@include mx.maxMediaQuery(xs) {
+			transform: scaleX(1);
+		}
 	}
 }

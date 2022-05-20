@@ -1,13 +1,33 @@
 @use "./sectionStyles" as ss;
+@use "../modules/mixins" as mx;
 
 .sectionContainer {
-	border: 1px solid red;
 	$extraPadding: 8%;
-	padding: 2% $extraPadding 5% $extraPadding;
+	padding: 2% $extraPadding 9% $extraPadding;
+
+	@include mx.maxMediaQuery(sm) {
+		padding-bottom: 90px;
+	}
+	@include mx.maxMediaQuery(xs) {
+		// padding-bottom: 90px;
+	}
 }
 
+.sectionTitleDiv {
+	@include mx.maxMediaQuery(sm) {
+		margin-bottom: 30px;
+	}
+}
 .sectionTitle {
 	text-align: right;
+
+	@include mx.maxMediaQuery(sm) {
+		font-size: 3.1rem;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: 2.9rem;
+		text-align: center;
+	}
 }
 
 .sectionContentDiv {
@@ -17,4 +37,11 @@
 }
 .textAbout {
 	font-size: 1.7rem;
+
+	@include mx.maxMediaQuery(sm) {
+		font-size: 1.4rem;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: 1.3rem;
+	}
 }

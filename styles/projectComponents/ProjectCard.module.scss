@@ -1,25 +1,69 @@
 @use "../modules/globalVariables" as gvar;
-@use "sass:color";
+@use "../modules/mixins" as mx;
+
+$cardOnHoverTime: 0.3s;
+$mediaQuery_TwoCardsWidth: 990px;
+$mediaQuery_OneCardWidth: 700px;
 
 .cardDiv {
-	$marginSide: 20px;
-	margin-right: $marginSide;
-	margin-left: $marginSide;
-	border-radius: 10px;
+	$marginBtm: 20px;
+	$marginSide: 10px;
+	margin: 0px $marginSide $marginBtm $marginSide;
+	border-radius: 10px 10px 0px 0px;
+	position: relative;
 
-	transition: background gvar.$colorTransitionTime;
-	background: linear-gradient(var(--color-backgroundclear), var(--color-backgroundclear)), var(--bgurl);
+	transition: background gvar.$colorTransitionTime, transform $cardOnHoverTime;
+	// background: linear-gradient(var(--color-backgroundclear), var(--color-backgroundclear)), var(--bgurl), var(--color-primary-dark);
+	background: var(--bgurl), var(--color-primary-dark);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	min-height: 250px;
-	height: auto;
+	min-height: 300px;
+	height: 300px;
+	width: 30%;
 
+	&:hover {
+		transform: translateY(-7px);
+		cursor: default;
+
+		& .bgOverlay {
+			opacity: 0.2;
+		}
+		& .cardContent .cardTextDiv .cardDescription {
+			opacity: 0;
+		}
+	}
+
+	@include mx.maxMediaQueryPX($mediaQuery_TwoCardsWidth) {
+		width: 45%;
+	}
+	@include mx.maxMediaQueryPX($mediaQuery_OneCardWidth) {
+		width: 100%;
+		margin-bottom: 50px;
+	}
+}
+.bgOverlay {
+	transition: background gvar.$colorTransitionTime, opacity $cardOnHoverTime;
+	background: var(--color-backgroundclear);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+.cardContent {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	z-index: 1;
 }
+
 .cardTextDiv {
 	display: flex;
 	flex-direction: column;
@@ -30,29 +74,52 @@
 	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary);
 
-	font-size: 1.4rem;
-	font-weight: 500;
-	margin-top: 10px;
+	font-size: 1.6rem;
+	font-weight: bold;
+	border-radius: 10px 10px 0px 0px;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	@include mx.maxMediaQueryPX($mediaQuery_OneCardWidth) {
+		font-size: 1.5rem;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: 1.4rem;
+	}
 }
 .cardDescription {
-	transition: color gvar.$colorTransitionTime;
+	transition: color gvar.$colorTransitionTime, opacity $cardOnHoverTime;
 	color: var(--color-text-primary);
 
 	text-align: center;
+	font-size: 1rem;
+	font-weight: 400;
+
 	padding: 10px;
+	padding-bottom: 20px;
+
+	@include mx.maxMediaQueryPX($mediaQuery_OneCardWidth) {
+		font-size: 1.2rem;
+		font-weight: 400;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: 0.8rem;
+	}
 }
 // Tags
 .cardTagsListDiv {
 	display: flex;
-	justify-content: flex-start;
+	flex-wrap: wrap;
+	// justify-content: flex-start;	// For Icon tags
+	justify-content: center; // For Word tags
 	align-items: center;
 
 	padding-bottom: 10px;
 }
-.cardTagDiv {
-	$tagSpacing: 5px;
-	padding-left: $tagSpacing;
-	padding-right: $tagSpacing;
+// Icon Tag
+.cardTagIconDiv {
+	padding-bottom: 10px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -61,7 +128,7 @@
 	& > svg {
 		transition: fill gvar.$colorTransitionTime;
 		fill: var(--color-text-primary);
-		transform: scale(2.5);
+		transform: scale(1.4);
 
 		// Hover Icon
 		&:hover {
@@ -72,9 +139,69 @@
 		}
 	}
 }
-.cardTagName {
-	padding-top: 20px;
+.cardTagIconName {
+	margin-top: 5px;
+	font-size: 0.7rem;
+
 	transition: color gvar.$colorTransitionTime, opacity 0.3s;
 	opacity: 0;
 	color: var(--color-text-primary);
+}
+// Word Tag
+.cardTagWord {
+	padding: 5px;
+	margin: 5px;
+	border-radius: 10px;
+
+	font-size: 0.8rem;
+	font-weight: 500;
+
+	transition: background gvar.$colorTransitionTime, color gvar.$colorTransitionTime;
+	background: var(--color-primary-dark);
+	color: var(--color-background);
+
+	@include mx.maxMediaQueryPX($mediaQuery_OneCardWidth) {
+		font-size: 0.9rem;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: 0.7rem;
+	}
+}
+// Links
+$linkSize: 1.5;
+.cardLinksDiv {
+	width: 100%;
+	padding: 10px;
+	transition: background gvar.$colorTransitionTime;
+	background: var(--color-primary-dark);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	& > a > svg {
+		transition: fill gvar.$colorTransitionTime;
+		fill: var(--color-background);
+		margin: 0px 20px;
+		transform: scale($linkSize);
+
+		&:hover {
+			transition: fill 0.1s;
+			fill: var(--color-primary-light);
+			cursor: pointer;
+		}
+	}
+
+	@include mx.maxMediaQueryPX($mediaQuery_OneCardWidth) {
+		padding: 13px;
+		& > a > svg {
+			transform: scale($linkSize);
+		}
+	}
+	@include mx.maxMediaQuery(xs) {
+		padding: 10px;
+		& > a > svg {
+			transform: scale(1.2);
+		}
+	}
 }

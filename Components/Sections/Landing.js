@@ -7,9 +7,7 @@ const LandingSection = () => {
 				<h6 className={styles.txtHello}>Hi there! I'm</h6>
 				<h2 className={styles.txtName}>Wei Xuan.</h2>
 				<h3 className={styles.txtWhatIDo}>I build software for people.</h3>
-			</div>
-			<div className={styles.textDiv}>
-				<h4>Currently a student @</h4>
+				<h4 className={styles.txtWhereIAm}>Currently a student @ SMU</h4>
 			</div>
 		</div>
 	);

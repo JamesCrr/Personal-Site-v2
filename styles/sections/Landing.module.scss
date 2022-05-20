@@ -1,35 +1,89 @@
-@use "../modules/globalVariables";
+@use "../modules/globalVariables" as gvar;
+@use "../modules/mixins" as mx;
+
+$mediaQuery_AfterSmall: 420px;
 
 .landingContainer {
 	$paddingSize: 5%;
+	min-height: 100vh;
+	min-height: -webkit-fill-available; /* For Webkit Browsers. */
+	min-height: -moz-available; /* For Mozilla Browsers. */
 	height: 100vh;
 	background: var(--color-background);
 	padding: 150px $paddingSize 0px $paddingSize;
 
-	transition: background globalVariables.$colorTransitionTime;
+	transition: background gvar.$colorTransitionTime;
 }
 
 .textDiv {
 	text-align: left;
-	transition: color globalVariables.$colorTransitionTime;
+	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary);
 }
 
 .txtHello {
 	font-weight: normal;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
+
+	@include mx.maxMediaQuery(sm) {
+		font-size: 1rem;
+	}
+	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
+		font-size: 0.8rem;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: 0.7rem;
+	}
 }
 .txtName {
+	line-height: 0.8;
 	font-weight: 400;
 	font-size: 6rem;
-	line-height: 0.8;
 
+	transition: color gvar.$colorTransitionTime;
 	color: var(--color-primary);
+
+	@include mx.maxMediaQuery(sm) {
+		font-size: 4.5rem;
+	}
+	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
+		font-size: 3.5rem;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: 3.1rem;
+	}
 }
 .txtWhatIDo {
+	line-height: 1;
 	font-weight: 500;
 	font-size: 5rem;
-	line-height: 1;
 
+	transition: color gvar.$colorTransitionTime;
+	color: var(--color-text-primary);
 	// text-shadow: 4px 4px 1px var(--color-primary);
+
+	@include mx.maxMediaQuery(sm) {
+		font-size: 3.5rem;
+	}
+	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
+		font-size: 2.5rem;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: 2.1rem;
+	}
+}
+.txtWhereIAm {
+	margin-top: 10px;
+	font-weight: 400;
+	font-size: 1.5rem;
+
+	@include mx.maxMediaQuery(sm) {
+		font-size: 1rem;
+	}
+	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
+		font-size: 0.8rem;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: 0.7rem;
+	}
 }

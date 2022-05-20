@@ -1,25 +1,36 @@
 @use "../modules/globalVariables" as gvar;
+@use "../modules/mixins" as mx;
 
 .sectionContainer {
-	$paddingSize: 2%;
-	transition: background gvar.$colorTransitionTime, color gvar.$colorTransitionTime;
 	min-height: 50vh;
+	transition: background gvar.$colorTransitionTime, color gvar.$colorTransitionTime;
 	background: var(--color-background);
 	color: var(--color-text-primary);
-	padding: $paddingSize;
+
+	$paddingSize: 2%;
 }
 
 .sectionTitleDiv {
 	height: 10%;
+	width: 100%;
 	margin-bottom: 5%;
 }
 
 .sectionTitle {
 	color: var(--color-primary);
 	text-align: left;
-	font-weight: 400;
-	font-size: 3.8rem;
 	line-height: 0.8;
+
+	font-weight: 400;
+	font-size: 4.5rem;
+
+	@include mx.maxMediaQuery(sm) {
+		font-size: 3.3rem;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: 3.1rem;
+		text-align: center;
+	}
 }
 
 .sectionContentDiv {

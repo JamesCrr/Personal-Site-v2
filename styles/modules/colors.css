@@ -25,12 +25,12 @@
 	--color-button-text: rgb(255, 255, 255);
 
 	--color-background: #fefef5;
-	--color-backgroundclear: #fefef5a0;
+	--color-backgroundclear: #fefef59d;
 }
 [data-theme="dark"] {
 	--color-primary: #4747cb;
 	--color-primary-light: #7676ef;
-	--color-primary-dark: #2727b7;
+	--color-primary-dark: #1e1ea2;
 	--color-secondary: #00ff4c;
 
 	--color-text-primary: #dfdef6;
