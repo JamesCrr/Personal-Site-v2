@@ -12,6 +12,7 @@
 	margin-left: 6%;
 	@include mx.maxMediaQuery(xs) {
 		margin: 0%;
+		font-size: 2.9rem;
 	}
 }
 
@@ -19,7 +20,19 @@
 }
 
 .featuredProjectsDiv {
-	margin-bottom: 400px;
+	$extraPadding: 8%;
+	padding-left: $extraPadding;
+	padding-right: $extraPadding;
+	padding-top: 10px;
+
+	@include mx.maxMediaQueryPX(850px) {
+		padding: 0px 20px;
+		padding-top: 40px;
+	}
+	@include mx.maxMediaQuery(sm) {
+		padding: 0px 10px;
+		padding-top: 10px;
+	}
 }
 
 .otherProjectsDiv {
@@ -38,19 +51,22 @@
 	}
 }
 .otherProjectsTitle {
-	font-size: 2.5rem;
-	font-weight: 450;
+	font-size: 2.8rem;
+	font-weight: 600;
 	text-align: center;
 
 	@include mx.maxMediaQuery(sm) {
-		font-size: 2.3rem;
+		font-size: 2.6rem;
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: 2.1rem;
+		font-size: 2.2rem;
 	}
 }
 .archiveLinkDiv {
-	font-size: 0.9rem;
+	font-size: 1rem;
 	text-align: center;
 	margin-bottom: 70px;
+
+	transition: color gvar.$colorTransitionTime;
+	color: var(--color-text-primary-lesser);
 }

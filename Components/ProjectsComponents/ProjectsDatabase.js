@@ -15,7 +15,7 @@ const ProjectDatabase = () => {
 			description:
 				"Project to learn more about OpenGL. Shaders, Heightmaps, OpenGL Buffers, Hierarchy modelling, Particle effects and importing of Meshes.",
 			image: "/project-imgs/CG_3.webp",
-			tags: ["OpenGL", "C++"],
+			tags: ["OpenGL", "C++", "OpenGL", "C++", "OpenGL", "C++", "OpenGL", "C++", "OpenGL", "C++", "OpenGL", "C++"],
 			linkGithub: "w",
 			linkDemo: "w",
 		},
@@ -44,22 +44,25 @@ const ProjectDatabase = () => {
 	};
 	Object.freeze(data);
 	const cards = ["Computer Graphics", "Robot_2", "The Druid", "Infestation"];
+	// Get the first 3 as Featured
+	const featured = Object.getOwnPropertyNames(data).slice(0, 2);
 
 	/**
-	 *
-	 * @param {Oject} selected Array of project names
+	 * Gets an Array of Objects that contains the project data from your selection.
+	 * @param {Oject} selected Array of project names to query from
 	 * @returns Array of Objects containing project data of those names
 	 */
-	const getProjectsFromSelected = (selected) => {
+	const getProjects = (selected) => {
 		const result = [];
 		for (const projectName of selected) {
 			if (!data[projectName]) continue;
+			// Add title property and add into array
 			result.push({ title: projectName, ...data[projectName] });
 		}
 		return result;
 	};
 
-	return { data, vFeature: null, vCard: getProjectsFromSelected(cards) };
+	return { data, vFeature: getProjects(featured), vCard: getProjects(cards) };
 };
 
 export default ProjectDatabase;

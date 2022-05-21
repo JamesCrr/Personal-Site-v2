@@ -20,12 +20,14 @@
 	--color-secondary: #00ff4c;
 
 	--color-text-primary: #292828;
+	--color-text-primary-less: #3e3d3d;
+	--color-text-primary-lesser: #696868;
 
 	--color-button: #3d486c;
 	--color-button-text: rgb(255, 255, 255);
 
 	--color-background: #fefef5;
-	--color-backgroundclear: #fefef59d;
+	--color-backgroundclear: #fefef5bc;
 }
 [data-theme="dark"] {
 	--color-primary: #4747cb;
@@ -33,7 +35,9 @@
 	--color-primary-dark: #1e1ea2;
 	--color-secondary: #00ff4c;
 
-	--color-text-primary: #dfdef6;
+	--color-text-primary: #ebebf9;
+	--color-text-primary-less: #b2b1c4;
+	--color-text-primary-lesser: #858593;
 
 	--color-button: #50d478;
 	--color-button-text: rgb(0, 0, 0);

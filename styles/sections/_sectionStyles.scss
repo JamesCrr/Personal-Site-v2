@@ -6,24 +6,30 @@
 	transition: background gvar.$colorTransitionTime, color gvar.$colorTransitionTime;
 	background: var(--color-background);
 	color: var(--color-text-primary);
-
-	$paddingSize: 2%;
 }
 
 .sectionTitleDiv {
 	height: 10%;
 	width: 100%;
 	margin-bottom: 5%;
+
+	@include mx.maxMediaQuery(sm) {
+		margin-bottom: 50px;
+	}
 }
 
 .sectionTitle {
+	transition: color gvar.$colorTransitionTime;
 	color: var(--color-primary);
 	text-align: left;
 	line-height: 0.8;
 
-	font-weight: 400;
+	font-weight: 600;
 	font-size: 4.5rem;
 
+	@include mx.maxMediaQuery(md) {
+		font-size: 3.4rem;
+	}
 	@include mx.maxMediaQuery(sm) {
 		font-size: 3.3rem;
 	}

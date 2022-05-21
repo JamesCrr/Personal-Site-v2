@@ -26,7 +26,7 @@ const Navbar = (props) => {
 	 * @param {Number} sectionID what section to scroll to
 	 */
 	const scrollToSection = (sectionID) => {
-		const { aboutSectionRef, experienceSectionRef, projectsSectionRef } = props;
+		const { aboutSectionRef, experienceSectionRef, projectsSectionRef, contactSectionRef } = props;
 		const scrollOptions = { behavior: "smooth", top: 0 };
 		switch (sectionID) {
 			case -1:
@@ -39,12 +39,16 @@ const Navbar = (props) => {
 			case 2:
 				scrollOptions.top = projectsSectionRef.current.offsetTop;
 				break;
+			case 3:
+				scrollOptions.top = contactSectionRef.current.offsetTop;
+				break;
 		}
 		/**
 		 * Difference between 2 options.
 		 * - window.scrollTo({ behavior: 'smooth', top: yourRef.current.offsetTop }) => only IE no support
 		 * - element.scrollIntoView({ behavior: 'smooth'}) => IE, Safari no support
 		 */
+		scrollOptions.top -= 80; // Include Navbar Height in calculation
 		// Scroll to selected section
 		window.scrollTo(scrollOptions);
 	};
@@ -63,17 +67,17 @@ const Navbar = (props) => {
 	 * Mobile Menu Icon was clicked
 	 */
 	const mobileMenuIconClicked = () => {
-		setMobileMenuOpen(!mobileMenuOpen);
 		// Toggle styling to lock scrolling
 		document.body.classList.toggle("lockScroll");
+		setMobileMenuOpen(!mobileMenuOpen);
 		// console.log("MobileMenu Clicked");
 	};
 	/**
 	 * Closes the Mobile Menu
 	 */
 	const closeMobileMenu = () => {
-		setMobileMenuOpen(false);
 		document.body.classList.remove("lockScroll");
+		setMobileMenuOpen(false);
 	};
 	/**
 	 * Ensures the Mobile Menu is closed if users change
@@ -116,6 +120,9 @@ const Navbar = (props) => {
 					</li>
 					<li onClick={() => scrollToSection(2)} className={styles.hLinkItem}>
 						<a>Projects.</a>
+					</li>
+					<li onClick={() => scrollToSection(3)} className={styles.hLinkItem}>
+						<a>Contact.</a>
 					</li>
 				</ul>
 			</div>

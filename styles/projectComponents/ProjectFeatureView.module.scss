@@ -1,0 +1,202 @@
+@use "../modules/globalVariables" as gvar;
+@use "../modules/mixins" as mx;
+
+$mediaQuery_Eightfifty: 850px;
+
+.featuredDiv {
+	display: flex;
+	flex-direction: var(--ownFlexDirection); // Specified in JS
+	justify-content: space-between;
+	align-items: center;
+
+	width: 100%;
+	height: 300px;
+
+	margin-bottom: 100px;
+
+	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
+	}
+	@include mx.maxMediaQuery(sm) {
+		flex-direction: column;
+		height: auto;
+	}
+	@include mx.maxMediaQuery(xs) {
+	}
+}
+// Text Related Div
+.txtDetailsDiv {
+	width: 60%;
+	height: 100%;
+
+	text-align: center;
+	margin-right: 50px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
+	}
+	@include mx.maxMediaQuery(sm) {
+		width: 100%;
+		margin-right: 0px;
+	}
+	@include mx.maxMediaQuery(xs) {
+	}
+}
+// Title
+.txtTitle {
+	transition: color gvar.$colorTransitionTime;
+	color: var(--color-text-primary);
+
+	font-size: 2rem;
+	font-weight: 500;
+
+	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
+		font-size: 1.7rem;
+	}
+	@include mx.maxMediaQuery(sm) {
+		font-size: 2rem;
+	}
+}
+// Description
+.txtDescription {
+	transition: color gvar.$colorTransitionTime;
+	color: var(--color-text-primary-less);
+
+	font-size: 1.2rem;
+	font-weight: 400;
+
+	margin: 20px 20px 30px 20px;
+
+	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
+		font-size: 1rem;
+		margin: 20px 0px 30px 0px;
+	}
+	@include mx.maxMediaQuery(sm) {
+		margin: 20px 10px 20px 10px;
+		font-size: 1.2rem;
+	}
+	@include mx.maxMediaQuery(xs) {
+	}
+}
+// Tags List
+.tagsListDiv {
+	width: 100%;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+
+	@include mx.maxMediaQuery(sm) {
+		padding: 0px 20px;
+	}
+	@include mx.maxMediaQuery(xs) {
+		padding: 0px;
+	}
+}
+// Tag Div
+.tagDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	margin-right: 5px;
+	margin-bottom: 20px;
+
+	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
+	}
+	@include mx.maxMediaQuery(sm) {
+		margin: 0;
+		margin-top: 15px;
+	}
+	@include mx.maxMediaQuery(xs) {
+	}
+}
+.iconImgDiv {
+	transform: scale(2.5);
+	& > svg {
+		transition: fill gvar.$colorTransitionTime;
+		fill: var(--color-text-primary-less);
+	}
+	&:hover {
+		// Icon Image
+		& > svg {
+			fill: var(--color-primary);
+		}
+		// <p> sibling
+		& + p {
+			opacity: 1;
+		}
+	}
+
+	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
+		transform: scale(2);
+	}
+	@include mx.maxMediaQuery(sm) {
+		transform: scale(2.5);
+	}
+}
+.iconTxt {
+	transition: color gvar.$colorTransitionTime, opacity 0.3s;
+	color: var(--color-text-primary);
+
+	margin-top: 5px;
+	font-size: 1rem;
+	opacity: 0;
+
+	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
+		font-size: 0.8rem;
+	}
+	@include mx.maxMediaQuery(sm) {
+		margin-top: 0px;
+		font-size: 1rem;
+	}
+	@include mx.maxMediaQuery(xs) {
+	}
+}
+// Image
+.imageDiv {
+	width: 400px;
+	height: 100%;
+	position: relative;
+
+	// Image
+	& > span > img {
+		object-fit: contain;
+	}
+
+	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
+	}
+	@include mx.maxMediaQuery(sm) {
+		width: 100%;
+		height: 300px;
+	}
+	@include mx.maxMediaQuery(xs) {
+		// Make image use FILL instead of contain as
+		// Width is so small that maintaining 16:9 aspect ratio is
+		// gonna make image TINY
+		& > span > img {
+			object-fit: fill !important;
+		}
+	}
+
+	// // If want to completely style ownself
+	// // Disables absolute positions..
+	// & > span {
+	// 	position: inherit !important;
+	// 	// bottom: null;
+	// 	// top: null;
+	// 	// right: null;
+	// 	// left: null;
+
+	// 	& > img {
+	// 		position: inherit !important;
+	// 		width: inherit !important;
+	// 		height: inherit !important;
+	// 	}
+	// }
+}

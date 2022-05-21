@@ -2,7 +2,7 @@
 @use "../modules/mixins" as mx;
 
 $cardOnHoverTime: 0.3s;
-$mediaQuery_TwoCardsWidth: 990px;
+$mediaQuery_TwoCardsWidth: 1050px;
 $mediaQuery_OneCardWidth: 700px;
 
 .cardDiv {
@@ -12,24 +12,28 @@ $mediaQuery_OneCardWidth: 700px;
 	border-radius: 10px 10px 0px 0px;
 	position: relative;
 
-	transition: background gvar.$colorTransitionTime, transform $cardOnHoverTime;
+	transition: background gvar.$colorTransitionTime, transform $cardOnHoverTime, box-shadow $cardOnHoverTime;
 	// background: linear-gradient(var(--color-backgroundclear), var(--color-backgroundclear)), var(--bgurl), var(--color-primary-dark);
 	background: var(--bgurl), var(--color-primary-dark);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	min-height: 300px;
-	height: 300px;
+	height: 350px; // Since all are absolute, need to define height
 	width: 30%;
 
 	&:hover {
 		transform: translateY(-7px);
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 		cursor: default;
 
 		& .bgOverlay {
 			opacity: 0.2;
 		}
 		& .cardContent .cardTextDiv .cardDescription {
+			opacity: 0;
+		}
+		& .cardContent .cardTagsListDiv {
 			opacity: 0;
 		}
 	}
@@ -74,33 +78,36 @@ $mediaQuery_OneCardWidth: 700px;
 	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary);
 
-	font-size: 1.6rem;
-	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	font-size: 1.8rem;
+	font-weight: 600;
 	border-radius: 10px 10px 0px 0px;
 
 	padding-top: 10px;
 	padding-bottom: 10px;
 
 	@include mx.maxMediaQueryPX($mediaQuery_OneCardWidth) {
-		font-size: 1.5rem;
+		font-size: 1.7rem;
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: 1.4rem;
+		font-size: 1.5rem;
 	}
 }
 .cardDescription {
 	transition: color gvar.$colorTransitionTime, opacity $cardOnHoverTime;
-	color: var(--color-text-primary);
+	color: var(--color-text-primary-less);
 
 	text-align: center;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	font-weight: 400;
 
-	padding: 10px;
-	padding-bottom: 20px;
+	padding: 0px 10px 0px 10px;
 
 	@include mx.maxMediaQueryPX($mediaQuery_OneCardWidth) {
-		font-size: 1.2rem;
 		font-weight: 400;
 	}
 	@include mx.maxMediaQuery(xs) {
@@ -109,6 +116,7 @@ $mediaQuery_OneCardWidth: 700px;
 }
 // Tags
 .cardTagsListDiv {
+	transition: opacity $cardOnHoverTime;
 	display: flex;
 	flex-wrap: wrap;
 	// justify-content: flex-start;	// For Icon tags
@@ -117,36 +125,6 @@ $mediaQuery_OneCardWidth: 700px;
 
 	padding-bottom: 10px;
 }
-// Icon Tag
-.cardTagIconDiv {
-	padding-bottom: 10px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	& > svg {
-		transition: fill gvar.$colorTransitionTime;
-		fill: var(--color-text-primary);
-		transform: scale(1.4);
-
-		// Hover Icon
-		&:hover {
-			// <p> sibling
-			& + p {
-				opacity: 1;
-			}
-		}
-	}
-}
-.cardTagIconName {
-	margin-top: 5px;
-	font-size: 0.7rem;
-
-	transition: color gvar.$colorTransitionTime, opacity 0.3s;
-	opacity: 0;
-	color: var(--color-text-primary);
-}
 // Word Tag
 .cardTagWord {
 	padding: 5px;
@@ -154,11 +132,11 @@ $mediaQuery_OneCardWidth: 700px;
 	border-radius: 10px;
 
 	font-size: 0.8rem;
-	font-weight: 500;
+	font-weight: bold;
 
 	transition: background gvar.$colorTransitionTime, color gvar.$colorTransitionTime;
-	background: var(--color-primary-dark);
-	color: var(--color-background);
+	background: var(--color-backgroundclear);
+	color: var(--color-text-primary);
 
 	@include mx.maxMediaQueryPX($mediaQuery_OneCardWidth) {
 		font-size: 0.9rem;
@@ -170,10 +148,12 @@ $mediaQuery_OneCardWidth: 700px;
 // Links
 $linkSize: 1.5;
 .cardLinksDiv {
-	width: 100%;
-	padding: 10px;
+	// width: 100%;
+	padding-top: 10px;
 	transition: background gvar.$colorTransitionTime;
-	background: var(--color-primary-dark);
+	background: var(--color-backgroundclear);
+	$radius: 30px;
+	border-radius: $radius $radius 0px 0px;
 
 	display: flex;
 	justify-content: center;
@@ -181,25 +161,24 @@ $linkSize: 1.5;
 
 	& > a > svg {
 		transition: fill gvar.$colorTransitionTime;
-		fill: var(--color-background);
+		fill: var(--color-primary);
 		margin: 0px 20px;
 		transform: scale($linkSize);
 
+		// Hover Transition
 		&:hover {
-			transition: fill 0.1s;
+			transition: fill 0.3s;
 			fill: var(--color-primary-light);
 			cursor: pointer;
 		}
 	}
 
 	@include mx.maxMediaQueryPX($mediaQuery_OneCardWidth) {
-		padding: 13px;
 		& > a > svg {
 			transform: scale($linkSize);
 		}
 	}
 	@include mx.maxMediaQuery(xs) {
-		padding: 10px;
 		& > a > svg {
 			transform: scale(1.2);
 		}

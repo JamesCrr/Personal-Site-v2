@@ -1,0 +1,99 @@
+@use "./sectionStyles" as ss;
+@use "../modules/mixins" as mx;
+@use "../modules/globalVariables" as gvar;
+
+.sectionContainer {
+	$paddingSize: 4%;
+	padding: 2% $paddingSize 100px $paddingSize;
+
+	@include mx.maxMediaQuery(sm) {
+		padding-bottom: 90px;
+	}
+	@include mx.maxMediaQuery(xs) {
+	}
+}
+
+.sectionTitleDiv {
+}
+
+.sectionTitle {
+	text-align: right;
+
+	@include mx.maxMediaQuery(sm) {
+		font-size: 3.1rem;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: 2.7rem;
+		text-align: center;
+	}
+}
+
+.sectionContentDiv {
+	text-align: center;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.contactTitle {
+	font-size: 3rem;
+	font-weight: 500;
+
+	@include mx.maxMediaQuery(sm) {
+		font-size: 2.5rem;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: 2.2rem;
+	}
+}
+.contactTxt {
+	margin-top: 20px;
+	padding: 0px 20%;
+	font-size: 1.5rem;
+
+	@include mx.maxMediaQuery(md) {
+		width: 100%;
+	}
+	@include mx.maxMediaQuery(sm) {
+		font-size: 1.3rem;
+		padding: 0px 5%;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: 1rem;
+		padding: 0px 1%;
+	}
+}
+.contactIconsDiv {
+	margin-top: 50px;
+	width: 100%;
+
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+
+	& > a {
+		transform: scale(2.5);
+
+		// Icon Image
+		& > svg {
+			transition: fill gvar.$colorTransitionTime;
+			fill: var(--color-primary);
+		}
+
+		&:hover {
+			cursor: pointer;
+			& > svg {
+				fill: var(--color-primary-light);
+			}
+		}
+
+		@include mx.maxMediaQuery(md) {
+		}
+		@include mx.maxMediaQuery(sm) {
+		}
+		@include mx.maxMediaQuery(xs) {
+		}
+	}
+}

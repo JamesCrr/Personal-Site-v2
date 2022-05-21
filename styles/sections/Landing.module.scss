@@ -17,27 +17,28 @@ $mediaQuery_AfterSmall: 420px;
 
 .textDiv {
 	text-align: left;
-	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary);
 }
 
 .txtHello {
+	transition: color gvar.$colorTransitionTime;
+	color: var(--color-text-primary-less);
+
 	font-weight: normal;
-	font-size: 1.2rem;
+	font-size: 2.2rem;
 
 	@include mx.maxMediaQuery(sm) {
-		font-size: 1rem;
+		font-size: 1.8rem;
 	}
 	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
-		font-size: 0.8rem;
+		font-size: 1.5rem;
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: 0.7rem;
+		font-size: 1.1rem;
 	}
 }
 .txtName {
 	line-height: 0.8;
-	font-weight: 400;
+	font-weight: 500;
 	font-size: 6rem;
 
 	transition: color gvar.$colorTransitionTime;
@@ -47,7 +48,7 @@ $mediaQuery_AfterSmall: 420px;
 		font-size: 4.5rem;
 	}
 	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
-		font-size: 3.5rem;
+		font-size: 3.8rem;
 	}
 	@include mx.maxMediaQuery(xs) {
 		font-size: 3.1rem;
@@ -55,7 +56,7 @@ $mediaQuery_AfterSmall: 420px;
 }
 .txtWhatIDo {
 	line-height: 1;
-	font-weight: 500;
+	font-weight: bold;
 	font-size: 5rem;
 
 	transition: color gvar.$colorTransitionTime;
@@ -66,24 +67,27 @@ $mediaQuery_AfterSmall: 420px;
 		font-size: 3.5rem;
 	}
 	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
-		font-size: 2.5rem;
+		font-size: 2.8rem;
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: 2.1rem;
+		font-size: 2.3rem;
 	}
 }
 .txtWhereIAm {
+	transition: color gvar.$colorTransitionTime;
+	color: var(--color-text-primary-less);
+
 	margin-top: 10px;
-	font-weight: 400;
-	font-size: 1.5rem;
+	font-weight: 500;
+	font-size: 2.2rem;
 
 	@include mx.maxMediaQuery(sm) {
-		font-size: 1rem;
+		font-size: 2rem;
 	}
 	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
-		font-size: 0.8rem;
+		font-size: 1.7rem;
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: 0.7rem;
+		font-size: 1.3rem;
 	}
 }

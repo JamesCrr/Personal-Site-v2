@@ -1,14 +1,14 @@
+import { useIconsContext } from "../../pages";
 import styles from "../../styles/projectComponents/ProjectCard.module.scss";
-import IconsDatabase from "./IconsDatabase";
-
-const { getIcon } = IconsDatabase();
 
 const ProjectCard = ({ details }) => {
+	const { getIcon } = useIconsContext();
+
 	// const getTagIconComponent = (tagName, index) => {
 	// 	return (
 	// 		<div key={index} className={styles.cardTagIconDiv}>
 	// 			{getIcon(tagName)}
-	// 			<p className={styles.cardTagIconName}>{tagName}</p>
+	// 			<p className={styles.cardTagIconTxt}>{tagName}</p>
 	// 		</div>
 	// 	);
 	// };
@@ -38,15 +38,18 @@ const ProjectCard = ({ details }) => {
 			<div className={styles.bgOverlay}></div>
 			{/* Content */}
 			<div className={styles.cardContent}>
+				{/* Title and Description */}
 				<div className={styles.cardTextDiv}>
 					<h4 className={styles.cardTitle}>{details.title}</h4>
 					<h4 className={styles.cardDescription}>{details.description}</h4>
 				</div>
+				{/* Tags */}
 				<div className={styles.cardTagsListDiv}>
 					{details.tags.map((tagName, index) => {
 						return getTagWordComponent(tagName, index);
 					})}
 				</div>
+				{/* Links */}
 				<div className={styles.cardLinksDiv}>
 					{isActiveLink(details.linkGithub) && <a>{getIcon("github")}</a>}
 					{isActiveLink(details.linkDemo) && <a>{getIcon("external")}</a>}

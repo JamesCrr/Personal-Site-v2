@@ -15,17 +15,23 @@ const MobileMenu = (props) => {
 			{/* Vertical Navbar Links */}
 			<ul className={props.mobileMenuOpen ? styles.vLinksParent : styles.vLinksParent_Close}>
 				<li onClick={() => navLinkClicked(0)} className={styles.vLinkItem}>
-					<a>0/ About Me.</a>
+					<a>About Me.</a>
 				</li>
 				<li onClick={() => navLinkClicked(1)} className={styles.vLinkItem}>
-					<a>1/ Experience.</a>
+					<a>Experience.</a>
 				</li>
 				<li onClick={() => navLinkClicked(2)} className={styles.vLinkItem}>
-					<a>2/ Projects.</a>
+					<a>Projects.</a>
+				</li>
+				<li onClick={() => navLinkClicked(3)} className={styles.vLinkItem}>
+					<a>Contact.</a>
 				</li>
 			</ul>
 			{/* Background */}
-			<div className={props.mobileMenuOpen ? styles.mobileMenuBackground : styles.mobileMenuBackground_Close}></div>
+			<div
+				className={props.mobileMenuOpen ? styles.mobileMenuBackground : styles.mobileMenuBackground_Close}
+				onClick={() => props.closeMobileMenuFunc()}
+			></div>
 		</div>
 	);
 };
