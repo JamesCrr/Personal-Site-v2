@@ -24,8 +24,12 @@ const ContactSection = () => {
 					I’ll try my best to get back to you!
 				</p>
 				<div className={styles.contactIconsDiv}>
-					<a>{getIcon("linkedin")}</a>
-					<a>{getIcon("email")}</a>
+					<a href="https://sg.linkedin.com/in/chinweixuan" target="_blank" rel="noopener noreferrer">
+						{getIcon("linkedin")}
+					</a>
+					<a href="mailto:cwx5283@gmail.com" target="_blank">
+						{getIcon("email")}
+					</a>
 				</div>
 			</div>
 		</div>

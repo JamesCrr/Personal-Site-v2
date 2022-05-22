@@ -1,7 +1,7 @@
 @use "../modules/globalVariables" as gvar;
 @use "../modules/mixins" as mx;
 
-$mediaQuery_Eightfifty: 850px;
+$mediaQuery_SevenHundred: 700px;
 
 .featuredDiv {
 	display: flex;
@@ -14,9 +14,7 @@ $mediaQuery_Eightfifty: 850px;
 
 	margin-bottom: 100px;
 
-	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
-	}
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQuery(md) {
 		flex-direction: column;
 		height: auto;
 	}
@@ -27,20 +25,17 @@ $mediaQuery_Eightfifty: 850px;
 .txtDetailsDiv {
 	width: 60%;
 	height: 100%;
-
-	text-align: center;
-	margin-right: 50px;
+	text-align: left;
 
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
 
-	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
-	}
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQuery(md) {
 		width: 100%;
-		margin-right: 0px;
+		padding-left: 40px;
+		padding-right: 40px;
 	}
 	@include mx.maxMediaQuery(xs) {
 	}
@@ -50,11 +45,10 @@ $mediaQuery_Eightfifty: 850px;
 	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary);
 
-	font-size: 2rem;
+	font-size: 2.5rem;
 	font-weight: 500;
 
-	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
-		font-size: 1.7rem;
+	@include mx.maxMediaQuery(md) {
 	}
 	@include mx.maxMediaQuery(sm) {
 		font-size: 2rem;
@@ -65,20 +59,28 @@ $mediaQuery_Eightfifty: 850px;
 	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary-less);
 
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 	font-weight: 400;
 
-	margin: 20px 20px 30px 20px;
+	margin: 20px 50px 30px 50px;
+	margin: 20px 0px 30px 0px;
 
-	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
-		font-size: 1rem;
+	@include mx.maxMediaQuery(lg) {
+		// margin: 20px 30px 30px 30px;
 		margin: 20px 0px 30px 0px;
 	}
+	@include mx.maxMediaQuery(md) {
+		font-size: 1.4rem;
+		// margin: 20px 50px 20px 50px;
+		margin: 20px 0px 20px 0px;
+	}
 	@include mx.maxMediaQuery(sm) {
-		margin: 20px 10px 20px 10px;
 		font-size: 1.2rem;
+		// margin: 20px 10px 20px 10px;
 	}
 	@include mx.maxMediaQuery(xs) {
+		font-size: 1rem;
+		margin: 20px 0px 20px 0px;
 	}
 }
 // Tags List
@@ -87,9 +89,12 @@ $mediaQuery_Eightfifty: 850px;
 
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 
+	@include mx.maxMediaQuery(md) {
+		justify-content: center;
+	}
 	@include mx.maxMediaQuery(sm) {
 		padding: 0px 20px;
 	}
@@ -104,20 +109,20 @@ $mediaQuery_Eightfifty: 850px;
 	justify-content: center;
 	align-items: center;
 
-	margin-right: 5px;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
+	margin-right: 20px;
 
-	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
-	}
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQuery(md) {
 		margin: 0;
+		margin-right: 20px;
 		margin-top: 15px;
 	}
 	@include mx.maxMediaQuery(xs) {
+		margin-right: 10px;
 	}
 }
 .iconImgDiv {
-	transform: scale(2.5);
+	transform: scale(3.5);
 	& > svg {
 		transition: fill gvar.$colorTransitionTime;
 		fill: var(--color-text-primary-less);
@@ -133,32 +138,34 @@ $mediaQuery_Eightfifty: 850px;
 		}
 	}
 
-	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
-		transform: scale(2);
+	@include mx.maxMediaQuery(md) {
+		transform: scale(3);
 	}
 	@include mx.maxMediaQuery(sm) {
-		transform: scale(2.5);
+		transform: scale(2.8);
+	}
+	@include mx.maxMediaQuery(xs) {
+		transform: scale(2.4);
 	}
 }
 .iconTxt {
 	transition: color gvar.$colorTransitionTime, opacity 0.3s;
 	color: var(--color-text-primary);
 
-	margin-top: 5px;
-	font-size: 1rem;
 	opacity: 0;
+	margin-top: 5px;
+	font-size: 0.9rem;
 
-	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
-		font-size: 0.8rem;
+	@include mx.maxMediaQuery(md) {
+		margin-top: 0px;
 	}
 	@include mx.maxMediaQuery(sm) {
-		margin-top: 0px;
-		font-size: 1rem;
+		font-size: 0.8rem;
 	}
 	@include mx.maxMediaQuery(xs) {
 	}
 }
-// Image
+// Image Div
 .imageDiv {
 	width: 400px;
 	height: 100%;
@@ -167,13 +174,19 @@ $mediaQuery_Eightfifty: 850px;
 	// Image
 	& > span > img {
 		object-fit: contain;
+		// transition: transform 0.3s;
 	}
 
-	@include mx.maxMediaQueryPX($mediaQuery_Eightfifty) {
-	}
-	@include mx.maxMediaQuery(sm) {
+	// &:hover {
+	// 	& > span > img {
+	// 		transform: scale(2);
+	// 	}
+	// }
+
+	@include mx.maxMediaQuery(md) {
 		width: 100%;
 		height: 300px;
+		margin-top: 20px;
 	}
 	@include mx.maxMediaQuery(xs) {
 		// Make image use FILL instead of contain as

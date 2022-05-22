@@ -51,9 +51,21 @@ const ProjectCard = ({ details }) => {
 				</div>
 				{/* Links */}
 				<div className={styles.cardLinksDiv}>
-					{isActiveLink(details.linkGithub) && <a>{getIcon("github")}</a>}
-					{isActiveLink(details.linkDemo) && <a>{getIcon("external")}</a>}
-					{isActiveLink(details.linkVid) && <a>{getIcon("youtube")}</a>}
+					{isActiveLink(details.linkGithub) && (
+						<a href={details.linkGithub} target="_blank" rel="noopener noreferrer">
+							{getIcon("github")}
+						</a>
+					)}
+					{isActiveLink(details.linkDemo) && (
+						<a href={details.linkDemo} target="_blank" rel="noopener noreferrer">
+							{getIcon("external")}
+						</a>
+					)}
+					{isActiveLink(details.linkVid) && (
+						<a href={details.linkVid} target="_blank" rel="noopener noreferrer">
+							{getIcon("youtube")}
+						</a>
+					)}
 				</div>
 			</div>
 		</div>

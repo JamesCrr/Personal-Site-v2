@@ -6,6 +6,12 @@
 	transition: background gvar.$colorTransitionTime, color gvar.$colorTransitionTime;
 	background: var(--color-background);
 	color: var(--color-text-primary);
+
+	padding-bottom: 60px;
+
+	@include mx.maxMediaQuery(sm) {
+		padding-bottom: 40px;
+	}
 }
 
 .sectionTitleDiv {
@@ -31,10 +37,8 @@
 		font-size: 3.4rem;
 	}
 	@include mx.maxMediaQuery(sm) {
-		font-size: 3.3rem;
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: 3.1rem;
 		text-align: center;
 	}
 }

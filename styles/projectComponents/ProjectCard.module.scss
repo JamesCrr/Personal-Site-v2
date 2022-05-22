@@ -28,11 +28,14 @@ $mediaQuery_OneCardWidth: 700px;
 		cursor: default;
 
 		& .bgOverlay {
-			opacity: 0.2;
+			opacity: 0.1;
 		}
 		& .cardContent .cardTextDiv .cardDescription {
 			opacity: 0;
 		}
+		// & .cardContent .cardTextDiv .cardTitle {
+		// 	color: var(--color-primary);
+		// }
 		& .cardContent .cardTagsListDiv {
 			opacity: 0;
 		}
@@ -91,7 +94,10 @@ $mediaQuery_OneCardWidth: 700px;
 	padding-bottom: 10px;
 
 	@include mx.maxMediaQueryPX($mediaQuery_OneCardWidth) {
-		font-size: 1.7rem;
+		font-size: 2.2rem;
+	}
+	@include mx.maxMediaQuery(sm) {
+		font-size: 1.8rem;
 	}
 	@include mx.maxMediaQuery(xs) {
 		font-size: 1.5rem;
@@ -108,10 +114,13 @@ $mediaQuery_OneCardWidth: 700px;
 	padding: 0px 10px 0px 10px;
 
 	@include mx.maxMediaQueryPX($mediaQuery_OneCardWidth) {
-		font-weight: 400;
+		font-size: 1.4rem;
+	}
+	@include mx.maxMediaQuery(sm) {
+		font-size: 1.2rem;
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: 0.8rem;
+		font-size: 1rem;
 	}
 }
 // Tags
@@ -123,7 +132,11 @@ $mediaQuery_OneCardWidth: 700px;
 	justify-content: center; // For Word tags
 	align-items: center;
 
-	padding-bottom: 10px;
+	margin-bottom: 10px;
+
+	@include mx.maxMediaQuery(sm) {
+		padding: 0px 10px;
+	}
 }
 // Word Tag
 .cardTagWord {
@@ -142,45 +155,52 @@ $mediaQuery_OneCardWidth: 700px;
 		font-size: 0.9rem;
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: 0.7rem;
+		font-size: 0.8rem;
 	}
 }
-// Links
-$linkSize: 1.5;
+// Links Div
 .cardLinksDiv {
 	// width: 100%;
-	padding-top: 10px;
+	$radius: 10px;
+	border-radius: $radius $radius 0px 0px;
+	padding: 12px 10px 5px 10px;
+
 	transition: background gvar.$colorTransitionTime;
 	background: var(--color-backgroundclear);
-	$radius: 30px;
-	border-radius: $radius $radius 0px 0px;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
-	& > a > svg {
-		transition: fill gvar.$colorTransitionTime;
-		fill: var(--color-primary);
-		margin: 0px 20px;
+	$linkSize: 1.8;
+	// Link
+	& > a {
 		transform: scale($linkSize);
+		margin: 0px 20px;
 
-		// Hover Transition
+		// Image
+		& > svg {
+			transition: fill gvar.$colorTransitionTime;
+			fill: var(--color-primary);
+		}
+
 		&:hover {
-			transition: fill 0.3s;
-			fill: var(--color-primary-light);
 			cursor: pointer;
+			& > svg {
+				transition: fill 0.3s;
+				fill: var(--color-primary-light);
+			}
 		}
 	}
 
 	@include mx.maxMediaQueryPX($mediaQuery_OneCardWidth) {
-		& > a > svg {
+		& > a {
 			transform: scale($linkSize);
 		}
 	}
 	@include mx.maxMediaQuery(xs) {
-		& > a > svg {
-			transform: scale(1.2);
+		& > a {
+			transform: scale(#{$linkSize - 0.3});
 		}
 	}
 }

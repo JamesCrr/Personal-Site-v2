@@ -42,39 +42,45 @@
 	font-weight: 500;
 
 	@include mx.maxMediaQuery(sm) {
-		font-size: 2.5rem;
+		font-size: 2.3rem;
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: 2.2rem;
+		font-size: 1.9rem;
 	}
 }
 .contactTxt {
-	margin-top: 20px;
+	transition: color gvar.$colorTransitionTime;
+	color: var(--color-text-primary-less);
+
+	margin-top: 40px;
 	padding: 0px 20%;
 	font-size: 1.5rem;
 
 	@include mx.maxMediaQuery(md) {
 		width: 100%;
+		padding: 0px 10%;
 	}
 	@include mx.maxMediaQuery(sm) {
 		font-size: 1.3rem;
 		padding: 0px 5%;
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: 1rem;
+		font-size: 1.2rem;
 		padding: 0px 1%;
 	}
 }
 .contactIconsDiv {
-	margin-top: 50px;
+	margin-top: 100px;
 	width: 100%;
 
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
 
 	& > a {
-		transform: scale(2.5);
+		transition: transform 0.3s;
+		transform: scale(3.5);
+		margin: 0px 10%;
 
 		// Icon Image
 		& > svg {
@@ -83,15 +89,18 @@
 		}
 
 		&:hover {
+			transform: scale(4);
 			cursor: pointer;
 			& > svg {
 				fill: var(--color-primary-light);
 			}
 		}
 
-		@include mx.maxMediaQuery(md) {
-		}
 		@include mx.maxMediaQuery(sm) {
+			margin: 0px 15%;
+		}
+		@include mx.maxMediaQueryPX(400px) {
+			margin: 0px 50px;
 		}
 		@include mx.maxMediaQuery(xs) {
 		}

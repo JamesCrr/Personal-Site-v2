@@ -21,9 +21,7 @@ const ProjectsSection = () => {
 				</h2>
 			</div>
 			<div className={styles.sectionContentDiv}>
-				<div className={styles.featuredProjectsDiv}>
-					<ProjectsFeatureViewList projects={vFeature} />
-				</div>
+				<ProjectsFeatureViewList projects={vFeature} />
 				<div className={styles.otherProjectsDiv}>
 					<h3 className={styles.otherProjectsTitle}>Other Projects</h3>
 					<h4 className={styles.archiveLinkDiv}>

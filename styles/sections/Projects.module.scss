@@ -6,33 +6,19 @@
 }
 
 .sectionTitleDiv {
+	@include mx.maxMediaQuery(sm) {
+		margin-bottom: 30px;
+	}
 }
 
 .sectionTitle {
 	margin-left: 6%;
 	@include mx.maxMediaQuery(xs) {
 		margin: 0%;
-		font-size: 2.9rem;
 	}
 }
 
 .sectionContentDiv {
-}
-
-.featuredProjectsDiv {
-	$extraPadding: 8%;
-	padding-left: $extraPadding;
-	padding-right: $extraPadding;
-	padding-top: 10px;
-
-	@include mx.maxMediaQueryPX(850px) {
-		padding: 0px 20px;
-		padding-top: 40px;
-	}
-	@include mx.maxMediaQuery(sm) {
-		padding: 0px 10px;
-		padding-top: 10px;
-	}
 }
 
 .otherProjectsDiv {
