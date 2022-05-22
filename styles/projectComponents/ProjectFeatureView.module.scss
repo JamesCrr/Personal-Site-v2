@@ -17,6 +17,7 @@ $mediaQuery_SevenHundred: 700px;
 	@include mx.maxMediaQuery(md) {
 		flex-direction: column-reverse;
 		height: auto;
+		margin-bottom: 50px;
 	}
 	@include mx.maxMediaQuery(xs) {
 	}
@@ -30,10 +31,11 @@ $mediaQuery_SevenHundred: 700px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	align-items: center;
+	// align-items: center;
 
 	@include mx.maxMediaQuery(md) {
 		width: 100%;
+		margin-top: 20px;
 		padding-left: 40px;
 		padding-right: 40px;
 	}
