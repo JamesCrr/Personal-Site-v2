@@ -11,7 +11,7 @@ const { vFeature, vCard } = ProjectDatabase();
 
 const ProjectsSection = () => {
 	const experienceContainerRef = useRef();
-	const isVisible = useOnceInViewport(experienceContainerRef, "-150px");
+	const isVisible = useOnceInViewport(experienceContainerRef);
 
 	return (
 		<div ref={experienceContainerRef} className={styles.sectionContainer}>

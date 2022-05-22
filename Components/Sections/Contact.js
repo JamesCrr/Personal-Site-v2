@@ -7,7 +7,7 @@ import { useIconsContext } from "../../pages";
 
 const ContactSection = () => {
 	const contactContainerRef = useRef();
-	const isVisible = useOnceInViewport(contactContainerRef, "-150px");
+	const isVisible = useOnceInViewport(contactContainerRef);
 	const { getIcon } = useIconsContext();
 
 	return (

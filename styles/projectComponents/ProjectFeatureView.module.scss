@@ -15,7 +15,7 @@ $mediaQuery_SevenHundred: 700px;
 	margin-bottom: 100px;
 
 	@include mx.maxMediaQuery(md) {
-		flex-direction: column;
+		flex-direction: column-reverse;
 		height: auto;
 	}
 	@include mx.maxMediaQuery(xs) {

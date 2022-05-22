@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
  * @param {String} rootMargin How much of the element should intersects before conside intersecting
  * @returns Whether the target element intersects the page
  */
-const useOnceInViewport = (targetRef, rootMargin = "0px") => {
+const useOnceInViewport = (targetRef, rootMargin = "-100px") => {
 	const [isVisible, setIsVisible] = useState(false);
 
 	useEffect(() => {

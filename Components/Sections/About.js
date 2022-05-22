@@ -6,7 +6,7 @@ import useOnceInViewport from "../StylingHelpers/useOnceInViewport";
 
 const AboutSection = () => {
 	const aboutContainerRef = useRef();
-	const isVisible = useOnceInViewport(aboutContainerRef, "-150px");
+	const isVisible = useOnceInViewport(aboutContainerRef);
 
 	return (
 		<div ref={aboutContainerRef} className={styles.sectionContainer}>
