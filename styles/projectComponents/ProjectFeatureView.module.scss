@@ -79,21 +79,23 @@ $mediaQuery_SevenHundred: 700px;
 	align-items: center;
 
 	// Icon
+	$baseIconScale: 1.4;
 	& div a svg {
 		cursor: pointer;
 		transition: fill gvar.$colorTransitionTime, transform gvar.$colorTransitionTime;
 		fill: var(--color-secondary);
-		transform: scale(1.2);
+		transform: scale($baseIconScale);
 		margin: 0px 20px 0px 0px;
 
 		&:hover {
 			fill: var(--color-secondary-light);
+			transform: scale($baseIconScale + 0.2);
 		}
 	}
 
 	@include mx.maxMediaQuery(sm) {
 		& div a svg {
-			transform: scale(1.2);
+			transform: scale(#{$baseIconScale - 0.2});
 		}
 	}
 }
@@ -107,25 +109,37 @@ $mediaQuery_SevenHundred: 700px;
 	font-size: 1.5rem;
 	font-weight: 400;
 
-	margin: 20px 50px 30px 50px;
-	margin: 20px 0px 30px 0px;
+	margin: 20px 0px 20px 0px;
 
 	@include mx.maxMediaQuery(lg) {
-		// margin: 20px 30px 30px 30px;
-		margin: 20px 0px 30px 0px;
 	}
 	@include mx.maxMediaQuery(md) {
 		font-size: 1.4rem;
-		// margin: 20px 50px 20px 50px;
 		margin: 20px 0px 20px 0px;
 	}
 	@include mx.maxMediaQuery(sm) {
 		font-size: 1.2rem;
-		// margin: 20px 10px 20px 10px;
 	}
 	@include mx.maxMediaQuery(xs) {
 		font-size: 1rem;
-		margin: 20px 0px 20px 0px;
+	}
+}
+// Built With Div
+.bwDiv {
+	width: 100%;
+}
+.bwTxt {
+	$baseFontSize: 1.4rem;
+	font-size: $baseFontSize;
+
+	@include mx.maxMediaQuery(md) {
+		font-size: #{$baseFontSize - 0.1};
+	}
+	@include mx.maxMediaQuery(sm) {
+		font-size: #{$baseFontSize - 0.2};
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: #{$baseFontSize - 0.3};
 	}
 }
 // Tags List Div
@@ -153,13 +167,9 @@ $mediaQuery_SevenHundred: 700px;
 	justify-content: center;
 	align-items: center;
 
-	margin-bottom: 15px;
-	margin-right: 20px;
+	margin: 20px 20px 15px 0px;
 
 	@include mx.maxMediaQuery(md) {
-		margin: 0;
-		margin-right: 20px;
-		margin-top: 15px;
 	}
 	@include mx.maxMediaQuery(xs) {
 		margin-right: 10px;
@@ -219,12 +229,12 @@ $mediaQuery_SevenHundred: 700px;
 	// Image
 	& > span > img {
 		object-fit: contain;
-		// transition: transform 0.3s;
+		// transition: transform 0.6s;
 	}
 
 	// &:hover {
 	// 	& > span > img {
-	// 		transform: scale(2);
+	// 		transform: scale(1.5);
 	// 	}
 	// }
 

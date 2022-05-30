@@ -1,0 +1,27 @@
+@use "../modules/globalVariables" as gvar;
+@use "../modules/mixins" as mx;
+
+// Footer
+.footerDiv {
+	width: 100%;
+	height: 80px;
+
+	transition: background gvar.$colorTransitionTime;
+	background: var(--color-primary);
+}
+// Message
+.msgDiv {
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.msg {
+	$baseFontSize: 1.6rem;
+	font-size: $baseFontSize;
+
+	@include mx.maxMediaQuery(md) {
+		font-size: #{$baseFontSize - 0.2};
+	}
+}

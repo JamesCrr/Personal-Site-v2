@@ -9,6 +9,7 @@ import AboutSection from "../Components/Sections/About";
 import ProjectsSection from "../Components/Sections/Projects";
 import ExperienceSection from "../Components/Sections/Experience";
 import ContactSection from "../Components/Sections/Contact";
+import Footer from "../Components/Sections/Footer";
 
 // Icons
 const { getIcon } = IconsDatabase();
@@ -51,6 +52,7 @@ export default function Home() {
 					<div id="contact-section" ref={contactSectionRef}>
 						<ContactSection />
 					</div>
+					<Footer />
 				</div>
 			</IconsContext.Provider>
 		</>

@@ -31,7 +31,7 @@
 	--color-background: #fefef5;
 	--color-backgroundclear: #fefef5bc;
 
-	--opacity-tagText: 0.2;
+	--opacity-tagText: 0.3;
 }
 [data-theme="dark"] {
 	--color-primary: #4747cb;

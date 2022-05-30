@@ -50,10 +50,10 @@
 		font-size: #{$baseFontSize - 0.4};
 	}
 	@include mx.maxMediaQueryPX(400px) {
-		font-size: #{$baseFontSize - 1.2};
+		font-size: #{$baseFontSize - 1};
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 1.6};
+		font-size: #{$baseFontSize - 1.4};
 	}
 }
 .archiveLinkDiv {

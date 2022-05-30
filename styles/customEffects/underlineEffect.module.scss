@@ -13,7 +13,7 @@
 		content: "";
 		width: 100%;
 		transform: scaleX(0);
-		background: var(--color-secondary-dark);
+		background: var(--color-secondary-light);
 		transition: transform var(--growspeed) ease-in-out, background gvar.$colorTransitionTime;
 
 		border-radius: 5px;

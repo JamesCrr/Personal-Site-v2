@@ -5,9 +5,9 @@ $mediaQuery_AfterSmall: 420px;
 
 .landingContainer {
 	$paddingSize: 5%;
-	min-height: 100vh;
 	min-height: -webkit-fill-available; /* For Webkit Browsers. */
 	min-height: -moz-available; /* For Mozilla Browsers. */
+	min-height: 600px;
 	height: 100vh;
 	background: var(--color-background);
 	padding: 150px $paddingSize 0px $paddingSize;

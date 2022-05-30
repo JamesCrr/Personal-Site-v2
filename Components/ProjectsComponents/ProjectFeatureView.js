@@ -48,7 +48,10 @@ const ProjectFeatureView = ({ details, textOnLeft = true }) => {
 					</div>
 				</div>
 				<h4 className={styles.descriptionTxt}>{details.description}</h4>
-				<div className={styles.tagsListDiv}>{details.tags.map((element, index) => renderTag(element, index))}</div>
+				<div className={styles.bwDiv}>
+					<h4 className={styles.bwTxt}>Built with:</h4>
+					<div className={styles.tagsListDiv}>{details.tags.map((element, index) => renderTag(element, index))}</div>
+				</div>
 			</div>
 			<div className={styles.imageDiv}>
 				<Image
