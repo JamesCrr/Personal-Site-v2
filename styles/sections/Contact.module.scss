@@ -17,7 +17,7 @@
 }
 
 .sectionTitle {
-	text-align: right;
+	text-align: center;
 
 	@include mx.maxMediaQuery(sm) {
 		font-size: 3.1rem;

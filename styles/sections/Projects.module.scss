@@ -25,34 +25,46 @@
 	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary);
 
-	$extraMargin: 10%;
-	padding-left: $extraMargin;
-	padding-right: $extraMargin;
+	$extraPadding: 4%;
+	padding: 0px $extraPadding;
 
+	@include mx.maxMediaQuery(md) {
+		padding-top: 60px;
+	}
 	@include mx.maxMediaQuery(sm) {
 		padding: 0px 3% 0px 3%;
+		padding-top: 40px;
 	}
 	@include mx.maxMediaQuery(xs) {
 		padding: 0px;
+		padding-top: 20px;
 	}
 }
 .otherProjectsTitle {
-	font-size: 2.8rem;
+	$baseFontSize: 3.8rem;
+	font-size: $baseFontSize;
 	font-weight: 600;
 	text-align: center;
 
 	@include mx.maxMediaQuery(sm) {
-		font-size: 2.6rem;
+		font-size: #{$baseFontSize - 0.4};
+	}
+	@include mx.maxMediaQueryPX(400px) {
+		font-size: #{$baseFontSize - 1.2};
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: 2.2rem;
+		font-size: #{$baseFontSize - 1.6};
 	}
 }
 .archiveLinkDiv {
 	font-size: 1rem;
 	text-align: center;
-	margin-bottom: 70px;
+	margin-bottom: 60px;
 
 	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary-lesser);
+
+	@include mx.maxMediaQuery(xs) {
+		margin-bottom: 30px;
+	}
 }

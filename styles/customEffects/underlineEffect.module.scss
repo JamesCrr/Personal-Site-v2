@@ -13,8 +13,9 @@
 		content: "";
 		width: 100%;
 		transform: scaleX(0);
+		background: var(--color-secondary-dark);
+		transition: transform var(--growspeed) ease-in-out, background gvar.$colorTransitionTime;
 
-		background: var(--color-primary-light);
 		border-radius: 5px;
 		height: 7%;
 		bottom: 0;
@@ -25,9 +26,8 @@
 	@extend .ungrown;
 
 	&::before {
-		transition: transform var(--growspeed) ease-out, background gvar.$colorTransitionTime;
-		transform: scaleX(var(--growwidth));
 		transform-origin: left;
+		transform: scaleX(var(--growwidth));
 
 		// Prevent Overflowing page
 		@include mx.maxMediaQuery(xs) {
@@ -40,7 +40,19 @@
 
 	&::before {
 		transform-origin: right;
-		transition: transform var(--growspeed) ease-in-out, background gvar.$colorTransitionTime;
+		transform: scaleX(var(--growwidth));
+
+		// Prevent Overflowing page
+		@include mx.maxMediaQuery(xs) {
+			transform: scaleX(1);
+		}
+	}
+}
+.growCenter {
+	@extend .ungrown;
+
+	&::before {
+		transform-origin: center;
 		transform: scaleX(var(--growwidth));
 
 		// Prevent Overflowing page

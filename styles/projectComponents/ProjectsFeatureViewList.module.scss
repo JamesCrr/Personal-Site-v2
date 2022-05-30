@@ -17,10 +17,8 @@
 	}
 	@include mx.maxMediaQuery(md) {
 		padding: 0px 20px;
-		padding-top: 40px;
 	}
 	@include mx.maxMediaQuery(sm) {
 		padding: 0px 10px;
-		padding-top: 10px;
 	}
 }

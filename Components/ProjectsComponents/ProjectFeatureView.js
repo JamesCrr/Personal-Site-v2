@@ -5,7 +5,13 @@ import styles from "../../styles/projectComponents/ProjectFeatureView.module.scs
 const ProjectFeatureView = ({ details, textOnLeft = true }) => {
 	const { getIcon } = useIconsContext();
 
-	const renderIcon = (tagName, key) => {
+	/**
+	 * Helper function to render a tag component
+	 * @param {String} tagName Name of Tag
+	 * @param {Number} key React List Identifier
+	 * @returns Tag component to render
+	 */
+	const renderTag = (tagName, key) => {
 		return (
 			<div key={key} className={styles.tagDiv}>
 				<div className={styles.iconImgDiv}>{getIcon(tagName)}</div>
@@ -13,13 +19,36 @@ const ProjectFeatureView = ({ details, textOnLeft = true }) => {
 			</div>
 		);
 	};
+	/**
+	 * Helper function to render a link component
+	 * @param {String} linkURL URL Link
+	 * @param {String} iconName Name of icon to lookup in database
+	 * @returns Link component to render
+	 */
+	const renderLink = (linkURL, iconName) => {
+		if (!linkURL || linkURL === "") return null;
+		return (
+			<div className={styles.linkIconDiv}>
+				<a href={linkURL} target="_blank" rel="noopener noreferrer">
+					{getIcon(iconName)}
+				</a>
+			</div>
+		);
+	};
 
 	return (
 		<div style={{ "--ownFlexDirection": textOnLeft ? "row" : "row-reverse" }} className={styles.featuredDiv}>
 			<div className={styles.txtDetailsDiv}>
-				<h3 className={styles.txtTitle}>{details.title}</h3>
-				<h4 className={styles.txtDescription}>{details.description}</h4>
-				<div className={styles.tagsListDiv}>{details.tags.map((element, index) => renderIcon(element, index))}</div>
+				<div className={styles.titleDiv}>
+					<h3 className={styles.titleTxt}>{details.title}</h3>
+					<div className={styles.linksDiv}>
+						{renderLink(details.linkGithub, "github")}
+						{renderLink(details.linkVid, "youtube")}
+						{renderLink(details.linkDemo, "external")}
+					</div>
+				</div>
+				<h4 className={styles.descriptionTxt}>{details.description}</h4>
+				<div className={styles.tagsListDiv}>{details.tags.map((element, index) => renderTag(element, index))}</div>
 			</div>
 			<div className={styles.imageDiv}>
 				<Image
@@ -29,7 +58,6 @@ const ProjectFeatureView = ({ details, textOnLeft = true }) => {
 					// height={864}
 					layout="fill"
 				/>
-				{/* <img src={details.image} /> */}
 			</div>
 		</div>
 	);

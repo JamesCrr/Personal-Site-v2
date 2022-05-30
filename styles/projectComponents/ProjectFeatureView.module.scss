@@ -15,7 +15,7 @@ $mediaQuery_SevenHundred: 700px;
 	margin-bottom: 100px;
 
 	@include mx.maxMediaQuery(md) {
-		flex-direction: column-reverse;
+		flex-direction: column;
 		height: auto;
 		margin-bottom: 50px;
 	}
@@ -27,6 +27,7 @@ $mediaQuery_SevenHundred: 700px;
 	width: 60%;
 	height: 100%;
 	text-align: left;
+	padding: 0px 40px;
 
 	display: flex;
 	flex-direction: column;
@@ -36,19 +37,32 @@ $mediaQuery_SevenHundred: 700px;
 	@include mx.maxMediaQuery(md) {
 		width: 100%;
 		margin-top: 20px;
-		padding-left: 40px;
-		padding-right: 40px;
+	}
+	@include mx.maxMediaQuery(sm) {
+		padding: 0px 10px;
 	}
 	@include mx.maxMediaQuery(xs) {
+		padding: 0;
 	}
 }
-// Title
-.txtTitle {
+// Title Div
+.titleDiv {
+	align-self: flex-start;
+
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+// Title Text
+.titleTxt {
 	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary);
 
 	font-size: 2.5rem;
 	font-weight: 500;
+	margin-right: 20px;
 
 	@include mx.maxMediaQuery(md) {
 	}
@@ -56,8 +70,37 @@ $mediaQuery_SevenHundred: 700px;
 		font-size: 2rem;
 	}
 }
+// Links Div
+.linksDiv {
+	padding-top: 10px;
+
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	// Icon
+	& div a svg {
+		cursor: pointer;
+		transition: fill gvar.$colorTransitionTime, transform gvar.$colorTransitionTime;
+		fill: var(--color-secondary);
+		transform: scale(1.2);
+		margin: 0px 20px 0px 0px;
+
+		&:hover {
+			fill: var(--color-secondary-light);
+		}
+	}
+
+	@include mx.maxMediaQuery(sm) {
+		& div a svg {
+			transform: scale(1.2);
+		}
+	}
+}
+.linkIconDiv {
+}
 // Description
-.txtDescription {
+.descriptionTxt {
 	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary-less);
 
@@ -85,7 +128,7 @@ $mediaQuery_SevenHundred: 700px;
 		margin: 20px 0px 20px 0px;
 	}
 }
-// Tags List
+// Tags List Div
 .tagsListDiv {
 	width: 100%;
 
@@ -95,10 +138,9 @@ $mediaQuery_SevenHundred: 700px;
 	align-items: center;
 
 	@include mx.maxMediaQuery(md) {
-		justify-content: center;
 	}
 	@include mx.maxMediaQuery(sm) {
-		padding: 0px 20px;
+		padding: 0px 5px;
 	}
 	@include mx.maxMediaQuery(xs) {
 		padding: 0px;
@@ -154,7 +196,7 @@ $mediaQuery_SevenHundred: 700px;
 	transition: color gvar.$colorTransitionTime, opacity 0.3s;
 	color: var(--color-text-primary);
 
-	opacity: 0;
+	opacity: var(--opacity-tagText);
 	margin-top: 5px;
 	font-size: 0.9rem;
 
@@ -167,6 +209,7 @@ $mediaQuery_SevenHundred: 700px;
 	@include mx.maxMediaQuery(xs) {
 	}
 }
+
 // Image Div
 .imageDiv {
 	width: 400px;
@@ -190,13 +233,16 @@ $mediaQuery_SevenHundred: 700px;
 		height: 300px;
 		margin-top: 20px;
 	}
-	@include mx.maxMediaQuery(xs) {
-		// Make image use FILL instead of contain as
-		// Width is so small that maintaining 16:9 aspect ratio is
-		// gonna make image TINY
+	@include mx.maxMediaQuery(sm) {
+		// Width is so small that maintaining 16:9 aspect ratio is gonna make image TINY
+		// Switch to other than contain
 		& > span > img {
-			object-fit: fill !important;
+			object-fit: cover !important;
 		}
+	}
+	@include mx.maxMediaQueryPX(400px) {
+	}
+	@include mx.maxMediaQuery(xs) {
 	}
 
 	// // If want to completely style ownself

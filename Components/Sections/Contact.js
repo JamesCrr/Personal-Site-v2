@@ -14,7 +14,7 @@ const ContactSection = () => {
 		<div ref={contactContainerRef} className={styles.sectionContainer}>
 			<div className={styles.sectionTitleDiv}>
 				<h2 className={styles.sectionTitle}>
-					<StyleWrapper sheets={isVisible ? stylesUnderline.growRight : stylesUnderline.ungrown}>Contact.</StyleWrapper>
+					<StyleWrapper sheets={isVisible ? stylesUnderline.growCenter : stylesUnderline.ungrown}>Contact.</StyleWrapper>
 				</h2>
 			</div>
 			<div className={styles.sectionContentDiv}>

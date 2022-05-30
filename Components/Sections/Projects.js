@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import useOnceInViewport from "../StylingHelpers/useOnceInViewport";
 import ProjectDatabase from "../ProjectsComponents/ProjectsDatabase";
-import ProjectsCardList from "../ProjectsComponents/ProjectsCardList";
+import ProjectsCardList from "../ProjectsComponents/ProjectsCardViewList";
 import ProjectsFeatureViewList from "../ProjectsComponents/ProjectsFeatureViewList";
 import styles from "../../styles/sections/Projects.module.scss";
 import stylesUnderline from "../../styles/customEffects/underlineEffect.module.scss";

@@ -1,7 +1,7 @@
 import { useIconsContext } from "../../pages";
-import styles from "../../styles/projectComponents/ProjectCard.module.scss";
+import styles from "../../styles/projectComponents/ProjectCardViewBg.module.scss";
 
-const ProjectCard = ({ details }) => {
+const ProjectCardViewBg = ({ details }) => {
 	const { getIcon } = useIconsContext();
 
 	// const getTagIconComponent = (tagName, index) => {
@@ -72,4 +72,4 @@ const ProjectCard = ({ details }) => {
 	);
 };
 
-export default ProjectCard;
+export default ProjectCardViewBg;
