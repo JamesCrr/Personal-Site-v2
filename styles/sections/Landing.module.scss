@@ -78,7 +78,7 @@ $mediaQuery_AfterSmall: 420px;
 	color: var(--color-text-primary-less);
 
 	margin-top: 10px;
-	font-weight: 500;
+	font-weight: normal;
 	font-size: 2.2rem;
 
 	@include mx.maxMediaQuery(sm) {

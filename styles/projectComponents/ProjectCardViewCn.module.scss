@@ -6,14 +6,27 @@
 	width: 40%;
 	min-height: 400px;
 
-	// border-bottom: 2px solid var(--color-secondary-light);
-	// border-radius: 10px;
-	margin-bottom: 20px;
+	$hoverTime: 0.3s;
+	transition: background gvar.$colorTransitionTime, transform $hoverTime, box-shadow $hoverTime;
+	background: var(--color-background-less);
+	border: 2px solid var(--color-primary-light);
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 50px;
+
+	&:hover {
+		transform: translateY(-10px);
+		box-shadow: 0px 5px 20px -5px black;
+		// Image
+		& .imageDiv span img {
+			transform: scale(1.2);
+		}
+	}
 
 	@include mx.maxMediaQuery(sm) {
 		width: 90%;
 		min-height: 0px;
-		margin-bottom: 50px;
+		margin-bottom: 20px;
 	}
 }
 // Image
@@ -23,7 +36,8 @@
 	position: relative;
 
 	& span img {
-		object-fit: contain;
+		transition: transform 0.4s;
+		object-fit: scale-down;
 	}
 }
 // Title Div
@@ -75,7 +89,7 @@
 
 		&:hover {
 			fill: var(--color-secondary-light);
-			transform: scale($baseIconScale + 0.2);
+			transform: scale($baseIconScale + 0.4);
 		}
 	}
 
@@ -103,7 +117,7 @@
 // Description
 .descriptionTxt {
 	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary-less);
+	color: var(--color-text-primary-lesser);
 
 	font-size: 1.2rem;
 
@@ -150,12 +164,12 @@
 		margin: 5px 10px;
 	}
 }
-.iconImgDiv {
+.tagIconImgDiv {
 	$baseScale: 3;
 	transform: scale($baseScale);
 	& > svg {
 		transition: fill gvar.$colorTransitionTime;
-		fill: var(--color-text-primary-less);
+		fill: var(--color-text-primary-lesser);
 	}
 	&:hover {
 		//// Icon Image
@@ -178,7 +192,7 @@
 		transform: scale(#{$baseScale - 0.4});
 	}
 }
-.iconTxt {
+.tagIconTxt {
 	transition: color gvar.$colorTransitionTime, opacity 0.3s;
 	color: var(--color-text-primary);
 

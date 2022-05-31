@@ -17,40 +17,36 @@
 	--color-primary-light: #8888e8;
 	--color-primary-dark: #141446;
 
-	--color-secondary: #750b83;
-	--color-secondary-light: #b225c5;
-	--color-secondary-dark: #530b5d;
+	--color-secondary: #d9880f;
+	--color-secondary-light: #e7a139;
+	--color-secondary-dark: #ac6d10;
 
 	--color-text-primary: #292828;
-	--color-text-primary-less: #3e3d3d;
+	--color-text-primary-less: #595959;
 	--color-text-primary-lesser: #696868;
 
-	--color-button: #3d486c;
-	--color-button-text: rgb(255, 255, 255);
-
 	--color-background: #fefef5;
-	--color-backgroundclear: #fefef5bc;
+	--color-background-clear: #fefef5bc;
+	--color-background-less: #dbd6d6;
 
 	--opacity-tagText: 0.3;
 }
 [data-theme="dark"] {
-	--color-primary: #4747cb;
+	--color-primary: #3a3abf;
 	--color-primary-light: #7676ef;
-	--color-primary-dark: #1e1ea2;
+	--color-primary-dark: #171784;
 
-	--color-secondary: #750b83;
-	--color-secondary-light: #b225c5;
-	--color-secondary-dark: #530b5d;
+	--color-secondary: #d9880f;
+	--color-secondary-light: #e7a139;
+	--color-secondary-dark: #ac6d10;
 
 	--color-text-primary: #ebebf9;
 	--color-text-primary-less: #b2b1c4;
 	--color-text-primary-lesser: #858593;
 
-	--color-button: #50d478;
-	--color-button-text: rgb(0, 0, 0);
-
 	--color-background: #131314;
-	--color-backgroundclear: #131314d5;
+	--color-background-clear: #131314d5;
+	--color-background-less: #19191a;
 
 	--opacity-tagText: 0.1;
 }

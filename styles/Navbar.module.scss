@@ -10,7 +10,7 @@ $zIndexTop: 100; // zIndex
 	transition: transform 0.3s, background gvar.$colorTransitionTime;
 	z-index: #{$zIndexTop - 10}; // Under all of MobileMenu, but still above everything else
 
-	background: var(--color-backgroundclear);
+	background: var(--color-background-clear);
 	width: 100%;
 	height: 80px;
 	padding: $hDivLinksPadding $hDivLinksPadding;

@@ -57,13 +57,21 @@
 	}
 }
 .archiveLinkDiv {
-	font-size: 1rem;
+	$baseFontSize: 1.2rem;
+	font-size: $baseFontSize;
 	text-align: center;
 	margin-bottom: 60px;
 
 	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary-lesser);
 
+	@include mx.maxMediaQuery(sm) {
+		font-size: #{$baseFontSize - 0.2};
+		margin-bottom: 40px;
+	}
+	@include mx.maxMediaQueryPX(400px) {
+		font-size: #{$baseFontSize - 0.3};
+	}
 	@include mx.maxMediaQuery(xs) {
 		margin-bottom: 30px;
 	}

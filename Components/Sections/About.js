@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import styles from "../../styles/sections/About.module.scss";
-import stylesUnderline from "../../styles/customEffects/underlineEffect.module.scss";
+import stylesUnderline from "../../styles/customEffects/growingUnderlineEffect.module.scss";
 import StyleWrapper from "../StylingHelpers/StyleWrapper";
 import useOnceInViewport from "../StylingHelpers/useOnceInViewport";
 
@@ -12,7 +12,8 @@ const AboutSection = () => {
 		<div ref={aboutContainerRef} className={styles.sectionContainer}>
 			<div className={styles.sectionTitleDiv}>
 				<h2 className={styles.sectionTitle}>
-					<StyleWrapper sheets={isVisible ? stylesUnderline.growRight : stylesUnderline.ungrown}>About Me.</StyleWrapper>
+					{/* <StyleWrapper sheets={isVisible ? stylesUnderline.growRight : stylesUnderline.ungrown}>About Me.</StyleWrapper> */}
+					About Me.
 				</h2>
 			</div>
 			<div className={styles.sectionContentDiv}>

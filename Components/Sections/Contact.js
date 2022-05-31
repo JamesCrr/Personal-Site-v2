@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import styles from "../../styles/sections/Contact.module.scss";
-import stylesUnderline from "../../styles/customEffects/underlineEffect.module.scss";
+import stylesUnderline from "../../styles/customEffects/growingUnderlineEffect.module.scss";
 import StyleWrapper from "../StylingHelpers/StyleWrapper";
 import useOnceInViewport from "../StylingHelpers/useOnceInViewport";
 import { useIconsContext } from "../../pages";
@@ -14,7 +14,8 @@ const ContactSection = () => {
 		<div ref={contactContainerRef} className={styles.sectionContainer}>
 			<div className={styles.sectionTitleDiv}>
 				<h2 className={styles.sectionTitle}>
-					<StyleWrapper sheets={isVisible ? stylesUnderline.growCenter : stylesUnderline.ungrown}>Contact.</StyleWrapper>
+					{/* <StyleWrapper sheets={isVisible ? stylesUnderline.growCenter : stylesUnderline.ungrown}>Contact.</StyleWrapper> */}
+					Contact.
 				</h2>
 			</div>
 			<div className={styles.sectionContentDiv}>

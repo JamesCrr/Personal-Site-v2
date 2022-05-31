@@ -2,23 +2,16 @@
 @use "../modules/mixins" as mx;
 
 .featureProjectsList {
-	// display:flex;
-	// flex-direction:column;
-	// justify-content: center;
-	// align-items: center;
-
 	$extraPadding: 8%;
-	padding-left: $extraPadding;
-	padding-right: $extraPadding;
-	padding-top: 10px;
+	padding: 10px $extraPadding 0px $extraPadding;
 
 	@include mx.maxMediaQuery(lg) {
 		padding: 0px 4%;
 	}
 	@include mx.maxMediaQuery(md) {
-		padding: 0px 20px;
+		padding: 0px 20px 20px 20px;
 	}
 	@include mx.maxMediaQuery(sm) {
-		padding: 0px 10px;
+		padding: 0px 10px 20px 10px;
 	}
 }

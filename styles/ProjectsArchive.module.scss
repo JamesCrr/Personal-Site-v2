@@ -12,6 +12,6 @@
 }
 .backBtn {
 	transition: background globalVariables.$colorTransitionTime, color globalVariables.$colorTransitionTime;
-	background: var(--color-button);
+	background: var(--color-primary);
 	color: var(--color-primary);
 }

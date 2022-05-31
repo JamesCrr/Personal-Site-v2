@@ -14,8 +14,8 @@ const ProjectCardViewCn = ({ details }) => {
 	const renderTag = (tagName, key) => {
 		return (
 			<div key={key} className={styles.tagDiv}>
-				<div className={styles.iconImgDiv}>{getIcon(tagName)}</div>
-				{/* <p className={styles.iconTxt}>{tagName}</p> */}
+				<div className={styles.tagIconImgDiv}>{getIcon(tagName)}</div>
+				{/* <p className={styles.tagIconTxt}>{tagName}</p> */}
 			</div>
 		);
 	};
@@ -50,7 +50,7 @@ const ProjectCardViewCn = ({ details }) => {
 				</div>
 			</div>
 			<p className={styles.descriptionTxt}>{details.description}</p>
-			<div className={styles.tagsListDiv}>{details.tags.map((element, index) => renderTag(element, index))}</div>
+			{/* <div className={styles.tagsListDiv}>{details.tags.map((element, index) => renderTag(element, index))}</div> */}
 		</div>
 	);
 };

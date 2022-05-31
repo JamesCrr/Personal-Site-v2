@@ -13,7 +13,7 @@ $mediaQuery_OneCardWidth: 700px;
 	position: relative;
 
 	transition: background gvar.$colorTransitionTime, transform $cardOnHoverTime, box-shadow $cardOnHoverTime;
-	// background: linear-gradient(var(--color-backgroundclear), var(--color-backgroundclear)), var(--bgurl), var(--color-primary-dark);
+	// background: linear-gradient(var(--color-background-clear), var(--color-background-clear)), var(--bgurl), var(--color-primary-dark);
 	background: var(--bgurl), var(--color-primary-dark);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -51,7 +51,7 @@ $mediaQuery_OneCardWidth: 700px;
 }
 .bgOverlay {
 	transition: background gvar.$colorTransitionTime, opacity $cardOnHoverTime;
-	background: var(--color-backgroundclear);
+	background: var(--color-background-clear);
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -148,7 +148,7 @@ $mediaQuery_OneCardWidth: 700px;
 	font-weight: bold;
 
 	transition: background gvar.$colorTransitionTime, color gvar.$colorTransitionTime;
-	background: var(--color-backgroundclear);
+	background: var(--color-background-clear);
 	color: var(--color-text-primary);
 
 	@include mx.maxMediaQueryPX($mediaQuery_OneCardWidth) {
@@ -166,7 +166,7 @@ $mediaQuery_OneCardWidth: 700px;
 	padding: 12px 10px 5px 10px;
 
 	transition: background gvar.$colorTransitionTime;
-	background: var(--color-backgroundclear);
+	background: var(--color-background-clear);
 
 	display: flex;
 	justify-content: center;

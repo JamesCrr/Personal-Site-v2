@@ -1,5 +1,6 @@
 @use "./sectionStyles" as ss;
 @use "../modules/mixins" as mx;
+@use "../modules/globalVariables" as gvar;
 
 .sectionContainer {
 	$extraPadding: 8%;
@@ -36,6 +37,8 @@
 	align-items: flex-start;
 }
 .textAbout {
+	color: var(--color-text-primary-less);
+	transition: color gvar.$colorTransitionTime;
 	font-size: 1.7rem;
 
 	@include mx.maxMediaQuery(sm) {

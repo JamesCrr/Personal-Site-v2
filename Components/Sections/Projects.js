@@ -4,8 +4,9 @@ import ProjectDatabase from "../ProjectsComponents/ProjectsDatabase";
 import ProjectsCardList from "../ProjectsComponents/ProjectsCardViewList";
 import ProjectsFeatureViewList from "../ProjectsComponents/ProjectsFeatureViewList";
 import styles from "../../styles/sections/Projects.module.scss";
-import stylesUnderline from "../../styles/customEffects/underlineEffect.module.scss";
+import stylesUnderline from "../../styles/customEffects/growingUnderlineEffect.module.scss";
 import StyleWrapper from "../StylingHelpers/StyleWrapper";
+import LinkWrapper from "../StylingHelpers/LinkWrapper";
 
 const { vFeature, vCard } = ProjectDatabase();
 
@@ -17,7 +18,8 @@ const ProjectsSection = () => {
 		<div ref={experienceContainerRef} className={styles.sectionContainer}>
 			<div className={styles.sectionTitleDiv}>
 				<h2 className={styles.sectionTitle}>
-					<StyleWrapper sheets={isVisible ? stylesUnderline.growLeft : stylesUnderline.ungrown}>Projects.</StyleWrapper>
+					{/* <StyleWrapper sheets={isVisible ? stylesUnderline.growLeft : stylesUnderline.ungrown}>Projects.</StyleWrapper> */}
+					Projects.
 				</h2>
 			</div>
 			<div className={styles.sectionContentDiv}>
@@ -25,7 +27,7 @@ const ProjectsSection = () => {
 				<div className={styles.otherProjectsDiv}>
 					<h3 className={styles.otherProjectsTitle}>Other Projects</h3>
 					<h4 className={styles.archiveLinkDiv}>
-						<a>view the archive</a>
+						<LinkWrapper> view the archive</LinkWrapper>
 					</h4>
 					<ProjectsCardList projects={vCard} />
 				</div>

@@ -1,8 +1,6 @@
 @use "../modules/globalVariables" as gvar;
 @use "../modules/mixins" as mx;
 
-$mediaQuery_SevenHundred: 700px;
-
 .featuredDiv {
 	display: flex;
 	flex-direction: var(--ownFlexDirection); // Specified in JS
@@ -17,9 +15,10 @@ $mediaQuery_SevenHundred: 700px;
 	@include mx.maxMediaQuery(md) {
 		flex-direction: column;
 		height: auto;
-		margin-bottom: 50px;
+		margin-bottom: 80px;
 	}
 	@include mx.maxMediaQuery(xs) {
+		margin-bottom: 50px;
 	}
 }
 // Text Related Div
@@ -81,15 +80,16 @@ $mediaQuery_SevenHundred: 700px;
 	// Icon
 	$baseIconScale: 1.4;
 	& div a svg {
-		cursor: pointer;
 		transition: fill gvar.$colorTransitionTime, transform gvar.$colorTransitionTime;
-		fill: var(--color-secondary);
 		transform: scale($baseIconScale);
+		fill: var(--color-secondary);
+
 		margin: 0px 20px 0px 0px;
+		cursor: pointer;
 
 		&:hover {
+			transform: scale($baseIconScale + 0.4);
 			fill: var(--color-secondary-light);
-			transform: scale($baseIconScale + 0.2);
 		}
 	}
 
@@ -104,18 +104,17 @@ $mediaQuery_SevenHundred: 700px;
 // Description
 .descriptionTxt {
 	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary-less);
+	color: var(--color-text-primary-lesser);
 
 	font-size: 1.5rem;
 	font-weight: 400;
 
-	margin: 20px 0px 20px 0px;
+	margin: 20px 0px 10px 0px;
 
 	@include mx.maxMediaQuery(lg) {
 	}
 	@include mx.maxMediaQuery(md) {
 		font-size: 1.4rem;
-		margin: 20px 0px 20px 0px;
 	}
 	@include mx.maxMediaQuery(sm) {
 		font-size: 1.2rem;
@@ -127,9 +126,14 @@ $mediaQuery_SevenHundred: 700px;
 // Built With Div
 .bwDiv {
 	width: 100%;
+	border-top: 3px solid var(--color-secondary);
+	padding-top: 10px;
 }
 .bwTxt {
-	$baseFontSize: 1.4rem;
+	transition: color gvar.$colorTransitionTime;
+	color: var(--color-text-primary);
+
+	$baseFontSize: 1.2rem;
 	font-size: $baseFontSize;
 
 	@include mx.maxMediaQuery(md) {
@@ -175,11 +179,12 @@ $mediaQuery_SevenHundred: 700px;
 		margin-right: 10px;
 	}
 }
-.iconImgDiv {
+.tagIconImgDiv {
 	transform: scale(3.5);
+	// Icon Image
 	& > svg {
 		transition: fill gvar.$colorTransitionTime;
-		fill: var(--color-text-primary-less);
+		fill: var(--color-text-primary-lesser);
 	}
 	&:hover {
 		// Icon Image
@@ -202,7 +207,7 @@ $mediaQuery_SevenHundred: 700px;
 		transform: scale(2.4);
 	}
 }
-.iconTxt {
+.tagIconTxt {
 	transition: color gvar.$colorTransitionTime, opacity 0.3s;
 	color: var(--color-text-primary);
 

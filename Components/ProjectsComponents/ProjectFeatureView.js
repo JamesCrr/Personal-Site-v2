@@ -14,8 +14,8 @@ const ProjectFeatureView = ({ details, textOnLeft = true }) => {
 	const renderTag = (tagName, key) => {
 		return (
 			<div key={key} className={styles.tagDiv}>
-				<div className={styles.iconImgDiv}>{getIcon(tagName)}</div>
-				<p className={styles.iconTxt}>{tagName}</p>
+				<div className={styles.tagIconImgDiv}>{getIcon(tagName)}</div>
+				<p className={styles.tagIconTxt}>{tagName}</p>
 			</div>
 		);
 	};

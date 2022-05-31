@@ -5,7 +5,7 @@ const ProjectsFeatureViewList = ({ projects }) => {
 	return (
 		<div className={styles.featureProjectsList}>
 			{projects.map((data, index) => {
-				return <ProjectFeatureView key={index} details={data} textOnLeft={index % 2 ? false : true} />;
+				return <ProjectFeatureView key={index} details={data} textOnLeft={index % 2 ? true : false} />;
 			})}
 		</div>
 	);
