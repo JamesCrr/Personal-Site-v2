@@ -1,9 +1,9 @@
-import { useIconsContext } from "../../pages";
+import { useDataContext } from "../../pages/_app";
 import Image from "next/image";
 import styles from "../../styles/projectComponents/ProjectCardViewCn.module.scss";
 
 const ProjectCardViewCn = ({ details }) => {
-	const { getIcon } = useIconsContext();
+	const { getIcon } = useDataContext();
 
 	/**
 	 * Helper function to render a tag component

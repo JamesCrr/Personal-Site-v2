@@ -1,22 +1,13 @@
-import { useRef } from "react";
 import styles from "../../styles/sections/Contact.module.scss";
-import stylesUnderline from "../../styles/customEffects/growingUnderlineEffect.module.scss";
-import StyleWrapper from "../StylingHelpers/StyleWrapper";
-import useOnceInViewport from "../StylingHelpers/useOnceInViewport";
-import { useIconsContext } from "../../pages";
+import { useDataContext } from "../../pages/_app";
 
 const ContactSection = () => {
-	const contactContainerRef = useRef();
-	const isVisible = useOnceInViewport(contactContainerRef);
-	const { getIcon } = useIconsContext();
+	const { getIcon } = useDataContext();
 
 	return (
-		<div ref={contactContainerRef} className={styles.sectionContainer}>
+		<div className={styles.sectionContainer}>
 			<div className={styles.sectionTitleDiv}>
-				<h2 className={styles.sectionTitle}>
-					{/* <StyleWrapper sheets={isVisible ? stylesUnderline.growCenter : stylesUnderline.ungrown}>Contact.</StyleWrapper> */}
-					Contact.
-				</h2>
+				<h2 className={styles.sectionTitle}>Contact.</h2>
 			</div>
 			<div className={styles.sectionContentDiv}>
 				<h3 className={styles.contactTitle}>Let's Get In Touch!</h3>

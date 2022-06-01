@@ -1,7 +1,11 @@
 @use "./modules/mixins" as mx;
 @use "./modules/globalVariables" as gvar;
+@use "./SiteLogo.module.scss";
 
-$zIndexTop: 100; // zIndex
+// zIndex
+$zIndexTop: 100;
+// Max width for horizontal nav links
+$hideNavLinksWidth: 700px;
 
 // Nav Menu Div
 .navbarDiv {
@@ -28,6 +32,7 @@ $zIndexTop: 100; // zIndex
 	justify-content: flex-end;
 	align-items: flex-end;
 }
+
 // Icons Div
 $iconMarginSize: 7px; // Margin for Navbar Icons
 .iconsDiv {
@@ -48,7 +53,7 @@ $iconMarginSize: 7px; // Margin for Navbar Icons
 	display: none;
 	transform: scale(2);
 
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQueryPX($hideNavLinksWidth) {
 		display: block;
 	}
 }
@@ -63,7 +68,7 @@ $iconMarginSize: 7px; // Margin for Navbar Icons
 	transition: opacity $iconSwitchTime, transform #{$iconSwitchTime + 0.2s}, fill gvar.$colorTransitionTime;
 	bottom: 0;
 
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQueryPX($hideNavLinksWidth) {
 		bottom: #{-$iconMarginSize - 2px};
 		right: #{$iconMarginSize - 2px};
 	}
@@ -76,7 +81,7 @@ $iconMarginSize: 7px; // Margin for Navbar Icons
 	left: $iconMarginSize;
 	top: -$iconMarginSize;
 }
-// Animations
+// Icon Animations
 .colorModeIcon_Fade {
 	@extend .colorModeIcon;
 
@@ -87,13 +92,14 @@ $iconMarginSize: 7px; // Margin for Navbar Icons
 	@extend .colorModeIcon_Fade;
 	@extend .mobileMenuIcon;
 }
+
 // Horizontial Links Parent
 .hLinksParent {
 	list-style: none;
 	display: flex;
 	justify-content: flex-end;
 
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQueryPX($hideNavLinksWidth) {
 		display: none;
 	}
 }
@@ -133,7 +139,7 @@ $mobileMenuCloseTime: 0.3s;
 	visibility: hidden;
 	transition: visibility $mobileMenuCloseTime;
 
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQueryPX($hideNavLinksWidth) {
 		visibility: visible;
 
 		display: flex;
@@ -162,7 +168,7 @@ $mobileMenuCloseTime: 0.3s;
 	justify-content: space-evenly;
 	align-items: center;
 
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQueryPX($hideNavLinksWidth) {
 		width: 60vw;
 		opacity: 1;
 	}
@@ -177,10 +183,14 @@ $mobileMenuCloseTime: 0.3s;
 .vLinkItem {
 	@extend .hLinkItem;
 	text-align: center;
-	font-size: 2.5rem;
+	$baseFontSize: 2.5rem;
+	font-size: $baseFontSize;
 
 	@include mx.maxMediaQueryPX(480px) {
-		font-size: 2rem;
+		font-size: #{$baseFontSize - 0.5};
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: #{$baseFontSize - 1};
 	}
 }
 // Mobile Menu Background
@@ -197,7 +207,7 @@ $mobileMenuCloseTime: 0.3s;
 	// filter: blur($blurStrength);
 	// -webkit-filter: blur($blurStrength);
 
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQueryPX($hideNavLinksWidth) {
 		opacity: 0.9;
 	}
 }

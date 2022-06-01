@@ -1,0 +1,18 @@
+@use "./modules/mixins" as mx;
+@use "./modules/globalVariables" as gvar;
+
+// Site Logo
+.siteLogoDiv {
+	margin-left: 3%;
+}
+.siteLogoTxt {
+	transition: color gvar.$colorTransitionTime;
+	color: var(--color-text-primary);
+
+	font-size: 1.8rem;
+	font-weight: bold;
+
+	@include mx.maxMediaQuery(md) {
+		font-size: 1.5rem;
+	}
+}

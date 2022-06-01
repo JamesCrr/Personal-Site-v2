@@ -22,7 +22,7 @@ const useOnceInViewport = (targetRef, rootMargin = "-100px") => {
 		);
 		observer.observe(targetRef.current);
 		// Unobserve when unmounting
-		return () => observer.unobserve(targetRef.current);
+		return () => targetRef.current && observer.unobserve(targetRef.current);
 	}, []);
 
 	return isVisible;

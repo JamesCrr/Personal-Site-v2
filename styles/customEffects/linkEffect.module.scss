@@ -26,6 +26,8 @@
 
 	&:hover {
 		color: var(--color-text-primary);
+		cursor: pointer;
+
 		&:before {
 			background: var(--color-secondary-dark);
 			width: 100%;

@@ -1,35 +1,29 @@
-import { useRef } from "react";
-import useOnceInViewport from "../StylingHelpers/useOnceInViewport";
-import ProjectDatabase from "../ProjectsComponents/ProjectsDatabase";
+import Link from "next/link";
+import { useDataContext } from "../../pages/_app";
 import ProjectsCardList from "../ProjectsComponents/ProjectsCardViewList";
 import ProjectsFeatureViewList from "../ProjectsComponents/ProjectsFeatureViewList";
+// Styling
 import styles from "../../styles/sections/Projects.module.scss";
-import stylesUnderline from "../../styles/customEffects/growingUnderlineEffect.module.scss";
-import StyleWrapper from "../StylingHelpers/StyleWrapper";
-import LinkWrapper from "../StylingHelpers/LinkWrapper";
-
-const { vFeature, vCard } = ProjectDatabase();
+import linkStyles from "../../styles/customEffects/linkEffect.module.scss";
 
 const ProjectsSection = () => {
-	const experienceContainerRef = useRef();
-	const isVisible = useOnceInViewport(experienceContainerRef);
+	const { pFeature, pCard } = useDataContext();
 
 	return (
-		<div ref={experienceContainerRef} className={styles.sectionContainer}>
+		<div className={styles.sectionContainer}>
 			<div className={styles.sectionTitleDiv}>
-				<h2 className={styles.sectionTitle}>
-					{/* <StyleWrapper sheets={isVisible ? stylesUnderline.growLeft : stylesUnderline.ungrown}>Projects.</StyleWrapper> */}
-					Projects.
-				</h2>
+				<h2 className={styles.sectionTitle}>Projects.</h2>
 			</div>
 			<div className={styles.sectionContentDiv}>
-				<ProjectsFeatureViewList projects={vFeature} />
+				<ProjectsFeatureViewList projects={pFeature} />
 				<div className={styles.otherProjectsDiv}>
 					<h3 className={styles.otherProjectsTitle}>Other Projects</h3>
 					<h4 className={styles.archiveLinkDiv}>
-						<LinkWrapper> view the archive</LinkWrapper>
+						<Link href="/projects-archive" passHref>
+							<a className={linkStyles.link}>view the archive</a>
+						</Link>
 					</h4>
-					<ProjectsCardList projects={vCard} />
+					<ProjectsCardList projects={pCard} />
 				</div>
 			</div>
 		</div>

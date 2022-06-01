@@ -1,7 +1,5 @@
 import { useRef } from "react";
 import styles from "../../styles/sections/About.module.scss";
-import stylesUnderline from "../../styles/customEffects/growingUnderlineEffect.module.scss";
-import StyleWrapper from "../StylingHelpers/StyleWrapper";
 import useOnceInViewport from "../StylingHelpers/useOnceInViewport";
 
 const AboutSection = () => {

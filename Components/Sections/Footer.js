@@ -1,14 +1,22 @@
 import styles from "../../styles/sections/Footer.module.scss";
-import { useIconsContext } from "../../pages";
+import { useDataContext } from "../../pages/_app";
 
 const Footer = () => {
-	const { getIcon } = useIconsContext();
+	const { getIcon } = useDataContext();
 
 	return (
 		<div className={styles.footerDiv}>
-			<div className={styles.msgDiv}>
-				<h4 className={styles.msg}>Thanks for stopping by</h4>
+			<div className={styles.siteLogoDiv}>
+				<h4 className={styles.siteLogoTxt}>Wx.</h4>
 			</div>
+			<div className={styles.msgDiv}>
+				<h4 className={styles.msgTxt}>Thanks for stopping by!</h4>
+			</div>
+			{/* <div className={styles.iconsDiv}>
+				<div className={styles.iconLink}>{getIcon("github")}</div>
+				<div className={styles.iconLink}>{getIcon("linkedin")}</div>
+				<div className={styles.iconLink}>{getIcon("email")}</div>
+			</div> */}
 		</div>
 	);
 };

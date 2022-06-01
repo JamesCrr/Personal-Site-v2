@@ -95,7 +95,9 @@ const Navbar = (props) => {
 
 	return (
 		<div className={shouldNavbarBeActive() ? styles.navbarDiv : styles.navbarDiv_Close}>
-			<ImSun />
+			<div className={styles.siteLogoDiv}>
+				<h4 className={styles.siteLogoTxt}>Wx.</h4>
+			</div>
 			<div className={styles.hNavbarEndContent}>
 				{/* Icons Div */}
 				<div className={styles.iconsDiv}>

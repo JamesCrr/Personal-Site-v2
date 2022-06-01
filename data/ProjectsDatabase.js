@@ -10,7 +10,7 @@
 }
 *********************************************/
 const ProjectDatabase = () => {
-	const data = {
+	const allProjects = {
 		"Computer Graphics": {
 			description:
 				"Project to learn more about OpenGL. Shaders, Heightmaps, OpenGL Buffers, Hierarchy modelling, Particle effects and importing of Meshes.",
@@ -47,10 +47,10 @@ const ProjectDatabase = () => {
 			linkVid: "q",
 		},
 	};
-	Object.freeze(data);
+	Object.freeze(allProjects);
 	const cards = ["Computer Graphics", "Factory Escape", "The Druid", "Infestation"];
 	// Get the first 3 as Featured
-	const featured = Object.getOwnPropertyNames(data).slice(0, 3);
+	const featured = Object.getOwnPropertyNames(allProjects).slice(0, 3);
 
 	/**
 	 * Gets an Array of Objects that contains the project data from your selection.
@@ -60,14 +60,22 @@ const ProjectDatabase = () => {
 	const getProjects = (selected) => {
 		const result = [];
 		for (const projectName of selected) {
-			if (!data[projectName]) continue;
+			if (!allProjects[projectName]) continue;
 			// Add title property and add into array
-			result.push({ title: projectName, ...data[projectName] });
+			result.push({ title: projectName, ...allProjects[projectName] });
 		}
 		return result;
 	};
+	/**
+	 * Converts the All Projets Data Object into an Array
+	 * @returns Array of all Projects
+	 */
+	const convertAllProjectsToArray = () =>
+		Object.keys(allProjects).map((projectName) => {
+			return { ...allProjects[projectName], title: projectName };
+		});
 
-	return { data, vFeature: getProjects(featured), vCard: getProjects(cards) };
+	return { allProjects: convertAllProjectsToArray(), pFeature: getProjects(featured), pCard: getProjects(cards) };
 };
 
 export default ProjectDatabase;

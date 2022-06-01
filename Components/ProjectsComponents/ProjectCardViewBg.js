@@ -1,8 +1,8 @@
-import { useIconsContext } from "../../pages";
+import { useDataContext } from "../../pages/_app";
 import styles from "../../styles/projectComponents/ProjectCardViewBg.module.scss";
 
 const ProjectCardViewBg = ({ details }) => {
-	const { getIcon } = useIconsContext();
+	const { getIcon } = useDataContext();
 
 	// const getTagIconComponent = (tagName, index) => {
 	// 	return (

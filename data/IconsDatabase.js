@@ -34,9 +34,9 @@ const IconsDatabase = () => {
 			case "github":
 				return <SiGithub />;
 			case "linkedin":
-				return <SiLinkedin style={{ transform: "scale(0.8)" }} />;
+				return <SiLinkedin />;
 			case "email":
-				return <MdEmail />;
+				return <MdEmail style={{ transform: "scale(1.2)" }} />;
 			case "youtube":
 				return <SiYoutube />;
 			// Others

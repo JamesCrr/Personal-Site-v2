@@ -1,5 +1,5 @@
 import styles from "../../styles/sections/Landing.module.scss";
-import LinkWrapper from "../StylingHelpers/LinkWrapper";
+import linkStyles from "../../styles/customEffects/linkEffect.module.scss";
 
 const LandingSection = () => {
 	return (
@@ -10,9 +10,9 @@ const LandingSection = () => {
 				<h3 className={styles.txtWhatIDo}>I build software for people.</h3>
 				<h4 className={styles.txtWhereIAm}>
 					Currently a student @{" "}
-					<LinkWrapper>
+					<a className={linkStyles.link}>
 						<span style={{ fontWeight: 500 }}>SMU</span>
-					</LinkWrapper>
+					</a>
 				</h4>
 			</div>
 		</div>
