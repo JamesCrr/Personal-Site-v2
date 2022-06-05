@@ -8,23 +8,61 @@ const ProjectsArchivePage = () => {
 	const { getIcon, allProjects } = useDataContext();
 
 	/**
+	 * Helper function to render a link component
+	 * @param {String} linkURL URL Link
+	 * @param {String} iconName Name of icon to lookup in database
+	 * @returns Link component to render
+	 */
+	const renderLink = (linkURL, iconName) => {
+		if (!linkURL || linkURL === "") return null;
+		return (
+			<div className={styles.itemLinkIconDiv}>
+				<a href={linkURL} target="_blank" rel="noopener noreferrer">
+					{getIcon(iconName)}
+				</a>
+			</div>
+		);
+	};
+	/**
 	 * Helper function to create a project item component to render
 	 * @param {Object} details Object containing the project details
 	 * @returns Component to render
 	 */
 	const renderProjectItem = (details) => {
 		return (
-			<div className={styles.itemDiv} key={details.title}>
-				<h3 className={styles.itemTitleTxt}>{details.title}</h3>
-				<p className={styles.itemDescriptionTxt}>{details.description}</p>
-				<div className={styles.itemTagsDiv}>
-					{details.tags.map((tagName, index) => {
-						return (
-							<div key={index} className={styles.itemTagIconDiv}>
-								{getIcon(tagName)}
-							</div>
-						);
-					})}
+			<div className={styles.listItemRowDiv} key={details.title}>
+				<div className={styles.listItemColumnDiv_Date}>
+					<h4 className={styles.itemDateTxt}>{details.date}</h4>
+				</div>
+
+				<div className={styles.listItemColumnDiv_Project}>
+					<div className={styles.itemTitleDiv}>
+						<h3 className={styles.itemTitleTxt}>{details.title}</h3>
+						<div className={styles.itemLinksDiv_NextToTitle}>
+							{renderLink(details.linkGithub, "github")}
+							{renderLink(details.linkVid, "youtube")}
+							{renderLink(details.linkDemo, "external")}
+						</div>
+					</div>
+					<p className={styles.itemDescriptionTxt}>{details.description}</p>
+				</div>
+				<div className={styles.listItemColumnDiv_Tags}>
+					<div className={styles.itemTagsDiv}>
+						{details.tags.map((tagName, index) => {
+							return (
+								<div key={index} className={styles.itemTagIconDiv}>
+									{getIcon(tagName)}
+								</div>
+							);
+						})}
+					</div>
+				</div>
+				<div className={styles.listItemColumnDiv_Links}>
+					<div className={styles.itemLinksDiv}>
+						{renderLink(details.linkGithub, "github")}
+						{renderLink(details.linkVid, "youtube")}
+						{renderLink(details.linkDemo, "external")}
+					</div>
 				</div>
 			</div>
 		);
@@ -57,6 +95,21 @@ const ProjectsArchivePage = () => {
 					</p>
 				</div>
 				<div className={styles.listDiv}>
+					<div className={`${styles.listItemRowDiv} ${styles.listItemPropertyTitleRowDiv}`}>
+						<div className={styles.listItemColumnDiv_Date}>
+							<h4 className={styles.listItemPropertyTitleTxt}>Date</h4>
+						</div>
+
+						<div className={styles.listItemColumnDiv_Project}>
+							<h4 className={styles.listItemPropertyTitleTxt}>Project</h4>
+						</div>
+						<div className={styles.listItemColumnDiv_Tags}>
+							<h4 className={styles.listItemPropertyTitleTxt}>Built With</h4>
+						</div>
+						<div className={styles.listItemColumnDiv_Links}>
+							<h4 className={styles.listItemPropertyTitleTxt}>Links</h4>
+						</div>
+					</div>
 					{allProjects.map((projectDetails) => {
 						return renderProjectItem(projectDetails);
 					})}

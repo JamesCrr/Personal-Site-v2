@@ -1,7 +1,13 @@
-import styles from "../../styles/sections/Contact.module.scss";
+import { useRef } from "react";
 import { useDataContext } from "../../pages/_app";
+// Styling
+import styles from "../../styles/sections/Contact.module.scss";
+import fadeStyles from "../../styles/customEffects/fadeInOutEffect.module.scss";
+import useIntersectionObserver from "../StylingHelpers/useIntersectionObserver";
 
 const ContactSection = () => {
+	const contactRef = useRef();
+	const isVisible = useIntersectionObserver(contactRef, "-150px");
 	const { getIcon } = useDataContext();
 
 	return (
@@ -9,7 +15,7 @@ const ContactSection = () => {
 			<div className={styles.sectionTitleDiv}>
 				<h2 className={styles.sectionTitle}>Contact.</h2>
 			</div>
-			<div className={styles.sectionContentDiv}>
+			<div className={`${styles.sectionContentDiv} ${isVisible ? fadeStyles.fadeIn : fadeStyles.faded}`} ref={contactRef}>
 				<h3 className={styles.contactTitle}>Let's Get In Touch!</h3>
 				<p className={styles.contactTxt}>
 					I am always looking for new exciting opportunties to join so my inbox is always open! Whether you have a question or just want to say hi,

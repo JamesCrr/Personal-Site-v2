@@ -4,7 +4,7 @@
 
 .sectionContainer {
 	$paddingSize: 4%;
-	padding: 2% $paddingSize 100px $paddingSize;
+	padding: 2% $paddingSize 150px $paddingSize;
 
 	@include mx.maxMediaQuery(sm) {
 		padding-bottom: 90px;

@@ -51,7 +51,7 @@ $iconMarginSize: 7px; // Margin for Navbar Icons
 .mobileMenuIconDiv {
 	z-index: $zIndexTop; // MobileMenuIcon should be at very top
 	display: none;
-	transform: scale(2);
+	transform: scale(2.2);
 
 	@include mx.maxMediaQueryPX($hideNavLinksWidth) {
 		display: block;
@@ -86,11 +86,13 @@ $iconMarginSize: 7px; // Margin for Navbar Icons
 	@extend .colorModeIcon;
 
 	opacity: 0;
-	transform: rotate(180deg);
+	transform: scale(0.6) rotate(180deg);
 }
 .mobileMenuIcon_Fade {
 	@extend .colorModeIcon_Fade;
 	@extend .mobileMenuIcon;
+
+	transform: translateX(20px);
 }
 
 // Horizontial Links Parent

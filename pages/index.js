@@ -44,7 +44,7 @@ export default function Home() {
 				<div id="contact-section" ref={contactSectionRef}>
 					<ContactSection />
 				</div>
-				<Footer />
+				{/* <Footer /> */}
 			</div>
 		</>
 	);

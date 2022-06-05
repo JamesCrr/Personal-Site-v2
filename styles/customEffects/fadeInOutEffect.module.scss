@@ -1,0 +1,14 @@
+.sharedAttributes {
+	display: block;
+	transition: opacity 0.5s ease-in-out, transform 0.3s ease-out;
+}
+.faded {
+	@extend .sharedAttributes;
+	opacity: 0;
+	transform: translateY(50px);
+}
+.fadeIn {
+	@extend .sharedAttributes;
+	opacity: 1;
+	transform: translateY(0px);
+}

@@ -1,5 +1,3 @@
-/* <StyleWrapper sheets={isVisible ? stylesUnderline.growLeft : stylesUnderline.ungrown} localVars={{ growspeed: "1.2s", growwidth: "30%" }}> */
-
 /**
  * Wraps a <span> element around the children and styles the element using
  * sheets also attaching any localVars to element.
@@ -7,6 +5,9 @@
  * @param {Object} localVars Any additional --var() to attach to the generated stylesheet
  */
 const StyleWrapper = ({ sheets, localVars, children }) => {
+	// Example:
+	/* <StyleWrapper sheets={isVisible ? stylesUnderline.growLeft : stylesUnderline.ungrown} localVars={{ growspeed: "1.2s", growwidth: "30%" }}> */
+
 	/**
 	 * Compiles localVars and styling to pass to html tag
 	 * @returns Compiled Props

@@ -1,8 +1,13 @@
-import { useDataContext } from "../../pages/_app";
+import { useRef } from "react";
 import Image from "next/image";
+import { useDataContext } from "../../pages/_app";
+// Styling
 import styles from "../../styles/projectComponents/ProjectCardViewCn.module.scss";
+import useIntersectionObserver from "../StylingHelpers/useIntersectionObserver";
 
 const ProjectCardViewCn = ({ details }) => {
+	const cardRef = useRef();
+	const isVisible = useIntersectionObserver(cardRef, "-100px");
 	const { getIcon } = useDataContext();
 
 	/**
@@ -37,7 +42,7 @@ const ProjectCardViewCn = ({ details }) => {
 	};
 
 	return (
-		<div className={styles.cardDiv}>
+		<div className={`${styles.cardDiv} ${isVisible ? styles.cardFadeIn : styles.cardFaded}`} ref={cardRef}>
 			<div className={styles.imageDiv}>
 				<Image src={details.image} alt={details.title + " Image"} layout="fill" />
 			</div>
@@ -50,7 +55,7 @@ const ProjectCardViewCn = ({ details }) => {
 				</div>
 			</div>
 			<p className={styles.descriptionTxt}>{details.description}</p>
-			{/* <div className={styles.tagsListDiv}>{details.tags.map((element, index) => renderTag(element, index))}</div> */}
+			<div className={styles.tagsListDiv}>{details.tags.map((element, index) => renderTag(element, index))}</div>
 		</div>
 	);
 };

@@ -5,7 +5,7 @@ import useVerticalScroll from "./useVerticalScroll";
 import MobileMenu from "./MobileMenu";
 import { ImSun } from "react-icons/im";
 import { FaMoon } from "react-icons/fa";
-import { RiMenu4Fill } from "react-icons/ri";
+import { BiMenuAltRight } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 
 const Navbar = (props) => {
@@ -108,7 +108,7 @@ const Navbar = (props) => {
 					</div>
 					{/* Mobile Menu Icon */}
 					<div className={styles.mobileMenuIconDiv} onClick={mobileMenuIconClicked}>
-						<RiMenu4Fill className={!mobileMenuOpen ? styles.mobileMenuIcon : styles.mobileMenuIcon_Fade} />
+						<BiMenuAltRight className={!mobileMenuOpen ? styles.mobileMenuIcon : styles.mobileMenuIcon_Fade} />
 						<VscChromeClose className={mobileMenuOpen ? styles.mobileMenuIcon : styles.mobileMenuIcon_Fade} />
 					</div>
 				</div>

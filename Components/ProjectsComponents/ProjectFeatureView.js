@@ -1,8 +1,15 @@
+import { useRef } from "react";
 import Image from "next/image";
 import { useDataContext } from "../../pages/_app";
+// Styling
 import styles from "../../styles/projectComponents/ProjectFeatureView.module.scss";
+import fadeStyles from "../../styles/customEffects/fadeInOutEffect.module.scss";
+import useIntersectionObserver from "../StylingHelpers/useIntersectionObserver";
+import StyleWrapper from "../StylingHelpers/StyleWrapper";
 
 const ProjectFeatureView = ({ details, textOnLeft = true }) => {
+	const featuredRef = useRef();
+	const isVisible = useIntersectionObserver(featuredRef, "-100px");
 	const { getIcon } = useDataContext();
 
 	/**
@@ -37,32 +44,35 @@ const ProjectFeatureView = ({ details, textOnLeft = true }) => {
 	};
 
 	return (
-		<div style={{ "--ownFlexDirection": textOnLeft ? "row" : "row-reverse" }} className={styles.featuredDiv}>
-			<div className={styles.txtDetailsDiv}>
-				<div className={styles.titleDiv}>
-					<h3 className={styles.titleTxt}>{details.title}</h3>
-					<div className={styles.linksDiv}>
-						{renderLink(details.linkGithub, "github")}
-						{renderLink(details.linkVid, "youtube")}
-						{renderLink(details.linkDemo, "external")}
+		<StyleWrapper sheets={isVisible ? fadeStyles.fadeIn : fadeStyles.faded}>
+			<div style={{ "--ownFlexDirection": textOnLeft ? "row" : "row-reverse" }} className={styles.featuredDiv} ref={featuredRef}>
+				<div className={styles.txtDetailsDiv}>
+					<div className={styles.titleDiv}>
+						<h3 className={styles.titleTxt}>{details.title}</h3>
+						<div className={styles.linksDiv}>
+							{renderLink(details.linkGithub, "github")}
+							{renderLink(details.linkVid, "youtube")}
+							{renderLink(details.linkDemo, "external")}
+						</div>
+					</div>
+					<h4 className={styles.descriptionTxt}>{details.description}</h4>
+					<div className={styles.bwDiv}>
+						<h4 className={styles.bwTxt}>Built with:</h4>
+						<div className={styles.tagsListDiv}>{details.tags.map((element, index) => renderTag(element, index))}</div>
 					</div>
 				</div>
-				<h4 className={styles.descriptionTxt}>{details.description}</h4>
-				<div className={styles.bwDiv}>
-					<h4 className={styles.bwTxt}>Built with:</h4>
-					<div className={styles.tagsListDiv}>{details.tags.map((element, index) => renderTag(element, index))}</div>
+				<div className={styles.imageDiv}>
+					<Image
+						src={details.image}
+						alt={details.title + " Image"}
+						priority
+						layout="fill"
+						// width={489}
+						// height={864}
+					/>
 				</div>
 			</div>
-			<div className={styles.imageDiv}>
-				<Image
-					src={details.image}
-					alt={details.title + " Image"}
-					// width={489}
-					// height={864}
-					layout="fill"
-				/>
-			</div>
-		</div>
+		</StyleWrapper>
 	);
 };
 

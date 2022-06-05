@@ -24,7 +24,7 @@
 // Text Related Div
 .txtDetailsDiv {
 	width: 60%;
-	height: 100%;
+	// height: 100%;
 	text-align: left;
 	padding: 0px 40px;
 
@@ -57,7 +57,7 @@
 // Title Text
 .titleTxt {
 	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary);
+	color: var(--color-secondary-light);
 
 	font-size: 2.5rem;
 	font-weight: 500;
@@ -82,14 +82,14 @@
 	& div a svg {
 		transition: fill gvar.$colorTransitionTime, transform gvar.$colorTransitionTime;
 		transform: scale($baseIconScale);
-		fill: var(--color-secondary);
+		fill: var(--color-primary);
 
 		margin: 0px 20px 0px 0px;
 		cursor: pointer;
 
 		&:hover {
 			transform: scale($baseIconScale + 0.4);
-			fill: var(--color-secondary-light);
+			fill: var(--color-primary-light);
 		}
 	}
 
@@ -104,7 +104,7 @@
 // Description
 .descriptionTxt {
 	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary-lesser);
+	color: var(--color-text-primary-less);
 
 	font-size: 1.5rem;
 	font-weight: 400;
@@ -131,9 +131,9 @@
 }
 .bwTxt {
 	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary);
+	color: var(--color-text-primary-less);
 
-	$baseFontSize: 1.2rem;
+	$baseFontSize: 1.4rem;
 	font-size: $baseFontSize;
 	font-style: italic;
 

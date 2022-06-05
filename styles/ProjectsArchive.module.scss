@@ -3,7 +3,14 @@
 @use "./SiteLogo.module.scss";
 
 $tempBreakpoint: 410px;
+$columnView: sm;
+// common attributes
+.primaryTxtAttributes {
+	color: var(--color-text-primary);
+	transition: color gvar.$colorTransitionTime;
+}
 
+// Page Div
 .projectArchiveDiv {
 	transition: background gvar.$colorTransitionTime, color gvar.$colorTransitionTime;
 	background: var(--color-background);
@@ -43,13 +50,12 @@ $tempBreakpoint: 410px;
 	$baseFontSize: 4.8rem;
 	font-size: $baseFontSize;
 
-	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary);
+	@extend .primaryTxtAttributes;
 
 	@include mx.maxMediaQuery(md) {
 		font-size: #{$baseFontSize - 0.8};
 	}
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQuery($columnView) {
 		font-size: #{$baseFontSize - 1.6};
 	}
 	@include mx.maxMediaQueryPX($tempBreakpoint) {
@@ -66,7 +72,7 @@ $tempBreakpoint: 410px;
 	@include mx.maxMediaQuery(md) {
 		font-size: #{$baseFontSize - 0.2};
 	}
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQuery($columnView) {
 		font-size: #{$baseFontSize - 0.3};
 	}
 	@include mx.maxMediaQueryPX($tempBreakpoint) {
@@ -81,13 +87,13 @@ $tempBreakpoint: 410px;
 	font-size: $baseFontSize;
 	margin-top: 50px;
 
-	transition: color gvar.$colorTransitionTime;
+	@extend .primaryTxtAttributes;
 	color: var(--color-text-primary-less);
 
 	@include mx.maxMediaQuery(md) {
 		font-size: #{$baseFontSize - 0.2};
 	}
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQuery($columnView) {
 		font-size: #{$baseFontSize - 0.4};
 	}
 	@include mx.maxMediaQueryPX($tempBreakpoint) {
@@ -100,57 +106,198 @@ $tempBreakpoint: 410px;
 // Projects List
 .listDiv {
 	margin-top: 70px;
-	padding: 0px 5%;
 	width: 100%;
 
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQuery(md) {
+	}
+	@include mx.maxMediaQuery($columnView) {
 		margin-top: 40px;
 	}
 }
-// Project Item
-.itemDiv {
+// List Item Row Div
+.listItemRowDiv {
+	width: 100%;
 	display: flex;
-	justify-content: flex-start;
-	align-items: center;
+	justify-content: space-evenly;
+	align-items: flex-start;
 
 	// border: 2px solid var(--color-primary);
-	border-radius: 20px;
-	background: var(--color-background-less);
-	padding: 15px;
-	margin: 10px 0px;
+	// border-radius: 20px;
+	// background: var(--color-background-less);
+	// padding: 15px;
+	margin: 25px 0px;
 
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQuery($columnView) {
 		flex-direction: column;
-		margin: 30px 0px;
+		// margin: 30px 0px;
+	}
+}
+// List Item Title Row Div
+.listItemPropertyTitleRowDiv {
+	@include mx.maxMediaQuery($columnView) {
+		display: none;
+	}
+}
+// Title Row Text
+.listItemPropertyTitleTxt {
+	@extend .primaryTxtAttributes;
+	color: var(--color-text-primary);
+	font-size: 1.4rem;
+}
+
+// List Item Column Div
+// Date Column
+.listItemColumnDiv_Date {
+	min-width: 70px;
+
+	@include mx.maxMediaQuery($columnView) {
+		width: 100%;
+	}
+}
+// Project Column
+.listItemColumnDiv_Project {
+	$projectWidth: 60%;
+	min-width: $projectWidth;
+	width: $projectWidth;
+
+	@include mx.maxMediaQuery($columnView) {
+		width: 100%;
+	}
+}
+// Tags Column
+.listItemColumnDiv_Tags {
+	$tagsWidth: 15%;
+	width: $tagsWidth;
+	min-width: $tagsWidth;
+
+	margin: 0px 15px;
+
+	@include mx.maxMediaQuery(md) {
+		display: none;
+	}
+	@include mx.maxMediaQuery($columnView) {
+		display: block;
+		margin: 0px;
+		width: 100%;
+	}
+}
+// Links Column
+.listItemColumnDiv_Links {
+	min-width: 100px;
+	text-align: left;
+
+	@include mx.maxMediaQuery($columnView) {
+		display: none;
+	}
+}
+// List Item Properties
+// Date
+.itemDateTxt {
+	@extend .primaryTxtAttributes;
+	color: var(--color-primary-light);
+
+	$baseFontSize: 1.2rem;
+	font-size: $baseFontSize;
+
+	@include mx.maxMediaQuery($columnView) {
+		font-size: #{$baseFontSize + 0.1};
+	}
+}
+// Title
+.itemTitleDiv {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include mx.maxMediaQuery(xs) {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
 	}
 }
 .itemTitleTxt {
-}
-.itemDescriptionTxt {
-	// white-space: nowrap;
-	// overflow: hidden;
-	// text-overflow: ellipsis;
+	@extend .primaryTxtAttributes;
+	color: var(--color-secondary);
 
-	@include mx.maxMediaQuery(sm) {
-		margin-top: 5px;
+	$baseFontSize: 1.3rem;
+	font-size: $baseFontSize;
+
+	@include mx.maxMediaQuery($columnView) {
+		margin-right: 20px;
+		font-size: #{$baseFontSize + 0.1};
 	}
 }
+// Description
+.itemDescriptionTxt {
+	@extend .primaryTxtAttributes;
+	color: var(--color-text-primary-less);
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	$baseFontSize: 1rem;
+	font-size: $baseFontSize;
+
+	@include mx.maxMediaQuery($columnView) {
+		margin-top: 5px;
+
+		white-space: normal;
+		overflow: null;
+		text-overflow: null;
+	}
+}
+// Tags
 .itemTagsDiv {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: flex-start;
 	align-items: center;
 
-	@include mx.maxMediaQuery(sm) {
+	@include mx.maxMediaQuery($columnView) {
 		margin-top: 15px;
 	}
 }
 .itemTagIconDiv {
-	transform: scale(2.2);
-	margin: 0px 10px;
+	$baseScale: 2.4;
+	transform: scale($baseScale);
+	margin-right: 20px;
+	margin-top: 10px;
 
 	// Icon
 	& svg {
 		transition: fill gvar.$colorTransitionTime;
-		fill: var(--color-text-primary);
+		fill: var(--color-text-primary-less);
+	}
+}
+// Links
+.itemLinksDiv {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+.itemLinksDiv_NextToTitle {
+	display: none;
+
+	@include mx.maxMediaQuery($columnView) {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin-top: 10px;
+	}
+}
+.itemLinkIconDiv {
+	$baseScale: 1.1;
+	transform: scale($baseScale);
+	margin-right: 10px;
+
+	// Icon
+	& a svg {
+		transition: fill gvar.$colorTransitionTime;
+		fill: var(--color-text-primary-less);
+
+		@include mx.maxMediaQuery(md) {
+		}
 	}
 }

@@ -1,26 +1,19 @@
 //
 
-/************* Project Template *************
-"title": {
-    description: "",
-    image: "url(project-imgs/)",
-    tags: [],	// Recommend 6 Tags only
-    // linkGithub: "",
-    // linkDemo: "",
-}
-*********************************************/
 const ProjectDatabase = () => {
 	const allProjects = {
 		"Computer Graphics": {
+			date: 2017,
 			description:
 				"Project to learn more about OpenGL. Shaders, Heightmaps, OpenGL Buffers, Hierarchy modelling, Particle effects and importing of Meshes.",
 			image: "/project-imgs/CG_3.webp",
-			tags: ["OpenGL", "C++", "OpenGL", "C++", "OpenGL", "C++"],
+			tags: ["OpenGL", "C++", "OpenGL", "C++", "OpenGL", "C++", "OpenGL", "C++", "C#"],
 			linkGithub: "q",
 			linkDemo: "q",
 			linkVid: "q",
 		},
 		"Factory Escape": {
+			date: 2018,
 			description: "An endless runner game that relies on skill and quick reaction times in order to succeed.",
 			image: "/project-imgs/Robot_2.webp",
 			tags: ["Unity", "C#"],
@@ -29,6 +22,7 @@ const ProjectDatabase = () => {
 			linkVid: "https://www.youtube.com/watch?v=QpqdQ1-NSdU",
 		},
 		"The Druid": {
+			date: 2019,
 			description:
 				"Become a Druid where you command powerful wild animals to help you survive in the harsh wilderness. Take their form to hunt and gather resources to upgrade your camp and unlock more unique animals.",
 			image: "/project-imgs/Druid_7.webp",
@@ -38,6 +32,7 @@ const ProjectDatabase = () => {
 			linkVid: "q",
 		},
 		Infestation: {
+			date: 2019,
 			description:
 				"A Shoot em up, Multiplayer LAN, Co-op Game. Fight your way through hordes of enemies and scavenge various weapon parts. Fit those different parts together to create your very own unique weapons. Work together in order to survive and see how long you'll last...",
 			image: "/project-imgs/FYP2_2.webp",

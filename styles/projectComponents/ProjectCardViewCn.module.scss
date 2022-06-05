@@ -7,9 +7,9 @@
 	min-height: 400px;
 
 	$hoverTime: 0.3s;
-	transition: background gvar.$colorTransitionTime, transform $hoverTime, box-shadow $hoverTime;
+	transition: background gvar.$colorTransitionTime, transform $hoverTime, box-shadow $hoverTime, opacity $hoverTime;
 	background: var(--color-background-less);
-	border: 2px solid var(--color-primary-light);
+	// border: 2px solid var(--color-primary);
 	border-radius: 10px;
 	padding: 20px;
 	margin-bottom: 50px;
@@ -17,6 +17,7 @@
 	&:hover {
 		transform: translateY(-10px);
 		box-shadow: 0px 5px 20px -5px black;
+
 		// Image
 		& .imageDiv span img {
 			transform: scale(1.2);
@@ -36,7 +37,7 @@
 	position: relative;
 
 	& span img {
-		transition: transform 0.4s;
+		transition: transform 0.7s;
 		object-fit: scale-down;
 	}
 }
@@ -55,7 +56,7 @@
 // Title
 .titleTxt {
 	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary);
+	color: var(--color-secondary-light);
 
 	padding-right: 10px;
 	font-size: 2.2rem;
@@ -83,12 +84,12 @@
 	& div a svg {
 		cursor: pointer;
 		transition: fill gvar.$colorTransitionTime, transform gvar.$colorTransitionTime;
-		fill: var(--color-secondary);
+		fill: var(--color-primary);
 		transform: scale($baseIconScale);
 		margin: 0px 15px 0px 0px;
 
 		&:hover {
-			fill: var(--color-secondary-light);
+			fill: var(--color-primary-light);
 			transform: scale($baseIconScale + 0.4);
 		}
 	}
@@ -117,7 +118,7 @@
 // Description
 .descriptionTxt {
 	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary-lesser);
+	color: var(--color-text-primary-less);
 
 	font-size: 1.2rem;
 
@@ -157,6 +158,7 @@
 	align-items: center;
 
 	margin: 5px 15px;
+	margin-bottom: 10px;
 
 	@include mx.maxMediaQuery(md) {
 	}
@@ -204,4 +206,14 @@
 	}
 	@include mx.maxMediaQuery(xs) {
 	}
+}
+
+// Animations
+.cardFaded {
+	opacity: 0;
+	transform: translateY(50px);
+}
+.cardFadeIn {
+	opacity: 1;
+	transform: translateY(0px);
 }
