@@ -3,40 +3,46 @@
 @use "../modules/mixins" as mx;
 
 .sectionContainer {
-}
+	$extraPadding: 5%;
+	padding: 0px $extraPadding 90px $extraPadding;
 
+	@include mx.maxMediaQuery(lg) {
+	}
+	@include mx.maxMediaQuery(md) {
+		padding: 0px #{$extraPadding - 1} 90px #{$extraPadding - 1};
+	}
+	@include mx.maxMediaQuery(sm) {
+	}
+	@include mx.maxMediaQuery(xs) {
+		padding: 0px #{$extraPadding - 2} 90px #{$extraPadding - 2};
+	}
+}
 .sectionTitleDiv {
 	@include mx.maxMediaQuery(sm) {
 		margin-bottom: 30px;
 	}
 }
-
 .sectionTitle {
-	margin-left: 6%;
-	@include mx.maxMediaQuery(xs) {
-		margin: 0%;
+	// margin-left: 6%;
+	@include mx.maxMediaQuery(md) {
+		margin-left: 0%;
 	}
 }
-
 .sectionContentDiv {
 }
 
+// Other Projects Div
 .otherProjectsDiv {
 	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary);
-
-	$extraPadding: 4%;
-	padding: 0px $extraPadding;
 
 	@include mx.maxMediaQuery(md) {
 		padding-top: 60px;
 	}
 	@include mx.maxMediaQuery(sm) {
-		padding: 0px 3% 0px 3%;
 		padding-top: 40px;
 	}
 	@include mx.maxMediaQuery(xs) {
-		padding: 0px;
 		padding-top: 20px;
 	}
 }

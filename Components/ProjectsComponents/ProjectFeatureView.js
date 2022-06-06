@@ -65,7 +65,7 @@ const ProjectFeatureView = ({ details, textOnLeft = true }) => {
 					<Image
 						src={details.image}
 						alt={details.title + " Image"}
-						priority
+						// priority
 						layout="fill"
 						// width={489}
 						// height={864}

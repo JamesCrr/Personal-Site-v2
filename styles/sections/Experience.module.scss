@@ -1,16 +1,100 @@
 @use "./sectionStyles" as ss;
 @use "../modules//mixins" as mx;
+@use "../modules/globalVariables" as gvar;
 
 .sectionContainer {
+	padding: 0px 5% 90px 5%;
 }
-
 .sectionTitleDiv {
 }
 .sectionTitle {
 	@include mx.maxMediaQuery(xs) {
-		font-size: 2.7rem;
+		margin: 0%;
+		font-size: 2.3rem;
+	}
+}
+.sectionContentDiv {
+	padding: 0px 5%;
+
+	@include mx.maxMediaQuery(md) {
+		padding: 0px;
 	}
 }
 
-.sectionContentDiv {
+// Experiences List Div
+.experiencesListDiv {
+}
+// Experience Item
+.experienceItemDiv {
+	margin-bottom: 50px;
+}
+.location {
+	$baseFontSize: 1.8rem;
+	font-size: $baseFontSize;
+	color: var(--color-text-primary);
+	// margin-bottom: 6px;
+
+	// the @ Sign
+	& span {
+		color: var(--color-secondary);
+	}
+
+	@include mx.maxMediaQuery(md) {
+		font-size: #{$baseFontSize - 0.2};
+	}
+	@include mx.maxMediaQuery(sm) {
+		font-size: #{$baseFontSize - 0.4};
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: #{$baseFontSize - 0.5};
+	}
+}
+// Date
+.date {
+	$baseFontSize: 1.4rem;
+	font-size: $baseFontSize;
+	font-weight: 500;
+	margin-top: 1%;
+	margin-bottom: 30px;
+
+	color: var(--color-text-primary-lesser);
+
+	@include mx.maxMediaQuery(md) {
+		font-size: #{$baseFontSize - 0.2};
+	}
+	@include mx.maxMediaQuery(sm) {
+		font-size: #{$baseFontSize - 0.3};
+		margin-bottom: 20px;
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: #{$baseFontSize - 0.3};
+	}
+}
+// Key Points
+.keypointsList {
+	list-style-type: none;
+}
+.keypointItem {
+	$baseFontSize: 1.3rem;
+	font-size: $baseFontSize;
+
+	width: 90%;
+	margin-bottom: 10px;
+	color: var(--color-text-primary-less);
+
+	&::before {
+		content: "➤";
+		color: var(--color-primary);
+		margin-right: 15px;
+	}
+
+	@include mx.maxMediaQuery(md) {
+		font-size: #{$baseFontSize - 0.2};
+	}
+	@include mx.maxMediaQuery(sm) {
+		font-size: #{$baseFontSize - 0.2};
+	}
+	@include mx.maxMediaQuery(xs) {
+		font-size: #{$baseFontSize - 0.3};
+	}
 }

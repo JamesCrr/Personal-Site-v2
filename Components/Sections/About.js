@@ -7,19 +7,16 @@ import StyleWrapper from "../StylingHelpers/StyleWrapper";
 
 const AboutSection = () => {
 	const aboutContainerRef = useRef();
-	const isVisible = useIntersectionObserver(aboutContainerRef);
+	const isVisible = useIntersectionObserver(aboutContainerRef, "-200px");
 
 	return (
 		<div ref={aboutContainerRef} className={styles.sectionContainer}>
 			<StyleWrapper sheets={isVisible ? fadeStyles.fadeIn : fadeStyles.faded}>
 				<div className={styles.sectionTitleDiv}>
-					<h2 className={styles.sectionTitle}>
-						{/* <StyleWrapper sheets={isVisible ? stylesUnderline.growRight : stylesUnderline.ungrown}>About Me.</StyleWrapper> */}
-						About Me.
-					</h2>
+					<h2 className={styles.sectionTitle}>About Me.</h2>
 				</div>
 				<div className={styles.sectionContentDiv}>
-					<p className={styles.textAbout}>
+					<p className={styles.aboutTxt}>
 						Hi there! My name is Wei xuan and I enjoy creating things that live on the internet. I am a freshman at Singapore Management University
 						studying Information Systems with a passion to create software that inspires people to do more. blah blah blah blah blah blah blah blah
 						blah blah blah blah blah blah blah blah blah blah blah blah .blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
