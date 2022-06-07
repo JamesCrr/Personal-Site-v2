@@ -9,7 +9,7 @@ import StyleWrapper from "../StylingHelpers/StyleWrapper";
 
 const ProjectFeatureView = ({ details, textOnLeft = true }) => {
 	const featuredRef = useRef();
-	const isVisible = useIntersectionObserver(featuredRef, "-100px");
+	const isVisible = useIntersectionObserver(featuredRef);
 	const { getIcon } = useDataContext();
 
 	/**
@@ -61,14 +61,14 @@ const ProjectFeatureView = ({ details, textOnLeft = true }) => {
 						<div className={styles.tagsListDiv}>{details.tags.map((element, index) => renderTag(element, index))}</div>
 					</div>
 				</div>
-				<div className={styles.imageDiv}>
+				<div as="image" className={styles.imageDiv}>
 					<Image
 						src={details.image}
 						alt={details.title + " Image"}
-						// priority
 						layout="fill"
 						// width={489}
 						// height={864}
+						priority={true}
 					/>
 				</div>
 			</div>

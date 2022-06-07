@@ -129,7 +129,7 @@ $columnView: sm;
 
 	@include mx.maxMediaQuery($columnView) {
 		flex-direction: column;
-		// margin: 30px 0px;
+		margin: 35px 0px;
 	}
 }
 // List Item Title Row Div
@@ -145,7 +145,7 @@ $columnView: sm;
 	font-size: 1.4rem;
 }
 
-// List Item Column Div
+/******************** List Item Columns ********************/
 // Date Column
 .listItemColumnDiv_Date {
 	min-width: 70px;
@@ -184,22 +184,29 @@ $columnView: sm;
 // Links Column
 .listItemColumnDiv_Links {
 	min-width: 100px;
-	text-align: left;
+	text-align: center;
 
 	@include mx.maxMediaQuery($columnView) {
 		display: none;
 	}
 }
-// List Item Properties
+/********************** List Item Project **********************/
 // Date
 .itemDateTxt {
 	@extend .primaryTxtAttributes;
 	color: var(--color-primary-light);
 
-	$baseFontSize: 1.2rem;
+	$baseFontSize: 1rem;
 	font-size: $baseFontSize;
 
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	min-height: 50px;
+
 	@include mx.maxMediaQuery($columnView) {
+		display: block;
+		min-height: 0;
 		font-size: #{$baseFontSize + 0.1};
 	}
 }
@@ -247,7 +254,7 @@ $columnView: sm;
 		text-overflow: null;
 	}
 }
-// Tags
+// Tags Div
 .itemTagsDiv {
 	display: flex;
 	flex-wrap: wrap;
@@ -258,23 +265,29 @@ $columnView: sm;
 		margin-top: 15px;
 	}
 }
+// Tag
 .itemTagIconDiv {
-	$baseScale: 2.4;
+	$baseScale: 1.5;
 	transform: scale($baseScale);
 	margin-right: 20px;
 	margin-top: 10px;
+	min-width: 10px;
 
 	// Icon
 	& svg {
 		transition: fill gvar.$colorTransitionTime;
 		fill: var(--color-text-primary-less);
 	}
+
+	@include mx.maxMediaQuery($columnView) {
+		margin-top: 0;
+	}
 }
-// Links
+// Links Div
 .itemLinksDiv {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
 }
 .itemLinksDiv_NextToTitle {
@@ -287,8 +300,9 @@ $columnView: sm;
 		margin-top: 10px;
 	}
 }
+// Link Icon
 .itemLinkIconDiv {
-	$baseScale: 1.1;
+	$baseScale: 1.2;
 	transform: scale($baseScale);
 	margin-right: 10px;
 

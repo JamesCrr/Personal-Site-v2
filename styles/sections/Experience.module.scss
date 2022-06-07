@@ -3,6 +3,7 @@
 @use "../modules/globalVariables" as gvar;
 
 .sectionContainer {
+	min-height: 700px;
 	padding: 0px 5% 90px 5%;
 }
 .sectionTitleDiv {
@@ -32,6 +33,7 @@
 	$baseFontSize: 1.8rem;
 	font-size: $baseFontSize;
 	color: var(--color-text-primary);
+	transition: color gvar.$colorTransitionTime;
 	// margin-bottom: 6px;
 
 	// the @ Sign
@@ -58,6 +60,7 @@
 	margin-bottom: 30px;
 
 	color: var(--color-text-primary-lesser);
+	transition: color gvar.$colorTransitionTime;
 
 	@include mx.maxMediaQuery(md) {
 		font-size: #{$baseFontSize - 0.2};
@@ -81,10 +84,12 @@
 	width: 90%;
 	margin-bottom: 10px;
 	color: var(--color-text-primary-less);
+	transition: color gvar.$colorTransitionTime;
 
 	&::before {
 		content: "➤";
 		color: var(--color-primary);
+		transition: color gvar.$colorTransitionTime;
 		margin-right: 15px;
 	}
 

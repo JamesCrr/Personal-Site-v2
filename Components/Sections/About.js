@@ -7,7 +7,7 @@ import StyleWrapper from "../StylingHelpers/StyleWrapper";
 
 const AboutSection = () => {
 	const aboutContainerRef = useRef();
-	const isVisible = useIntersectionObserver(aboutContainerRef, "-200px");
+	const isVisible = useIntersectionObserver(aboutContainerRef, "-130px");
 
 	return (
 		<div ref={aboutContainerRef} className={styles.sectionContainer}>

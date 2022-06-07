@@ -71,9 +71,9 @@ const ProjectsArchivePage = () => {
 	return (
 		<div className={styles.projectArchiveDiv}>
 			<Head>
-				<title>Projects Archive</title>
-				<meta name="description" content="Portfolio Projects Archive" />
-				<link rel="icon" href="/favicon.ico" />
+				<title>Archive</title>
+				<meta name="description" content="Project Archive List" />
+				<link rel="icon" href="/project-imgs/logo.png" />
 			</Head>
 			<div className={styles.archiveNavbar}>
 				<div className={styles.siteLogoDiv}>

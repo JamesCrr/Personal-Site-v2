@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
  * @param {Boolean} disconnectOnDetect Stop checking for intersections once intersected once
  * @returns Whether the target element intersects the page
  */
-const useIntersectionObserver = (targetRef, rootBottomMargin = "-200px", disconnectOnDetect = true) => {
+const useIntersectionObserver = (targetRef, rootBottomMargin = "-100px", disconnectOnDetect = true) => {
 	const [isVisible, setIsVisible] = useState(false);
 
 	useEffect(() => {

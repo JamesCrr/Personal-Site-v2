@@ -13,13 +13,31 @@ import StyleWrapper from "../StylingHelpers/StyleWrapper";
  * @returns JSX Component to render
  */
 const ExperienceListItem = ({ experienceDetail }) => {
+	/**
+	 * Helper function to render links
+	 * @param {Object} details Object details
+	 * @returns Component to render
+	 */
+	const renderLocationText = (details) => {
+		if (details.placeLink && details.placeLink !== "") {
+			return (
+				<LinkWrapper linkTo={details.placeLink} newTab>
+					{details.place}
+				</LinkWrapper>
+			);
+		}
+		// Link not avaliable, just return text
+		return <span>{details.place}</span>;
+	};
+
 	return (
 		<div className={styles.experienceItemDiv}>
 			<h3 className={styles.location}>
-				{experienceDetail.title} <span>@</span>{" "}
-				<LinkWrapper linkTo={experienceDetail.placeLink} newTab>
+				{experienceDetail.title} <span>@ </span>
+				{/* <LinkWrapper linkTo={experienceDetail.placeLink} newTab>
 					{experienceDetail.place}
-				</LinkWrapper>
+				</LinkWrapper> */}
+				{renderLocationText(experienceDetail)}
 			</h3>
 			<h4 className={styles.date}>{experienceDetail.date}</h4>
 			<ul className={styles.keypointsList}>
@@ -38,7 +56,7 @@ const ExperienceListItem = ({ experienceDetail }) => {
 const ExperienceSection = () => {
 	const { allExperiences } = useDataContext();
 	const experienceSectionRef = useRef();
-	const isVisible = useIntersectionObserver(experienceSectionRef, "-150px");
+	const isVisible = useIntersectionObserver(experienceSectionRef);
 
 	return (
 		<div ref={experienceSectionRef} className={styles.sectionContainer}>

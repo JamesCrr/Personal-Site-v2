@@ -9,8 +9,8 @@
 	$hoverTime: 0.3s;
 	transition: background gvar.$colorTransitionTime, transform $hoverTime, box-shadow $hoverTime, opacity $hoverTime;
 	background: var(--color-background-less);
-	// border: 2px solid var(--color-primary);
 	border-radius: 10px;
+
 	padding: 20px;
 	margin-bottom: 50px;
 
@@ -18,12 +18,27 @@
 		transform: translateY(-10px);
 		box-shadow: 0px 5px 20px -5px black;
 
-		// Image
-		& .imageDiv span img {
-			transform: scale(1.2);
+		// // Image
+		// & .imageDiv span img {
+		// 	 transform: scale(1.2);
+		// }
+		// Title
+		& .titleTxt {
+			color: var(--color-secondary-light);
+		}
+		// Description
+		& .descriptionTxt {
+			color: var(--color-text-primary);
+		}
+		// Tags
+		& .tagIconImgDiv svg {
+			// fill: var(--color-text-primary);
 		}
 	}
 
+	@include mx.maxMediaQuery(md) {
+		padding: 10px;
+	}
 	@include mx.maxMediaQuery(sm) {
 		width: 90%;
 		min-height: 0px;
@@ -38,6 +53,7 @@
 
 	& span img {
 		transition: transform 0.7s;
+		transform: scale(1.3);
 		object-fit: scale-down;
 	}
 }
@@ -56,7 +72,7 @@
 // Title
 .titleTxt {
 	transition: color gvar.$colorTransitionTime;
-	color: var(--color-secondary-light);
+	color: var(--color-secondary-dark);
 
 	padding-right: 10px;
 	font-size: 2.2rem;
@@ -72,48 +88,54 @@
 		font-size: 1.6rem;
 	}
 }
-// Links
+// Links Div
 .linksDiv {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
+
 	padding-top: 10px;
+	margin-left: 5px;
+}
+// Link Div
+.linkIconDiv {
+	$baseIconScale: 1.5;
+	$baseRightMargin: 17px;
+	transition: transform gvar.$colorTransitionTime;
+	transform: scale($baseIconScale);
+	margin-right: $baseRightMargin;
 
 	// Icon
-	$baseIconScale: 1.2;
-	& div a svg {
+	& a svg {
 		cursor: pointer;
-		transition: fill gvar.$colorTransitionTime, transform gvar.$colorTransitionTime;
+		transition: fill gvar.$colorTransitionTime;
 		fill: var(--color-primary);
-		transform: scale($baseIconScale);
-		margin: 0px 15px 0px 0px;
 
-		&:hover {
+		// &:hover {
+		// 	fill: var(--color-primary-light);
+		// }
+	}
+
+	&:hover {
+		transform: scale($baseIconScale + 0.4);
+		// Icon
+		& a svg {
 			fill: var(--color-primary-light);
-			transform: scale($baseIconScale + 0.4);
 		}
 	}
 
 	@include mx.maxMediaQuery(md) {
-		& div a svg {
-			transform: scale(#{$baseIconScale - 0.1});
-			margin: 0px 12px 0px 0px;
-		}
+		transform: scale(#{$baseIconScale - 0.1});
+		margin-right: #{$baseRightMargin - 3};
 	}
 	@include mx.maxMediaQuery(sm) {
-		& div a svg {
-			transform: scale($baseIconScale);
-			margin: 0px 15px 0px 0px;
-		}
+		transform: scale(#{$baseIconScale - 0.1});
+		margin-right: #{$baseRightMargin - 0};
 	}
 	@include mx.maxMediaQuery(xs) {
-		& div a svg {
-			transform: scale(#{$baseIconScale - 0.3});
-			margin: 0px 8px 0px 0px;
-		}
+		transform: scale(#{$baseIconScale - 0.3});
+		margin-right: #{$baseRightMargin - 7};
 	}
-}
-.linkIconDiv {
 }
 // Description
 .descriptionTxt {
@@ -166,19 +188,15 @@
 		margin: 5px 10px;
 	}
 }
+// Tag Icon
 .tagIconImgDiv {
-	$baseScale: 3;
+	$baseScale: 2;
 	transform: scale($baseScale);
-	& > svg {
+	& svg {
 		transition: fill gvar.$colorTransitionTime;
 		fill: var(--color-text-primary-lesser);
 	}
 	&:hover {
-		//// Icon Image
-		// & > svg {
-		// 	fill: var(--color-primary);
-		// }
-		// <p> sibling
 		& + p {
 			opacity: 1;
 		}
@@ -194,6 +212,7 @@
 		transform: scale(#{$baseScale - 0.4});
 	}
 }
+// Tag Text
 .tagIconTxt {
 	transition: color gvar.$colorTransitionTime, opacity 0.3s;
 	color: var(--color-text-primary);

@@ -2,8 +2,7 @@
 @use "../modules/mixins" as mx;
 
 .sectionContainer {
-	// min-height: 50vh;
-	min-height: 400px;
+	min-height: 500px;
 	transition: background gvar.$colorTransitionTime, color gvar.$colorTransitionTime;
 	background: var(--color-background);
 	color: var(--color-text-primary);

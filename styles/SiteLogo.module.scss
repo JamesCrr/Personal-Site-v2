@@ -12,6 +12,12 @@
 	font-size: 1.8rem;
 	font-weight: bold;
 
+	user-select: none; /* supported by Chrome and Opera */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+
 	@include mx.maxMediaQuery(md) {
 		font-size: 1.5rem;
 	}

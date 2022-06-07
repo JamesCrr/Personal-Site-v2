@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import styles from "../styles/Home.module.scss";
 // Components
 import Navbar from "../Components/Navbar/Navbar";
@@ -8,7 +8,7 @@ import AboutSection from "../Components/Sections/About";
 import ProjectsSection from "../Components/Sections/Projects";
 import ExperienceSection from "../Components/Sections/Experience";
 import ContactSection from "../Components/Sections/Contact";
-import Footer from "../Components/Sections/Footer";
+// import Footer from "../Components/Sections/Footer";
 
 export default function Home() {
 	// Section Refs for scrolling
@@ -20,9 +20,12 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Portfolio</title>
-				<meta name="description" content="Portfolio" />
-				<link rel="icon" href="/favicon.ico" />
+				<title>Weixuan.</title>
+				<meta
+					name="description"
+					content="Hi there! I am Wei Xuan, a software engineer based on the sunny island of Singapore. This is my Portfolio website where I showcase all of my past and present work. Dont't hesitate to reach out if you have any questions! Thanks for visiting!"
+				/>
+				<link rel="icon" href="/project-imgs/logo.png" />
 			</Head>
 			<div className={styles.pageContainer}>
 				<Navbar

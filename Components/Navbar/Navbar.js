@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useThemeContext } from "../Theme/OwnThemeProvider";
-import styles from "../../styles/Navbar.module.scss";
 import useVerticalScroll from "./useVerticalScroll";
+import styles from "../../styles/Navbar.module.scss";
 import MobileMenu from "./MobileMenu";
+// Icons
 import { ImSun } from "react-icons/im";
 import { FaMoon } from "react-icons/fa";
 import { BiMenuAltRight } from "react-icons/bi";
@@ -115,16 +116,16 @@ const Navbar = (props) => {
 				{/* Horizontial Navbar Links */}
 				<ul className={styles.hLinksParent}>
 					<li onClick={() => scrollToSection(0)} className={styles.hLinkItem}>
-						<a>About Me.</a>
+						About Me.
 					</li>
 					<li onClick={() => scrollToSection(1)} className={styles.hLinkItem}>
-						<a>Experience.</a>
+						Experience.
 					</li>
 					<li onClick={() => scrollToSection(2)} className={styles.hLinkItem}>
-						<a>Projects.</a>
+						Projects.
 					</li>
 					<li onClick={() => scrollToSection(3)} className={styles.hLinkItem}>
-						<a>Contact.</a>
+						Contact.
 					</li>
 				</ul>
 			</div>

@@ -7,7 +7,7 @@ import useIntersectionObserver from "../StylingHelpers/useIntersectionObserver";
 
 const ProjectCardViewCn = ({ details }) => {
 	const cardRef = useRef();
-	const isVisible = useIntersectionObserver(cardRef, "-100px");
+	const isVisible = useIntersectionObserver(cardRef);
 	const { getIcon } = useDataContext();
 
 	/**
