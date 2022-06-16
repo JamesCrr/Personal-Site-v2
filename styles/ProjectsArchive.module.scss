@@ -196,7 +196,7 @@ $columnView: sm;
 	@extend .primaryTxtAttributes;
 	color: var(--color-primary-light);
 
-	$baseFontSize: 1rem;
+	$baseFontSize: 1.2rem;
 	font-size: $baseFontSize;
 
 	display: flex;
@@ -239,9 +239,9 @@ $columnView: sm;
 	@extend .primaryTxtAttributes;
 	color: var(--color-text-primary-less);
 
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	// white-space: nowrap;
+	// overflow: hidden;
+	// text-overflow: ellipsis;
 
 	$baseFontSize: 1rem;
 	font-size: $baseFontSize;
@@ -309,7 +309,7 @@ $columnView: sm;
 	// Icon
 	& a svg {
 		transition: fill gvar.$colorTransitionTime;
-		fill: var(--color-text-primary-less);
+		fill: var(--color-primary);
 
 		@include mx.maxMediaQuery(md) {
 		}

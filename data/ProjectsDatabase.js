@@ -23,9 +23,9 @@ const ProjectDatabase = () => {
 		"Ball Rookers": {
 			date: 2019,
 			description:
-				"A Top 10 entry for the JamesCook University GameJam 2019. A couch co-op, physics based game that challenges your reaction speed and quick reflexes!",
+				"A Top 10 entry for the JamesCook University 48hr GameJam. A couch Co-op, physics based game that challenges your reaction speed and quick reflexes!",
 			image: "/project-imgs/Cook19_0.webp",
-			tags: ["Unity", "C#"],
+			tags: ["Unity", "C#", "Git"],
 			linkGithub: "",
 			linkDemo: "",
 			linkVid: "https://www.youtube.com/watch?v=5EZ4r2y_pPA",
@@ -33,18 +33,19 @@ const ProjectDatabase = () => {
 		"Survival of the Animents": {
 			date: 2018,
 			description:
-				"A Spell Bending Survival Game. Players can combine elements to create over 16 unique spell combinations. Each combination interacts differently with environment and enemies. There are also 4 different game modes to challenge yourself in!",
+				"A Spell Bending Survival game. Combine 4 base elements to create over 16 unique spell combinations that each interacts differently with the environment and enemies. There are also 4 different game modes to challenge yourself in!",
 			image: "/project-imgs/p_0.webp",
-			tags: ["Unity", "C#"],
+			tags: ["Unity", "C#", "Git"],
 			linkGithub: "",
 			linkDemo: "",
 			linkVid: "https://www.youtube.com/watch?v=nDbO5j1FVvk",
 		},
 		"Factory Escape": {
 			date: 2018,
-			description: "An endless runner game that relies on skill and quick reaction times in order to succeed.",
+			description:
+				"A small but fun endless runner game that relies on skill and quick reaction times in order to succeed. Created in 5 days for IGCC Game Jam.",
 			image: "/project-imgs/Robot_0.webp",
-			tags: ["Unity", "C#"],
+			tags: ["Unity", "C#", "Git"],
 			linkGithub: "",
 			linkDemo: "",
 			linkVid: "https://www.youtube.com/watch?v=QpqdQ1-NSdU",
@@ -52,9 +53,9 @@ const ProjectDatabase = () => {
 		"The Druid": {
 			date: 2019,
 			description:
-				"Become a Druid where you command powerful wild animals to help you survive in the harsh wilderness. Take their form to hunt and gather resources to upgrade your camp and unlock more unique animals.",
+				"Become a Druid where you command powerful wild animals to help you survive in the harsh wilderness. Take their form to hunt and gather resources to upgrade your camp and unlock more unique animals. Developed using SteamVR and HTC Vive.",
 			image: "/project-imgs/Druid_7.webp",
-			tags: ["Unity", "C#", "Steam"],
+			tags: ["Unity", "C#", "Git"],
 			linkGithub: "",
 			linkDemo: "",
 			linkVid: "",
@@ -62,18 +63,26 @@ const ProjectDatabase = () => {
 		Infestation: {
 			date: 2019,
 			description:
-				"A Shoot em up, Multiplayer LAN, Co-op Game. Fight your way through hordes of enemies and scavenge various weapon parts. Fit those different parts together to create your very own unique weapons. Work together in order to survive and see how long you'll last...",
+				"A Multiplayer-LAN, Shoot-em-up, Co-op game. Fight your way through hordes of enemies and scavenge various powerful weapon parts. Combine different parts together to create your very own unique weapons. Work together in order to survive and see how long you'll last...",
 			image: "/project-imgs/FYP2_2.webp",
-			tags: ["Unity", "C#"],
+			tags: ["Unity", "C#", "Git"],
 			linkGithub: "",
 			linkDemo: "",
 			linkVid: "",
 		},
-
+		"Pathfinding & AI": {
+			date: 2018,
+			description: "Project to learn about Pathfinding algorithms and how to apply them. Implemented algorithms such as A*, DFS, BFS.",
+			image: "/project-imgs/pathsim2.webp",
+			tags: ["OpenGL", "C++"],
+			linkGithub: "",
+			linkDemo: "",
+			linkVid: "",
+		},
 		"Computer Graphics": {
-			date: 2017,
+			date: 2018,
 			description:
-				"Project to learn more about OpenGL. Shaders, Heightmaps, OpenGL Buffers, Hierarchy modelling, Particle effects and importing of Meshes.",
+				"Project to learn more about OpenGL by working with Shaders, Heightmaps, OpenGL Buffers, Hierarchy modelling, Particle effects and importing of Meshes.",
 			image: "/project-imgs/CG_3.webp",
 			tags: ["OpenGL", "C++"],
 			linkGithub: "",
@@ -82,7 +91,7 @@ const ProjectDatabase = () => {
 		},
 	};
 	Object.freeze(allProjects);
-	const cards = ["Computer Graphics", "Factory Escape", "The Druid", "Infestation"];
+	const cards = ["Pathfinding & AI", "Factory Escape", "The Druid", "Infestation"];
 	// Get the first 3 as Featured
 	const featured = Object.getOwnPropertyNames(allProjects).slice(0, 3);
 

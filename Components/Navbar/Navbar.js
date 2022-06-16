@@ -104,8 +104,8 @@ const Navbar = (props) => {
 				<div className={styles.iconsDiv}>
 					{/* Color Mode Icon */}
 					<div className={styles.colorModeIconDiv} onClick={switchColorMode}>
-						<ImSun className={!darkMode ? styles.colorModeIcon : styles.colorModeIcon_Fade} />
-						<FaMoon className={darkMode ? styles.colorModeIcon : styles.colorModeIcon_Fade} />
+						<ImSun className={darkMode === false ? styles.colorModeIcon : styles.colorModeIcon_Fade} />
+						<FaMoon className={darkMode === true ? styles.colorModeIcon : styles.colorModeIcon_Fade} />
 					</div>
 					{/* Mobile Menu Icon */}
 					<div className={styles.mobileMenuIconDiv} onClick={mobileMenuIconClicked}>

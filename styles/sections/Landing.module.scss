@@ -57,10 +57,10 @@ $mediaQuery_AfterSmall: 420px;
 		font-size: #{$baseFontSize - 1.9};
 	}
 	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
-		font-size: #{$baseFontSize - 2.5};
+		font-size: #{$baseFontSize - 2.2};
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 2.9};
+		font-size: #{$baseFontSize - 2.6};
 	}
 }
 // Sub Title
@@ -95,6 +95,10 @@ $mediaQuery_AfterSmall: 420px;
 	font-weight: normal;
 	$baseFontSize: 2.2rem;
 	font-size: $baseFontSize;
+
+	& > span {
+		color: var(--color-secondary);
+	}
 
 	@include mx.maxMediaQuery(md) {
 		font-size: #{$baseFontSize - 0.4};

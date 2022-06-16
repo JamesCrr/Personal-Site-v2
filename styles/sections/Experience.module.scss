@@ -3,7 +3,7 @@
 @use "../modules/globalVariables" as gvar;
 
 .sectionContainer {
-	min-height: 700px;
+	min-height: 500px;
 	padding: 0px 5% 90px 5%;
 }
 .sectionTitleDiv {
@@ -29,8 +29,9 @@
 .experienceItemDiv {
 	margin-bottom: 50px;
 }
-.location {
-	$baseFontSize: 1.8rem;
+// Job Title
+.jobTitle {
+	$baseFontSize: 2rem;
 	font-size: $baseFontSize;
 	color: var(--color-text-primary);
 	transition: color gvar.$colorTransitionTime;
@@ -53,7 +54,7 @@
 }
 // Date
 .date {
-	$baseFontSize: 1.4rem;
+	$baseFontSize: 1.3rem;
 	font-size: $baseFontSize;
 	font-weight: 500;
 	margin-top: 1%;
@@ -80,6 +81,7 @@
 .keypointItem {
 	$baseFontSize: 1.3rem;
 	font-size: $baseFontSize;
+	font-weight: 500;
 
 	width: 90%;
 	margin-bottom: 10px;

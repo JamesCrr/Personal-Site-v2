@@ -14,6 +14,7 @@ const OwnThemeProvider = (props) => {
 		// Preferences not found yet, don't set anything
 		if (darkMode === undefined) return;
 		// Set Style Attributes according to mode
+		// And store them in local storage
 		const htmlTag = document.documentElement;
 		if (darkMode) {
 			htmlTag.setAttribute("data-theme", "dark");

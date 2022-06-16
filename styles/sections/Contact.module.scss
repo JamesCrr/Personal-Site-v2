@@ -55,18 +55,19 @@
 
 	margin-top: 40px;
 	padding: 0px 20%;
-	font-size: 1.5rem;
+	$baseFontSize: 1.5rem;
+	font-size: $baseFontSize;
 
 	@include mx.maxMediaQuery(md) {
 		width: 100%;
 		padding: 0px 10%;
 	}
 	@include mx.maxMediaQuery(sm) {
-		font-size: 1.3rem;
+		font-size: #{$baseFontSize - 0.2};
 		padding: 0px 5%;
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: 1.2rem;
+		font-size: #{$baseFontSize - 0.3};
 		padding: 0px 1%;
 	}
 }

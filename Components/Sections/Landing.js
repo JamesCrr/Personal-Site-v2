@@ -16,7 +16,7 @@ const LandingSection = () => {
 				</StyleWrapper>
 				<StyleWrapper sheets={styles.landingFadeIn} localVars={{ "animation-delay": "0.8s" }}>
 					<h4 className={styles.txtWhereIAm}>
-						Currently a student @{" "}
+						Currently a student <span>@</span>{" "}
 						<a className={linkStyles.link} href="https://www.smu.edu.sg/" target="_blank" rel="noopener noreferrer">
 							<span style={{ fontWeight: 500 }}>SMU</span>
 						</a>

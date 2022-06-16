@@ -32,7 +32,7 @@ const ExperienceListItem = ({ experienceDetail }) => {
 
 	return (
 		<div className={styles.experienceItemDiv}>
-			<h3 className={styles.location}>
+			<h3 className={styles.jobTitle}>
 				{experienceDetail.title} <span>@ </span>
 				{/* <LinkWrapper linkTo={experienceDetail.placeLink} newTab>
 					{experienceDetail.place}
@@ -56,7 +56,7 @@ const ExperienceListItem = ({ experienceDetail }) => {
 const ExperienceSection = () => {
 	const { allExperiences } = useDataContext();
 	const experienceSectionRef = useRef();
-	const isVisible = useIntersectionObserver(experienceSectionRef);
+	const isVisible = useIntersectionObserver(experienceSectionRef, "-100px");
 
 	return (
 		<div ref={experienceSectionRef} className={styles.sectionContainer}>

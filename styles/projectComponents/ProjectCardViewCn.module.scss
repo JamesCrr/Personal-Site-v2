@@ -72,20 +72,21 @@
 // Title
 .titleTxt {
 	transition: color gvar.$colorTransitionTime;
-	color: var(--color-secondary-dark);
+	color: var(--color-secondary);
 
-	padding-right: 10px;
-	font-size: 2.2rem;
+	$baseFontSize: 2.2rem;
+	font-size: $baseFontSize;
 	font-weight: 500;
+	padding-right: 10px;
 
 	@include mx.maxMediaQuery(md) {
-		font-size: 1.9rem;
+		font-size: #{$baseFontSize - 0.3};
 	}
 	@include mx.maxMediaQuery(sm) {
-		font-size: 2rem;
+		font-size: #{$baseFontSize - 0.2};
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: 1.6rem;
+		font-size: #{$baseFontSize - 0.6};
 	}
 }
 // Links Div
@@ -142,16 +143,17 @@
 	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary-less);
 
-	font-size: 1.2rem;
+	$baseFontSize: 1.2rem;
+	font-size: $baseFontSize;
 
 	@include mx.maxMediaQuery(md) {
-		font-size: 1.1rem;
+		font-size: #{$baseFontSize - 0.1};
 	}
 	@include mx.maxMediaQuery(sm) {
-		font-size: 1.2rem;
+		font-size: #{$baseFontSize - 0.2};
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: 1rem;
+		font-size: #{$baseFontSize - 0.3};
 	}
 }
 // Tags List Div

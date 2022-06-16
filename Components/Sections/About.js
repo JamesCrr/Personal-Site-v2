@@ -6,16 +6,21 @@ import useIntersectionObserver from "../StylingHelpers/useIntersectionObserver";
 import StyleWrapper from "../StylingHelpers/StyleWrapper";
 
 const AboutSection = () => {
-	const aboutContainerRef = useRef();
-	const isVisible = useIntersectionObserver(aboutContainerRef, "-130px");
+	const containerRef = useRef();
+	const contentRef = useRef();
+	const containerVisible = useIntersectionObserver(containerRef);
+	const contentVisible = useIntersectionObserver(contentRef, "-70px");
 
 	return (
-		<div ref={aboutContainerRef} className={styles.sectionContainer}>
-			<StyleWrapper sheets={isVisible ? fadeStyles.fadeIn : fadeStyles.faded}>
-				<div className={styles.sectionTitleDiv}>
+		<div className={styles.sectionContainer}>
+			<StyleWrapper sheets={containerVisible ? fadeStyles.fadeIn : fadeStyles.faded}>
+				<div ref={containerRef} className={styles.sectionTitleDiv}>
 					<h2 className={styles.sectionTitle}>About Me.</h2>
 				</div>
-				<div className={styles.sectionContentDiv}>
+			</StyleWrapper>
+
+			<StyleWrapper sheets={contentVisible ? fadeStyles.fadeIn : fadeStyles.faded}>
+				<div ref={contentRef} className={styles.sectionContentDiv}>
 					<p className={styles.aboutTxt}>
 						Hi there! My name is Wei xuan and I enjoy creating things that live on the internet. I am a freshman at Singapore Management University
 						studying Information Systems with a passion to create software that inspires people to do more. blah blah blah blah blah blah blah blah

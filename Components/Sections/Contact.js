@@ -8,7 +8,7 @@ import StyleWrapper from "../StylingHelpers/StyleWrapper";
 
 const ContactSection = () => {
 	const contactRef = useRef();
-	const isVisible = useIntersectionObserver(contactRef, "-50px");
+	const isVisible = useIntersectionObserver(contactRef);
 	const { getIcon } = useDataContext();
 
 	return (

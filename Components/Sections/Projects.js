@@ -12,7 +12,7 @@ import fadeStyles from "../../styles/customEffects/fadeInOutEffect.module.scss";
 
 const ProjectsSection = () => {
 	const titleRef = useRef();
-	const titleVisible = useIntersectionObserver(titleRef, "-50px");
+	const titleVisible = useIntersectionObserver(titleRef);
 	const { pFeature, pCard } = useDataContext();
 
 	return (
