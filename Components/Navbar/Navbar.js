@@ -116,16 +116,16 @@ const Navbar = (props) => {
 				{/* Horizontial Navbar Links */}
 				<ul className={styles.hLinksParent}>
 					<li onClick={() => scrollToSection(0)} className={styles.hLinkItem}>
-						About Me.
+						About Me
 					</li>
 					<li onClick={() => scrollToSection(1)} className={styles.hLinkItem}>
-						Experience.
+						Experience
 					</li>
 					<li onClick={() => scrollToSection(2)} className={styles.hLinkItem}>
-						Projects.
+						Projects
 					</li>
 					<li onClick={() => scrollToSection(3)} className={styles.hLinkItem}>
-						Contact.
+						Contact
 					</li>
 				</ul>
 			</div>

@@ -22,6 +22,7 @@ import {
 	SiReactrouter,
 	SiSocketdotio,
 	SiMongodb,
+	SiMaterialui,
 	SiGit,
 	SiGithub,
 	SiLinkedin,

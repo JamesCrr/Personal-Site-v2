@@ -9,9 +9,9 @@ const ExperienceDatabase = () => {
 			placeLink: "https://www.kamk.fi/en",
 			points: [
 				"Developed and Presented 2 games(2D Platformer & VR) to a satisfactory quality in a span of 6 weeks.",
-				"Collaborated with multi-national and multi-disciplinary team of engineers, artists and producers on a daily basis.",
-				"Wrote custom editors within the engine for myself and fellow engineers to help accelerate development.",
 				"Implemented from scratch, a Physics-based interaction between the game objects, environment and VR Controllers.",
+				"Wrote custom editors in the engine for fellow engineers to help accelerate development.",
+				"Collaborated with multi-national and multi-disciplinary team of engineers, artists and producers on a daily basis.",
 			],
 		},
 		// {

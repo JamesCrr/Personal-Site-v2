@@ -2,6 +2,7 @@
 @use "../modules/mixins" as mx;
 
 $mediaQuery_AfterSmall: 420px;
+$firstLetterDifference: -0.06em;
 
 .landingContainer {
 	min-height: -webkit-fill-available; /* For Webkit Browsers. */
@@ -21,10 +22,10 @@ $mediaQuery_AfterSmall: 420px;
 // Hello
 .txtHello {
 	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary-less);
+	color: var(--color-secondary);
 
 	font-weight: normal;
-	$baseFontSize: 2.2rem;
+	$baseFontSize: 2rem;
 	font-size: $baseFontSize;
 
 	@include mx.maxMediaQuery(md) {
@@ -34,21 +35,26 @@ $mediaQuery_AfterSmall: 420px;
 		font-size: #{$baseFontSize - 0.6};
 	}
 	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
-		font-size: #{$baseFontSize - 0.9};
+		font-size: #{$baseFontSize - 0.7};
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 1};
+		font-size: #{$baseFontSize - 0.8};
 	}
 }
 // Name
 .txtName {
-	line-height: 0.8;
+	line-height: 1;
 	font-weight: 500;
 	$baseFontSize: 6rem;
 	font-size: $baseFontSize;
 
 	transition: color gvar.$colorTransitionTime;
 	color: var(--color-primary);
+
+	// Make it align with Hello
+	&::first-letter {
+		margin-left: $firstLetterDifference;
+	}
 
 	@include mx.maxMediaQuery(md) {
 		font-size: #{$baseFontSize - 1.4};
@@ -66,12 +72,17 @@ $mediaQuery_AfterSmall: 420px;
 // Sub Title
 .txtWhatIDo {
 	line-height: 1;
-	font-weight: bold;
-	$baseFontSize: 5rem;
+	font-weight: 500;
+	$baseFontSize: 5.2rem;
 	font-size: $baseFontSize;
 
 	transition: color gvar.$colorTransitionTime;
 	color: var(--color-text-primary);
+
+	// Make it align with Hello
+	&::first-letter {
+		margin-left: $firstLetterDifference;
+	}
 
 	@include mx.maxMediaQuery(md) {
 		font-size: #{$baseFontSize - 1.2};
@@ -93,11 +104,16 @@ $mediaQuery_AfterSmall: 420px;
 
 	margin-top: 10px;
 	font-weight: normal;
-	$baseFontSize: 2.2rem;
+	$baseFontSize: 2rem;
 	font-size: $baseFontSize;
 
+	// @
 	& > span {
 		color: var(--color-secondary);
+	}
+	// Make it align with Hello
+	&::first-letter {
+		margin-left: $firstLetterDifference;
 	}
 
 	@include mx.maxMediaQuery(md) {
@@ -117,7 +133,7 @@ $mediaQuery_AfterSmall: 420px;
 .landingFadeIn {
 	display: block;
 	animation-name: fadeInAni;
-	animation-duration: 0.6s;
+	animation-duration: 0.4s;
 	animation-timing-function: ease-out;
 	animation-delay: var(--animation-delay);
 	animation-fill-mode: both;
@@ -125,10 +141,10 @@ $mediaQuery_AfterSmall: 420px;
 @keyframes fadeInAni {
 	0% {
 		opacity: 0;
-		transform: translateY(40px);
+		transform: translateX(-30px);
 	}
 	100% {
 		opacity: 1;
-		transform: translateY(0px);
+		transform: translateX(0px);
 	}
 }

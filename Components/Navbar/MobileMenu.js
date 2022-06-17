@@ -15,16 +15,16 @@ const MobileMenu = (props) => {
 			{/* Vertical Navbar Links */}
 			<ul className={props.mobileMenuOpen ? styles.vLinksParent : styles.vLinksParent_Close}>
 				<li onClick={() => navLinkClicked(0)} className={styles.vLinkItem}>
-					About Me.
+					About Me
 				</li>
 				<li onClick={() => navLinkClicked(1)} className={styles.vLinkItem}>
-					Experience.
+					Experience
 				</li>
 				<li onClick={() => navLinkClicked(2)} className={styles.vLinkItem}>
-					Projects.
+					Projects
 				</li>
 				<li onClick={() => navLinkClicked(3)} className={styles.vLinkItem}>
-					Contact.
+					Contact
 				</li>
 			</ul>
 			{/* Background */}

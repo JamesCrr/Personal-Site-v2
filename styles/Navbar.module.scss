@@ -109,8 +109,9 @@ $iconMarginSize: 7px; // Margin for Navbar Icons
 	cursor: pointer;
 	font-size: 1.5rem;
 	font-weight: 500;
-	padding: 0px 10px;
+	padding: 0px 11px;
 
+	// Prevent user selection
 	user-select: none; /* supported by Chrome and Opera */
 	-webkit-user-select: none; /* Safari */
 	-khtml-user-select: none; /* Konqueror HTML */
@@ -198,7 +199,7 @@ $mobileMenuCloseTime: 0.3s;
 		font-size: #{$baseFontSize - 0.5};
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 1};
+		font-size: #{$baseFontSize - 1.2};
 	}
 }
 // Mobile Menu Background

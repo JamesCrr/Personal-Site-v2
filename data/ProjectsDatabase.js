@@ -20,6 +20,17 @@ const ProjectDatabase = () => {
 			linkDemo: "",
 			linkVid: "",
 		},
+		"Chat WebApp": {
+			date: 2022,
+			description:
+				"A Real-Time chat web application that features multi-room chats, status tracking, switching of view modes and user authentication.",
+			image: "/project-imgs/chatwebapp1.webp",
+			tags: ["React", "Javascript", "SocketIO", "MUI", "NodeJS", "MongoDB"],
+			linkGithub: "https://github.com/JamesCrr/Chat-WebApp",
+			linkDemo: "https://beeschats.netlify.app ",
+			linkVid: "",
+		},
+		/*************************** End of Featured Projects ***************************/
 		"Ball Rookers": {
 			date: 2019,
 			description:
@@ -91,9 +102,9 @@ const ProjectDatabase = () => {
 		},
 	};
 	Object.freeze(allProjects);
-	const cards = ["Pathfinding & AI", "Factory Escape", "The Druid", "Infestation"];
 	// Get the first 3 as Featured
 	const featured = Object.getOwnPropertyNames(allProjects).slice(0, 3);
+	const cards = ["Pathfinding & AI", "Factory Escape", "The Druid", "Infestation"];
 
 	/**
 	 * Gets an Array of Objects that contains the project data from your selection.
