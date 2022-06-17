@@ -45,7 +45,7 @@ $firstLetterDifference: -0.06em;
 .txtName {
 	line-height: 1;
 	font-weight: 500;
-	$baseFontSize: 6rem;
+	$baseFontSize: 5.5rem;
 	font-size: $baseFontSize;
 
 	transition: color gvar.$colorTransitionTime;
@@ -63,17 +63,17 @@ $firstLetterDifference: -0.06em;
 		font-size: #{$baseFontSize - 1.9};
 	}
 	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
-		font-size: #{$baseFontSize - 2.2};
+		font-size: #{$baseFontSize - 2};
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 2.6};
+		font-size: #{$baseFontSize - 2.4};
 	}
 }
 // Sub Title
 .txtWhatIDo {
 	line-height: 1;
 	font-weight: 500;
-	$baseFontSize: 5.2rem;
+	$baseFontSize: 5rem;
 	font-size: $baseFontSize;
 
 	transition: color gvar.$colorTransitionTime;
@@ -123,10 +123,10 @@ $firstLetterDifference: -0.06em;
 		font-size: #{$baseFontSize - 0.5};
 	}
 	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
-		font-size: #{$baseFontSize - 0.8};
+		font-size: #{$baseFontSize - 0.6};
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 0.9};
+		font-size: #{$baseFontSize - 0.7};
 	}
 }
 // Animations

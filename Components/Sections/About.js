@@ -29,7 +29,7 @@ const AboutSection = () => {
 						But more recently, my focus has shifted to building things that has an impact not just in the gaming realm. One such pursuit has been
 						towards Full-stack development accompanied with a modest involvement of Dev-ops.
 						<br /> <br />
-						Oh, and I'm also an Information Systems student at{""}
+						Oh, and I'm also an Information Systems student at{" "}
 						<a className={linkStyles.link} href="https://www.smu.edu.sg/" target="_blank" rel="noopener noreferrer">
 							Singapore Management University.
 						</a>
