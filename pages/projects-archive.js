@@ -50,10 +50,8 @@ const ProjectsArchivePage = () => {
 					<div className={styles.itemTagsDiv}>
 						{details.tags.map((tagName, index) => {
 							return (
-								<div className={styles.itemTagDiv}>
-									<div key={index} className={styles.itemTagIconDiv}>
-										{getIcon(tagName)}
-									</div>
+								<div key={index} className={styles.itemTagDiv}>
+									<div className={styles.itemTagIconDiv}>{getIcon(tagName)}</div>
 									<p className={styles.itemTagText}>{tagName}</p>
 								</div>
 							);
