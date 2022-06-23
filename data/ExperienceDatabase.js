@@ -3,7 +3,7 @@
 const ExperienceDatabase = () => {
 	const allExperiences = [
 		{
-			date: "June 2019 - September 2019",
+			date: "June 2019 - August 2019",
 			title: "Game Programmer Intern",
 			place: "Kajanni University of Applied Sciences",
 			placeLink: "https://www.kamk.fi/en",

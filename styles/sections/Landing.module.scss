@@ -35,10 +35,10 @@ $firstLetterDifference: -0.06em;
 		font-size: #{$baseFontSize - 0.6};
 	}
 	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
-		font-size: #{$baseFontSize - 0.7};
+		font-size: #{$baseFontSize - 0.6};
 	}
 	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 0.8};
+		font-size: #{$baseFontSize - 0.7};
 	}
 }
 // Name

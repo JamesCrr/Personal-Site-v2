@@ -110,7 +110,10 @@ const Navbar = (props) => {
 					{/* Mobile Menu Icon */}
 					<div className={styles.mobileMenuIconDiv} onClick={mobileMenuIconClicked}>
 						<BiMenuAltRight className={!mobileMenuOpen ? styles.mobileMenuIcon : styles.mobileMenuIcon_Fade} />
-						<VscChromeClose className={mobileMenuOpen ? styles.mobileMenuIcon : styles.mobileMenuIcon_Fade} />
+						<VscChromeClose
+							style={{ fill: "var(--color-secondary)" }}
+							className={mobileMenuOpen ? styles.mobileMenuIcon : styles.mobileMenuIcon_Fade}
+						/>
 					</div>
 				</div>
 				{/* Horizontial Navbar Links */}

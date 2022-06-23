@@ -50,8 +50,11 @@ const ProjectsArchivePage = () => {
 					<div className={styles.itemTagsDiv}>
 						{details.tags.map((tagName, index) => {
 							return (
-								<div key={index} className={styles.itemTagIconDiv}>
-									{getIcon(tagName)}
+								<div className={styles.itemTagDiv}>
+									<div key={index} className={styles.itemTagIconDiv}>
+										{getIcon(tagName)}
+									</div>
+									<p className={styles.itemTagText}>{tagName}</p>
 								</div>
 							);
 						})}
@@ -88,11 +91,7 @@ const ProjectsArchivePage = () => {
 							<a className={linkStyles.link}>Return to main site.</a>
 						</Link>
 					</div>
-					<p className={styles.descriptionTxt}>
-						Here lies the project archive. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque sem, porta eget nisl id, convallis
-						aliquet augue. Proin accumsan condimentum ante, quis accumsan nibh elementum at. Suspendisse lobortis luctus nunc sagittis blandit. Aenean
-						ullamcorper, nibh venenatis condimentum sollicitudin, neque magna laoreet velit, dapibus volutpat quam purus sed diam.
-					</p>
+					<p className={styles.descriptionTxt}>Here lies the project archive which holds all of the notable projects I have done.</p>
 				</div>
 				<div className={styles.listDiv}>
 					<div className={`${styles.listItemRowDiv} ${styles.listItemPropertyTitleRowDiv}`}>
