@@ -45,7 +45,7 @@ $firstLetterDifference: -0.06em;
 .txtName {
 	line-height: 1;
 	font-weight: 500;
-	$baseFontSize: 5.5rem;
+	$baseFontSize: 5rem;
 	font-size: $baseFontSize;
 
 	transition: color gvar.$colorTransitionTime;
@@ -65,8 +65,11 @@ $firstLetterDifference: -0.06em;
 	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
 		font-size: #{$baseFontSize - 2};
 	}
-	@include mx.maxMediaQuery(xs) {
+	@include mx.maxMediaQueryPX(320px) {
 		font-size: #{$baseFontSize - 2.4};
+	}
+	@include mx.maxMediaQueryPX(280px) {
+		font-size: #{$baseFontSize - 2.6};
 	}
 }
 // Sub Title
