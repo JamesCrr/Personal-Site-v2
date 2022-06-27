@@ -20,7 +20,7 @@ const ProjectFeatureView = ({ details, textOnLeft = true }) => {
 	 */
 	const renderTag = (tagName, key) => {
 		return (
-			<div key={key} className={styles.tagDiv}>
+			<div key={key} className={styles.tagIconDiv}>
 				<div className={styles.tagIconImgDiv}>{getIcon(tagName)}</div>
 				<p className={styles.tagIconTxt}>{tagName}</p>
 			</div>
@@ -48,19 +48,24 @@ const ProjectFeatureView = ({ details, textOnLeft = true }) => {
 			<div style={{ "--ownFlexDirection": textOnLeft ? "row" : "row-reverse" }} className={styles.featuredDiv} ref={featuredRef}>
 				<div className={styles.txtDetailsDiv}>
 					<div className={styles.titleDiv}>
+						{/* Title */}
 						<h3 className={styles.titleTxt}>{details.title}</h3>
+						{/* Links */}
 						<div className={styles.linksDiv}>
 							{renderLink(details.linkGithub, "github")}
 							{renderLink(details.linkVid, "youtube")}
 							{renderLink(details.linkDemo, "external")}
 						</div>
 					</div>
+					{/* Description */}
 					<h4 className={styles.descriptionTxt}>{details.description}</h4>
+					{/* Tags */}
 					<div className={styles.bwDiv}>
-						<h4 className={styles.bwTxt}>Built with:</h4>
+						{/* <h4 className={styles.bwTxt}>Built with:</h4> */}
 						<div className={styles.tagsListDiv}>{details.tags.map((element, index) => renderTag(element, index))}</div>
 					</div>
 				</div>
+				{/* Image */}
 				<div as="image" className={styles.imageDiv}>
 					<Image
 						src={details.image}

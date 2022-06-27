@@ -156,8 +156,10 @@ $columnView: md;
 	$projectWidth: 60%;
 	min-width: $projectWidth;
 	width: $projectWidth;
+	padding-right: 40px;
 
 	@include mx.maxMediaQuery($columnView) {
+		padding: 0px;
 		width: 100%;
 	}
 }
@@ -167,7 +169,7 @@ $columnView: md;
 	width: $tagsWidth;
 	min-width: $tagsWidth;
 
-	margin: 0px 15px;
+	margin-right: 15px;
 
 	@include mx.maxMediaQuery($columnView) {
 		margin: 0px;
@@ -176,7 +178,8 @@ $columnView: md;
 }
 // Links Column
 .listItemColumnDiv_Links {
-	min-width: 100px;
+	// min-width: 100px;
+	flex-grow: 3;
 	text-align: right;
 
 	@include mx.maxMediaQuery($columnView) {
@@ -260,7 +263,7 @@ $columnView: md;
 	}
 }
 // Tag
-.itemTagDiv {
+.itemTagIconDiv {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -272,11 +275,11 @@ $columnView: md;
 	@include mx.maxMediaQuery(sm) {
 	}
 	@include mx.maxMediaQuery(xs) {
-		min-width: 20px;
+		min-width: 30px;
 	}
 }
-// Tag Icon Div
-.itemTagIconDiv {
+// Icon Image Div
+.itemTagIconImageDiv {
 	$baseScale: 1.5;
 	transform: scale($baseScale);
 
@@ -292,7 +295,7 @@ $columnView: md;
 	}
 }
 // Tag Text
-.itemTagText {
+.itemTagIconTxt {
 	transition: color gvar.$colorTransitionTime, opacity 0.3s;
 	color: var(--color-text-primary-less);
 
@@ -340,5 +343,9 @@ $columnView: md;
 
 		@include mx.maxMediaQuery(md) {
 		}
+	}
+
+	@include mx.maxMediaQuery($columnView) {
+		margin: 0px 8px;
 	}
 }

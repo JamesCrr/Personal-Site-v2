@@ -10,7 +10,7 @@ const AboutSection = () => {
 	const containerRef = useRef();
 	const contentRef = useRef();
 	const containerVisible = useIntersectionObserver(containerRef, "-20px");
-	const contentVisible = useIntersectionObserver(contentRef, "-70px");
+	const contentVisible = useIntersectionObserver(contentRef, "-30px");
 
 	return (
 		<div className={styles.sectionContainer}>

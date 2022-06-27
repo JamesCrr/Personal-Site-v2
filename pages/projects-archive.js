@@ -38,6 +38,7 @@ const ProjectsArchivePage = () => {
 				<div className={styles.listItemColumnDiv_Project}>
 					<div className={styles.itemTitleDiv}>
 						<h3 className={styles.itemTitleTxt}>{details.title}</h3>
+						{/* Links for Mobile View */}
 						<div className={styles.itemLinksDiv_NextToTitle}>
 							{renderLink(details.linkGithub, "github")}
 							{renderLink(details.linkVid, "youtube")}
@@ -50,9 +51,9 @@ const ProjectsArchivePage = () => {
 					<div className={styles.itemTagsDiv}>
 						{details.tags.map((tagName, index) => {
 							return (
-								<div key={index} className={styles.itemTagDiv}>
-									<div className={styles.itemTagIconDiv}>{getIcon(tagName)}</div>
-									<p className={styles.itemTagText}>{tagName}</p>
+								<div key={index} className={styles.itemTagIconDiv}>
+									<div className={styles.itemTagIconImageDiv}>{getIcon(tagName)}</div>
+									<p className={styles.itemTagIconTxt}>{tagName}</p>
 								</div>
 							);
 						})}

@@ -1,6 +1,8 @@
 @use "./sectionStyles" as ss;
 @use "../modules//mixins" as mx;
 @use "../modules/globalVariables" as gvar;
+// Other Stylesheets
+@use "../projectComponents/ProjectFeatureView.module.scss" as pfv;
 
 .sectionContainer {
 	min-height: 500px;
@@ -104,4 +106,24 @@
 	@include mx.maxMediaQuery(xs) {
 		font-size: #{$baseFontSize - 0.3};
 	}
+}
+// Built With
+.bwDiv {
+	padding-top: 5px;
+	border: none;
+}
+.bwTxt {
+}
+// Tags
+.tagsListDiv {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+// Using ProjectFeatureView Tag Styling
+.tagIconDiv {
+}
+.tagIconImgDiv {
+}
+.tagIconTxt {
 }

@@ -139,7 +139,7 @@
 }
 .bwTxt {
 	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary-less);
+	color: var(--color-text-primary-lesser);
 
 	$baseFontSize: 1.4rem;
 	font-size: $baseFontSize;
@@ -167,14 +167,13 @@
 	@include mx.maxMediaQuery(md) {
 	}
 	@include mx.maxMediaQuery(sm) {
-		padding: 0px 5px;
+		padding: 0px;
 	}
 	@include mx.maxMediaQuery(xs) {
-		padding: 0px;
 	}
 }
 // Tag Div
-.tagDiv {
+.tagIconDiv {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -183,9 +182,23 @@
 	margin: 20px 10px 0px 0px;
 	min-width: 40px;
 
+	// Hover
+	&:hover {
+		cursor: default;
+		// Icon Image
+		& .tagIconImgDiv svg {
+			fill: var(--color-primary);
+		}
+		// Icon Text
+		& .tagIconTxt {
+			opacity: 1;
+		}
+	}
+
 	@include mx.maxMediaQuery(md) {
 	}
 	@include mx.maxMediaQuery(sm) {
+		margin: 20px 8px 0px 0px;
 	}
 	@include mx.maxMediaQuery(xs) {
 		min-width: 20px;
@@ -195,20 +208,11 @@
 .tagIconImgDiv {
 	$baseIconScale: 2.2;
 	transform: scale($baseIconScale);
+
 	// Icon Image
 	& svg {
 		transition: fill gvar.$colorTransitionTime;
 		fill: var(--color-text-primary-lesser);
-	}
-	&:hover {
-		// Icon Image
-		& svg {
-			fill: var(--color-primary);
-		}
-		// <p> sibling
-		& + p {
-			opacity: 1;
-		}
 	}
 
 	@include mx.maxMediaQuery(md) {
@@ -232,7 +236,7 @@
 	margin-top: 5px;
 
 	@include mx.maxMediaQuery(md) {
-		margin-top: 0px;
+		margin-top: 3px;
 	}
 	@include mx.maxMediaQuery(sm) {
 		font-size: #{$baseFontSize - 0.1};
@@ -250,14 +254,7 @@
 	// Image
 	& span img {
 		object-fit: contain;
-		// transition: transform 0.6s;
 	}
-
-	// &:hover {
-	// 	& span img {
-	// 		transform: scale(1.5);
-	// 	}
-	// }
 
 	@include mx.maxMediaQuery(md) {
 		width: 100%;
