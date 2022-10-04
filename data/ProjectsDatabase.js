@@ -27,7 +27,7 @@ const ProjectDatabase = () => {
 			image: "/project-imgs/chatwebapp1.webp",
 			tags: ["React", "Javascript", "SocketIO", "MUI", "NodeJS", "MongoDB"],
 			linkGithub: "https://github.com/JamesCrr/Chat-WebApp",
-			linkDemo: "https://beeschats.netlify.app ",
+			linkDemo: "",
 			linkVid: "",
 		},
 		/*************************** End of Featured Projects ***************************/
