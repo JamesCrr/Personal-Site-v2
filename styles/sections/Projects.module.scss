@@ -3,82 +3,85 @@
 @use "../modules/mixins" as mx;
 
 .sectionContainer {
-	$extraPadding: 5%;
-	padding: 0px $extraPadding 90px $extraPadding;
+    $extraPadding: 5%;
+    padding: 0px $extraPadding 90px $extraPadding;
 
-	@include mx.maxMediaQuery(lg) {
-	}
-	@include mx.maxMediaQuery(md) {
-		padding: 0px #{$extraPadding - 1} 90px #{$extraPadding - 1};
-	}
-	@include mx.maxMediaQuery(sm) {
-	}
-	@include mx.maxMediaQuery(xs) {
-		padding: 0px #{$extraPadding - 2} 90px #{$extraPadding - 2};
-	}
+    @include mx.maxMediaQuery(lg) {
+    }
+    @include mx.maxMediaQuery(md) {
+        padding: 0px #{$extraPadding - 1} 90px #{$extraPadding - 1};
+    }
+    @include mx.maxMediaQuery(sm) {
+    }
+    @include mx.maxMediaQuery(xs) {
+        padding: 0px #{$extraPadding - 2} 90px #{$extraPadding - 2};
+    }
 }
 .sectionTitleDiv {
-	@include mx.maxMediaQuery(sm) {
-		margin-bottom: 30px;
-	}
+    @include mx.maxMediaQuery(sm) {
+        margin-bottom: 30px;
+    }
 }
 .sectionTitle {
-	// margin-left: 6%;
-	@include mx.maxMediaQuery(md) {
-		margin-left: 0%;
-	}
+    // margin-left: 6%;
+    @include mx.maxMediaQuery(md) {
+        margin-left: 0%;
+    }
 }
 .sectionContentDiv {
 }
 
 // Other Projects Div
 .otherProjectsDiv {
-	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary);
+    transition: color gvar.$colorTransitionTime;
+    color: var(--color-text-primary);
 
-	@include mx.maxMediaQuery(md) {
-		padding-top: 60px;
-	}
-	@include mx.maxMediaQuery(sm) {
-		padding-top: 40px;
-	}
-	@include mx.maxMediaQuery(xs) {
-		padding-top: 20px;
-	}
+    @include mx.maxMediaQuery(md) {
+        padding-top: 60px;
+    }
+    @include mx.maxMediaQuery(sm) {
+        padding-top: 40px;
+    }
+    @include mx.maxMediaQuery(xs) {
+        padding-top: 20px;
+    }
 }
 .otherProjectsTitle {
-	$baseFontSize: 3.8rem;
-	font-size: $baseFontSize;
-	font-weight: 600;
-	text-align: center;
+    $baseFontSize: 3.2rem;
+    font-size: $baseFontSize;
+    font-weight: 600;
+    text-align: center;
 
-	@include mx.maxMediaQuery(sm) {
-		font-size: #{$baseFontSize - 0.4};
-	}
-	@include mx.maxMediaQueryPX(400px) {
-		font-size: #{$baseFontSize - 1};
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 1.4};
-	}
+    @include mx.maxMediaQuery(md) {
+        font-size: #{$baseFontSize - 0.5};
+    }
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 0.8};
+    }
+    @include mx.maxMediaQueryPX(400px) {
+        font-size: #{$baseFontSize - 1};
+    }
+    @include mx.maxMediaQuery(xs) {
+        font-size: #{$baseFontSize - 1.4};
+    }
 }
 .archiveLinkDiv {
-	$baseFontSize: 1.2rem;
-	font-size: $baseFontSize;
-	text-align: center;
-	margin-bottom: 60px;
+    $baseFontSize: 1.2rem;
+    font-size: $baseFontSize;
+    text-align: center;
+    margin-bottom: 60px;
 
-	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary-lesser);
+    transition: color gvar.$colorTransitionTime;
+    color: var(--color-text-primary-lesser);
 
-	@include mx.maxMediaQuery(sm) {
-		font-size: #{$baseFontSize - 0.2};
-		margin-bottom: 40px;
-	}
-	@include mx.maxMediaQueryPX(400px) {
-		font-size: #{$baseFontSize - 0.3};
-	}
-	@include mx.maxMediaQuery(xs) {
-		margin-bottom: 30px;
-	}
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 0.2};
+        margin-bottom: 40px;
+    }
+    @include mx.maxMediaQueryPX(400px) {
+        font-size: #{$baseFontSize - 0.3};
+    }
+    @include mx.maxMediaQuery(xs) {
+        margin-bottom: 30px;
+    }
 }

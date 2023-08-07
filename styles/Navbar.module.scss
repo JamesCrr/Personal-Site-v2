@@ -1,5 +1,5 @@
-@use "./modules/mixins" as mx;
 @use "./modules/globalVariables" as gvar;
+@use "./modules/mixins" as mx;
 @use "./SiteLogo.module.scss";
 
 // zIndex
@@ -9,122 +9,122 @@ $hideNavLinksWidth: 700px;
 
 // Nav Menu Div
 .navbarDiv {
-	$hDivLinksPadding: 20px;
-	position: fixed;
-	transition: transform 0.3s, background gvar.$colorTransitionTime;
-	z-index: #{$zIndexTop - 10}; // Under all of MobileMenu, but still above everything else
+    $hDivLinksPadding: 20px;
+    position: fixed;
+    transition: transform 0.3s, background gvar.$colorTransitionTime;
+    z-index: #{$zIndexTop - 10}; // Under all of MobileMenu, but still above everything else
 
-	background: var(--color-background-clear);
-	width: 100%;
-	height: 60px;
-	padding: $hDivLinksPadding $hDivLinksPadding;
+    background: var(--color-background-clear);
+    width: 100%;
+    height: 60px;
+    padding: $hDivLinksPadding $hDivLinksPadding;
 
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .navbarDiv_Close {
-	@extend .navbarDiv;
-	transform: translateY(-120px);
+    @extend .navbarDiv;
+    transform: translateY(-120px);
 }
 .hNavbarEndContent {
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 // Icons Div
 $iconMarginSize: 7px; // Margin for Navbar Icons
 .iconsDiv {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	margin-right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-right: 40px;
 }
 // Color Icon Div
 .colorModeIconDiv {
-	transform: scale(1.7);
-	cursor: pointer;
+    transform: scale(1.7);
+    cursor: pointer;
 }
 // Mobile Menu Icon Div
 .mobileMenuIconDiv {
-	z-index: $zIndexTop; // MobileMenuIcon should be at very top
-	display: none;
-	transform: scale(2.2);
+    z-index: $zIndexTop; // MobileMenuIcon should be at very top
+    display: none;
+    transform: scale(2.2);
 
-	@include mx.maxMediaQueryPX($hideNavLinksWidth) {
-		display: block;
-	}
+    @include mx.maxMediaQueryPX($hideNavLinksWidth) {
+        display: block;
+    }
 }
 // Icon themselves
 .commonIconProperties {
-	fill: var(--color-text-primary);
-	position: absolute;
+    fill: var(--color-text-primary);
+    position: absolute;
 }
 .colorModeIcon {
-	@extend .commonIconProperties;
-	$iconSwitchTime: 0.3s;
-	transition: opacity $iconSwitchTime, transform #{$iconSwitchTime + 0.2s}, fill gvar.$colorTransitionTime;
-	bottom: 0;
+    @extend .commonIconProperties;
+    $iconSwitchTime: 0.3s;
+    transition: opacity $iconSwitchTime, transform #{$iconSwitchTime + 0.2s}, fill gvar.$colorTransitionTime;
+    bottom: 0;
 
-	@include mx.maxMediaQueryPX($hideNavLinksWidth) {
-		bottom: #{-$iconMarginSize - 2px};
-		right: #{$iconMarginSize - 2px};
-	}
+    @include mx.maxMediaQueryPX($hideNavLinksWidth) {
+        bottom: #{-$iconMarginSize - 2px};
+        right: #{$iconMarginSize - 2px};
+    }
 }
 .mobileMenuIcon {
-	@extend .commonIconProperties;
-	$iconSwitchTime: 0.3s;
-	transition: opacity $iconSwitchTime, transform $iconSwitchTime, fill gvar.$colorTransitionTime;
+    @extend .commonIconProperties;
+    $iconSwitchTime: 0.3s;
+    transition: opacity $iconSwitchTime, transform $iconSwitchTime, fill gvar.$colorTransitionTime;
 
-	left: $iconMarginSize;
-	top: -$iconMarginSize;
+    left: $iconMarginSize;
+    top: -$iconMarginSize;
 }
 // Icon Animations
 .colorModeIcon_Fade {
-	@extend .colorModeIcon;
+    @extend .colorModeIcon;
 
-	opacity: 0;
-	transform: scale(0.6) rotate(180deg);
+    opacity: 0;
+    transform: scale(0.6) rotate(180deg);
 }
 .mobileMenuIcon_Fade {
-	@extend .colorModeIcon_Fade;
-	@extend .mobileMenuIcon;
+    @extend .colorModeIcon_Fade;
+    @extend .mobileMenuIcon;
 
-	transform: translateX(20px);
+    transform: translateX(20px);
 }
 
 // Horizontial Links Parent
 .hLinksParent {
-	list-style: none;
-	display: flex;
-	justify-content: flex-end;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
 
-	@include mx.maxMediaQueryPX($hideNavLinksWidth) {
-		display: none;
-	}
+    @include mx.maxMediaQueryPX($hideNavLinksWidth) {
+        display: none;
+    }
 }
 .hLinkItem {
-	cursor: pointer;
-	font-size: 1.5rem;
-	font-weight: 500;
-	padding: 0px 11px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0px 11px;
 
-	// Prevent user selection
-	user-select: none; /* supported by Chrome and Opera */
-	-webkit-user-select: none; /* Safari */
-	-khtml-user-select: none; /* Konqueror HTML */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* Internet Explorer/Edge */
+    // Prevent user selection
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 
-	color: var(--color-primary);
-	transition: color gvar.$colorTransitionTime, transform gvar.$colorTransitionTime;
+    color: var(--color-primary);
+    transition: color gvar.$colorTransitionTime, transform gvar.$colorTransitionTime;
 
-	&:hover {
-		color: var(--color-primary-light);
-		transform: scale(1.1);
-	}
+    &:hover {
+        color: var(--color-primary-light);
+        transform: scale(1.1);
+    }
 }
 
 /*************************************
@@ -141,87 +141,92 @@ $iconMarginSize: 7px; // Margin for Navbar Icons
 $mobileMenuCloseTime: 0.3s;
 // Mobile Menu Div
 .mobileMenuDiv {
-	position: fixed;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	visibility: hidden;
-	transition: visibility $mobileMenuCloseTime;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    visibility: hidden;
+    transition: visibility $mobileMenuCloseTime;
 
-	@include mx.maxMediaQueryPX($hideNavLinksWidth) {
-		visibility: visible;
+    @include mx.maxMediaQueryPX($hideNavLinksWidth) {
+        visibility: visible;
 
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: flex-end;
-	}
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
 }
 .mobileMenuDiv_Close {
-	@extend .mobileMenuDiv;
+    @extend .mobileMenuDiv;
 
-	visibility: hidden;
+    visibility: hidden;
 }
 // Vertical Links Parent
 .vLinksParent {
-	z-index: #{$zIndexTop - 1};
-	width: 0%;
-	height: 100%;
-	opacity: 0;
-	background: var(--color-background);
-	transition: width $mobileMenuCloseTime, opacity $mobileMenuCloseTime;
+    z-index: #{$zIndexTop - 1};
+    width: 0%;
+    height: 100%;
+    opacity: 0;
+    background: var(--color-background);
+    transition: width $mobileMenuCloseTime, opacity $mobileMenuCloseTime;
 
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: center;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 80px;
 
-	@include mx.maxMediaQueryPX($hideNavLinksWidth) {
-		width: 60vw;
-		opacity: 1;
-	}
+    @include mx.maxMediaQueryPX($hideNavLinksWidth) {
+        width: 60vw;
+        opacity: 1;
+    }
 }
 .vLinksParent_Close {
-	@extend .vLinksParent;
+    @extend .vLinksParent;
 
-	width: 0%;
-	opacity: 0;
+    width: 0%;
+    opacity: 0;
 }
 // Vertical Links
 .vLinkItem {
-	@extend .hLinkItem;
-	text-align: center;
-	$baseFontSize: 2.5rem;
-	font-size: $baseFontSize;
+    @extend .hLinkItem;
+    text-align: center;
+    $baseFontSize: 2rem;
+    font-size: $baseFontSize;
+    margin: 10px 0px;
 
-	@include mx.maxMediaQueryPX(480px) {
-		font-size: #{$baseFontSize - 0.5};
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 1.2};
-	}
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 0.4};
+    }
+    @include mx.maxMediaQueryPX(480px) {
+        font-size: #{$baseFontSize - 0.5};
+    }
+    @include mx.maxMediaQuery(xs) {
+        font-size: #{$baseFontSize - 1};
+    }
 }
 // Mobile Menu Background
 .mobileMenuBackground {
-	z-index: #{$zIndexTop - 2};
-	position: fixed;
-	opacity: 0;
-	width: 100%;
-	height: 100%;
-	transition: opacity $mobileMenuCloseTime;
-	background: black;
-	// Blur Effect
-	$blurStrength: 100px;
-	// filter: blur($blurStrength);
-	// -webkit-filter: blur($blurStrength);
+    z-index: #{$zIndexTop - 2};
+    position: fixed;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity $mobileMenuCloseTime;
+    background: black;
+    // Blur Effect
+    $blurStrength: 100px;
+    // filter: blur($blurStrength);
+    // -webkit-filter: blur($blurStrength);
 
-	@include mx.maxMediaQueryPX($hideNavLinksWidth) {
-		opacity: 0.9;
-	}
+    @include mx.maxMediaQueryPX($hideNavLinksWidth) {
+        opacity: 0.9;
+    }
 }
 .mobileMenuBackground_Close {
-	@extend .mobileMenuBackground;
+    @extend .mobileMenuBackground;
 
-	opacity: 0;
+    opacity: 0;
 }

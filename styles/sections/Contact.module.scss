@@ -3,119 +3,121 @@
 @use "../modules/globalVariables" as gvar;
 
 .sectionContainer {
-	$paddingSize: 4%;
-	padding: 2% $paddingSize 150px $paddingSize;
+    $paddingSize: 4%;
+    padding: 2% $paddingSize 150px $paddingSize;
 
-	@include mx.maxMediaQuery(sm) {
-		padding-bottom: 90px;
-	}
-	@include mx.maxMediaQuery(xs) {
-	}
+    @include mx.maxMediaQuery(sm) {
+        padding-bottom: 90px;
+    }
+    @include mx.maxMediaQuery(xs) {
+    }
 }
 
 .sectionTitleDiv {
-	margin-bottom: 10%;
+    margin-bottom: 10%;
 }
 
 .sectionTitle {
-	text-align: center;
+    text-align: center;
 
-	@include mx.maxMediaQuery(sm) {
-		font-size: 3.1rem;
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: 2.7rem;
-		text-align: center;
-	}
+    // @include mx.maxMediaQuery(sm) {
+    // 	font-size: 3.1rem;
+    // }
+    @include mx.maxMediaQuery(xs) {
+        // font-size: 2.7rem;
+        text-align: center;
+    }
 }
 
 .sectionContentDiv {
-	text-align: center;
+    text-align: center;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .contactTitle {
-	font-size: 3rem;
-	font-weight: 500;
+    $baseFontSize: 2.5rem;
+    font-size: $baseFontSize;
+    font-weight: 500;
+    color: var(--color-secondary);
 
-	@include mx.maxMediaQuery(sm) {
-		font-size: 2.3rem;
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: 1.9rem;
-	}
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 0.7};
+    }
+    @include mx.maxMediaQuery(xs) {
+        font-size: #{$baseFontSize - 1.1};
+    }
 }
 .contactTxt {
-	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary-less);
+    transition: color gvar.$colorTransitionTime;
+    color: var(--color-text-primary-less);
 
-	margin-top: 40px;
-	padding: 0px 20%;
-	$baseFontSize: 1.5rem;
-	font-size: $baseFontSize;
+    margin-top: 40px;
+    padding: 0px 20%;
+    $baseFontSize: 1.2rem;
+    font-size: $baseFontSize;
 
-	@include mx.maxMediaQuery(md) {
-		width: 100%;
-		padding: 0px 10%;
-	}
-	@include mx.maxMediaQuery(sm) {
-		font-size: #{$baseFontSize - 0.2};
-		padding: 0px 5%;
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 0.3};
-		padding: 0px 1%;
-	}
+    @include mx.maxMediaQuery(md) {
+        width: 100%;
+        padding: 0px 10%;
+    }
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 0.2};
+        padding: 0px 5%;
+    }
+    @include mx.maxMediaQuery(xs) {
+        font-size: #{$baseFontSize - 0.3};
+        padding: 0px 1%;
+    }
 }
 // Icons Div
 .contactIconsDiv {
-	margin-top: 100px;
-	width: 100%;
+    margin-top: 100px;
+    width: 100%;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-	// Link
-	& > a {
-		$baseIconScale: 3;
-		transition: transform 0.3s;
-		transform: scale($baseIconScale);
-		margin: 0px 10%;
+    // Link
+    & > a {
+        $baseIconScale: 2.5;
+        transition: transform 0.3s;
+        transform: scale($baseIconScale);
+        margin: 0px 10%;
 
-		// Icon Image
-		& > svg {
-			transition: fill gvar.$colorTransitionTime;
-			fill: var(--color-primary);
-		}
+        // Icon Image
+        & > svg {
+            transition: fill gvar.$colorTransitionTime;
+            fill: var(--color-primary);
+        }
 
-		&:hover {
-			transform: scale(#{$baseIconScale + 0.5});
-			cursor: pointer;
-			& > svg {
-				fill: var(--color-primary-light);
-			}
-		}
+        &:hover {
+            transform: scale(#{$baseIconScale + 0.5});
+            cursor: pointer;
+            & > svg {
+                fill: var(--color-primary-light);
+            }
+        }
 
-		@include mx.maxMediaQuery(sm) {
-			margin: 0px 15%;
-			transform: scale(#{$baseIconScale - 0.4});
-			&:hover {
-				transform: scale(#{$baseIconScale});
-			}
-		}
-		@include mx.maxMediaQueryPX(400px) {
-			margin: 0px 50px;
-		}
-		@include mx.maxMediaQuery(xs) {
-			transform: scale(#{$baseIconScale - 0.6});
-			&:hover {
-				transform: scale(#{$baseIconScale - 0.2});
-			}
-		}
-	}
+        @include mx.maxMediaQuery(sm) {
+            margin: 0px 15%;
+            transform: scale(#{$baseIconScale - 0.4});
+            &:hover {
+                transform: scale(#{$baseIconScale});
+            }
+        }
+        @include mx.maxMediaQueryPX(400px) {
+            margin: 0px 50px;
+        }
+        @include mx.maxMediaQuery(xs) {
+            transform: scale(#{$baseIconScale - 0.6});
+            &:hover {
+                transform: scale(#{$baseIconScale - 0.2});
+            }
+        }
+    }
 }

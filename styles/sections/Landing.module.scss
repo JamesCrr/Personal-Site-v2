@@ -5,149 +5,149 @@ $mediaQuery_AfterSmall: 420px;
 $firstLetterDifference: -0.06em;
 
 .landingContainer {
-	min-height: -webkit-fill-available; /* For Webkit Browsers. */
-	min-height: -moz-available; /* For Mozilla Browsers. */
-	min-height: 600px;
-	height: 100vh;
-	background: var(--color-background);
+    min-height: -webkit-fill-available; /* For Webkit Browsers. */
+    min-height: -moz-available; /* For Mozilla Browsers. */
+    min-height: 600px;
+    height: 100vh;
+    background: var(--color-background);
 
-	transition: background gvar.$colorTransitionTime;
+    transition: background gvar.$colorTransitionTime;
 }
 // Text Content Div
 .textContentDiv {
-	$paddingSize: 5%;
-	padding: 150px $paddingSize 0px $paddingSize;
-	text-align: left;
+    $paddingSize: 5%;
+    padding: 150px $paddingSize 0px $paddingSize;
+    text-align: left;
 }
 // Hello
 .txtHello {
-	transition: color gvar.$colorTransitionTime;
-	color: var(--color-secondary);
+    transition: color gvar.$colorTransitionTime;
+    color: var(--color-secondary);
 
-	font-weight: normal;
-	$baseFontSize: 2rem;
-	font-size: $baseFontSize;
+    font-weight: normal;
+    $baseFontSize: 2rem;
+    font-size: $baseFontSize;
 
-	@include mx.maxMediaQuery(md) {
-		font-size: #{$baseFontSize - 0.4};
-	}
-	@include mx.maxMediaQuery(sm) {
-		font-size: #{$baseFontSize - 0.6};
-	}
-	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
-		font-size: #{$baseFontSize - 0.6};
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 0.7};
-	}
+    @include mx.maxMediaQuery(md) {
+        font-size: #{$baseFontSize - 0.4};
+    }
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 0.6};
+    }
+    @include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
+        font-size: #{$baseFontSize - 0.6};
+    }
+    @include mx.maxMediaQuery(xs) {
+        font-size: #{$baseFontSize - 0.7};
+    }
 }
 // Name
 .txtName {
-	line-height: 1;
-	font-weight: 500;
-	$baseFontSize: 5rem;
-	font-size: $baseFontSize;
+    line-height: 1;
+    font-weight: 500;
+    $baseFontSize: 4rem;
+    font-size: $baseFontSize;
 
-	transition: color gvar.$colorTransitionTime;
-	color: var(--color-primary);
+    transition: color gvar.$colorTransitionTime;
+    color: var(--color-primary);
 
-	// Make it align with Hello
-	&::first-letter {
-		margin-left: $firstLetterDifference;
-	}
+    // Make it align with Hello
+    &::first-letter {
+        margin-left: $firstLetterDifference;
+    }
 
-	@include mx.maxMediaQuery(md) {
-		font-size: #{$baseFontSize - 1.4};
-	}
-	@include mx.maxMediaQuery(sm) {
-		font-size: #{$baseFontSize - 1.9};
-	}
-	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
-		font-size: #{$baseFontSize - 2};
-	}
-	@include mx.maxMediaQueryPX(320px) {
-		font-size: #{$baseFontSize - 2.4};
-	}
-	@include mx.maxMediaQueryPX(280px) {
-		font-size: #{$baseFontSize - 2.6};
-	}
+    @include mx.maxMediaQuery(md) {
+        font-size: #{$baseFontSize - 1.4};
+    }
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 1.9};
+    }
+    @include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
+        font-size: #{$baseFontSize - 2};
+    }
+    @include mx.maxMediaQueryPX(320px) {
+        font-size: #{$baseFontSize - 2.4};
+    }
+    @include mx.maxMediaQueryPX(280px) {
+        font-size: #{$baseFontSize - 2.6};
+    }
 }
 // Sub Title
 .txtWhatIDo {
-	line-height: 1;
-	font-weight: 500;
-	$baseFontSize: 5rem;
-	font-size: $baseFontSize;
+    line-height: 1;
+    font-weight: 500;
+    $baseFontSize: 4rem;
+    font-size: $baseFontSize;
 
-	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary);
+    transition: color gvar.$colorTransitionTime;
+    color: var(--color-text-primary);
 
-	// Make it align with Hello
-	&::first-letter {
-		margin-left: $firstLetterDifference;
-	}
+    // Make it align with Hello
+    &::first-letter {
+        margin-left: $firstLetterDifference;
+    }
 
-	@include mx.maxMediaQuery(md) {
-		font-size: #{$baseFontSize - 1.2};
-	}
-	@include mx.maxMediaQuery(sm) {
-		font-size: #{$baseFontSize - 1.9};
-	}
-	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
-		font-size: #{$baseFontSize - 2.2};
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 2.7};
-	}
+    @include mx.maxMediaQuery(md) {
+        font-size: #{$baseFontSize - 1.2};
+    }
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 1.9};
+    }
+    @include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
+        font-size: #{$baseFontSize - 2.2};
+    }
+    @include mx.maxMediaQuery(xs) {
+        font-size: #{$baseFontSize - 2.7};
+    }
 }
 // Currently
 .txtWhereIAm {
-	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary-less);
+    transition: color gvar.$colorTransitionTime;
+    color: var(--color-text-primary-less);
 
-	margin-top: 10px;
-	font-weight: normal;
-	$baseFontSize: 2rem;
-	font-size: $baseFontSize;
+    margin-top: 10px;
+    font-weight: normal;
+    $baseFontSize: 1.5rem;
+    font-size: $baseFontSize;
 
-	// @
-	& > span {
-		color: var(--color-secondary);
-	}
-	// Make it align with Hello
-	&::first-letter {
-		margin-left: $firstLetterDifference;
-	}
+    // @
+    & > span {
+        color: var(--color-secondary);
+    }
+    // Make it align with Hello
+    &::first-letter {
+        margin-left: $firstLetterDifference;
+    }
 
-	@include mx.maxMediaQuery(md) {
-		font-size: #{$baseFontSize - 0.4};
-	}
-	@include mx.maxMediaQuery(sm) {
-		font-size: #{$baseFontSize - 0.5};
-	}
-	@include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
-		font-size: #{$baseFontSize - 0.6};
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 0.7};
-	}
+    @include mx.maxMediaQuery(md) {
+        font-size: #{$baseFontSize - 0.4};
+    }
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 0.5};
+    }
+    @include mx.maxMediaQueryPX($mediaQuery_AfterSmall) {
+        font-size: #{$baseFontSize - 0.6};
+    }
+    @include mx.maxMediaQuery(xs) {
+        font-size: #{$baseFontSize - 0.7};
+    }
 }
 // Animations
 .landingFadeIn {
-	display: block;
-	animation-name: fadeInAni;
-	animation-duration: 0.4s;
-	animation-timing-function: ease-out;
-	animation-delay: var(--animation-delay);
-	animation-fill-mode: both;
+    display: block;
+    animation-name: fadeInAni;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-out;
+    animation-delay: var(--animation-delay);
+    animation-fill-mode: both;
 }
 @keyframes fadeInAni {
-	0% {
-		opacity: 0;
-		transform: translateX(-30px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateX(0px);
-	}
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }

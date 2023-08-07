@@ -3,52 +3,52 @@
 @use "../modules/globalVariables" as gvar;
 
 .sectionContainer {
-	$extraPadding: 8%;
-	padding: 2% $extraPadding 9% $extraPadding;
+    $extraPadding: 8%;
+    padding: 2% $extraPadding 9% $extraPadding;
 
-	@include mx.maxMediaQuery(sm) {
-		padding-bottom: 90px;
-	}
-	@include mx.maxMediaQuery(xs) {
-		// padding-bottom: 90px;
-	}
+    @include mx.maxMediaQuery(sm) {
+        padding-bottom: 90px;
+    }
+    @include mx.maxMediaQuery(xs) {
+        // padding-bottom: 90px;
+    }
 }
 
 .sectionTitleDiv {
-	@include mx.maxMediaQuery(sm) {
-		margin-bottom: 30px;
-	}
+    @include mx.maxMediaQuery(sm) {
+        margin-bottom: 30px;
+    }
 }
 .sectionTitle {
-	text-align: right;
+    text-align: right;
 
-	@include mx.maxMediaQuery(sm) {
-		font-size: 3.1rem;
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: 2.3rem;
-		text-align: center;
-	}
+    // @include mx.maxMediaQuery(sm) {
+    //     font-size: 3.1rem;
+    // }
+    @include mx.maxMediaQuery(xs) {
+        // font-size: 2.3rem;
+        text-align: center;
+    }
 }
 .sectionContentDiv {
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 // About Text
 .aboutTxt {
-	color: var(--color-text-primary-less);
-	transition: color gvar.$colorTransitionTime;
-	$baseFontSize: 1.7rem;
-	font-size: $baseFontSize;
+    color: var(--color-text-primary-less);
+    transition: color gvar.$colorTransitionTime;
+    $baseFontSize: 1.5rem;
+    font-size: $baseFontSize;
 
-	@include mx.maxMediaQuery(md) {
-		font-size: #{$baseFontSize - 0.2};
-	}
-	@include mx.maxMediaQuery(sm) {
-		font-size: #{$baseFontSize - 0.4};
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 0.6};
-	}
+    @include mx.maxMediaQuery(md) {
+        font-size: #{$baseFontSize - 0.2};
+    }
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 0.4};
+    }
+    @include mx.maxMediaQuery(xs) {
+        font-size: #{$baseFontSize - 0.6};
+    }
 }

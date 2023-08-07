@@ -2,290 +2,291 @@
 @use "../modules/mixins" as mx;
 
 .featuredDiv {
-	display: flex;
-	flex-direction: var(--ownFlexDirection); // Specified in JS
-	justify-content: space-evenly;
-	align-items: center;
+    display: flex;
+    flex-direction: var(--ownFlexDirection); // Specified in JS
+    justify-content: space-evenly;
+    align-items: center;
 
-	width: 100%;
-	padding: 0px 20px;
-	margin-bottom: 100px;
+    width: 100%;
+    padding: 0px 20px;
+    margin-bottom: 100px;
 
-	@include mx.maxMediaQuery(md) {
-		flex-direction: column;
-		height: auto;
-		padding: 0px;
-		margin-bottom: 80px;
-	}
-	@include mx.maxMediaQuery(xs) {
-		margin-bottom: 50px;
-	}
+    @include mx.maxMediaQuery(md) {
+        flex-direction: column;
+        height: auto;
+        padding: 0px;
+        margin-bottom: 80px;
+    }
+    @include mx.maxMediaQuery(xs) {
+        margin-bottom: 50px;
+    }
 }
 // Text Related Div
 .txtDetailsDiv {
-	width: 60%;
-	text-align: left;
-	padding: 0px 40px;
+    width: 60%;
+    text-align: left;
+    padding: 0px 40px;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 
-	@include mx.maxMediaQuery(md) {
-		width: 100%;
-		padding: 0px;
-	}
-	@include mx.maxMediaQuery(sm) {
-		padding: 0;
-	}
-	@include mx.maxMediaQuery(xs) {
-		padding: 0;
-	}
+    @include mx.maxMediaQuery(md) {
+        width: 100%;
+        padding: 0px;
+    }
+    @include mx.maxMediaQuery(sm) {
+        padding: 0;
+    }
+    @include mx.maxMediaQuery(xs) {
+        padding: 0;
+    }
 }
 // Title Div
 .titleDiv {
-	align-self: flex-start;
+    align-self: flex-start;
 
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 // Title Text
 .titleTxt {
-	transition: color gvar.$colorTransitionTime;
-	color: var(--color-secondary);
+    transition: color gvar.$colorTransitionTime;
+    color: var(--color-secondary);
 
-	$baseFontSize: 2.5rem;
-	font-size: $baseFontSize;
-	font-weight: 500;
-	margin-right: 20px;
+    $baseFontSize: 2rem;
+    font-size: $baseFontSize;
+    font-weight: 500;
+    margin-right: 20px;
 
-	@include mx.maxMediaQuery(md) {
-	}
-	@include mx.maxMediaQuery(sm) {
-		font-size: #{$baseFontSize - 0.5};
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 0.9};
-	}
+    @include mx.maxMediaQuery(md) {
+    }
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 0.5};
+    }
+    @include mx.maxMediaQuery(xs) {
+        font-size: #{$baseFontSize - 0.9};
+    }
 }
 // Links Div
 .linksDiv {
-	padding-top: 10px;
-	margin-left: 5px;
+    padding-top: 10px;
+    margin-left: 5px;
 
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 // Icon Div
 .linkIconDiv {
-	transition: transform gvar.$colorTransitionTime;
-	$baseIconScale: 1.6;
-	transform: scale($baseIconScale);
-	cursor: pointer;
-	margin: 0px 20px 0px 0px;
+    transition: transform gvar.$colorTransitionTime;
+    $baseIconScale: 1.6;
+    transform: scale($baseIconScale);
+    cursor: pointer;
+    margin: 0px 20px 0px 0px;
 
-	// Icon
-	& a svg {
-		transition: fill gvar.$colorTransitionTime;
-		fill: var(--color-primary);
-	}
+    // Icon
+    & a svg {
+        transition: fill gvar.$colorTransitionTime;
+        fill: var(--color-primary);
+    }
 
-	&:hover {
-		transform: scale($baseIconScale + 0.4);
-		// Icon
-		& a svg {
-			fill: var(--color-primary-light);
-		}
-	}
+    &:hover {
+        transform: scale($baseIconScale + 0.4);
+        // Icon
+        & a svg {
+            fill: var(--color-primary-light);
+        }
+    }
 
-	@include mx.maxMediaQuery(sm) {
-		transform: scale(#{$baseIconScale - 0.2});
-	}
-	@include mx.maxMediaQuery(xs) {
-		transform: scale(#{$baseIconScale - 0.4});
-	}
+    @include mx.maxMediaQuery(sm) {
+        transform: scale(#{$baseIconScale - 0.2});
+    }
+    @include mx.maxMediaQuery(xs) {
+        transform: scale(#{$baseIconScale - 0.4});
+    }
 }
 // Description
 .descriptionTxt {
-	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary-less);
+    transition: color gvar.$colorTransitionTime;
+    color: var(--color-text-primary-less);
 
-	font-size: 1.5rem;
-	font-weight: 400;
+    $baseFontSize: 1.2rem;
+    font-size: $baseFontSize;
+    font-weight: 400;
 
-	margin: 20px 0px 10px 0px;
+    margin: 20px 0px 10px 0px;
 
-	@include mx.maxMediaQuery(lg) {
-	}
-	@include mx.maxMediaQuery(md) {
-		font-size: 1.4rem;
-	}
-	@include mx.maxMediaQuery(sm) {
-		font-size: 1.2rem;
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: 1rem;
-	}
+    @include mx.maxMediaQuery(lg) {
+    }
+    @include mx.maxMediaQuery(md) {
+        font-size: #{$baseFontSize - 0.1};
+    }
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 0.3};
+    }
+    @include mx.maxMediaQuery(xs) {
+        font-size: #{$baseFontSize - 0.5};
+    }
 }
 // Built With Div
 .bwDiv {
-	width: 100%;
-	border-top: 3px solid var(--color-secondary);
-	padding-top: 10px;
+    width: 100%;
+    border-top: 3px solid var(--color-secondary);
+    padding-top: 10px;
 }
 .bwTxt {
-	transition: color gvar.$colorTransitionTime;
-	color: var(--color-text-primary-lesser);
+    transition: color gvar.$colorTransitionTime;
+    color: var(--color-text-primary-lesser);
 
-	$baseFontSize: 1.4rem;
-	font-size: $baseFontSize;
-	font-style: italic;
+    $baseFontSize: 1.4rem;
+    font-size: $baseFontSize;
+    font-style: italic;
 
-	@include mx.maxMediaQuery(md) {
-		font-size: #{$baseFontSize - 0.1};
-	}
-	@include mx.maxMediaQuery(sm) {
-		font-size: #{$baseFontSize - 0.2};
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 0.3};
-	}
+    @include mx.maxMediaQuery(md) {
+        font-size: #{$baseFontSize - 0.1};
+    }
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 0.2};
+    }
+    @include mx.maxMediaQuery(xs) {
+        font-size: #{$baseFontSize - 0.3};
+    }
 }
 // Tags List Div
 .tagsListDiv {
-	width: 100%;
+    width: 100%;
 
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
 
-	@include mx.maxMediaQuery(md) {
-	}
-	@include mx.maxMediaQuery(sm) {
-		padding: 0px;
-	}
-	@include mx.maxMediaQuery(xs) {
-	}
+    @include mx.maxMediaQuery(md) {
+    }
+    @include mx.maxMediaQuery(sm) {
+        padding: 0px;
+    }
+    @include mx.maxMediaQuery(xs) {
+    }
 }
 // Tag Div
 .tagIconDiv {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-	margin: 20px 10px 0px 0px;
-	min-width: 40px;
+    margin: 20px 10px 0px 0px;
+    min-width: 40px;
 
-	// Hover
-	&:hover {
-		cursor: default;
-		// Icon Image
-		& .tagIconImgDiv svg {
-			fill: var(--color-primary);
-		}
-		// Icon Text
-		& .tagIconTxt {
-			opacity: 1;
-		}
-	}
+    // Hover
+    &:hover {
+        cursor: default;
+        // Icon Image
+        & .tagIconImgDiv svg {
+            fill: var(--color-primary);
+        }
+        // Icon Text
+        & .tagIconTxt {
+            opacity: 1;
+        }
+    }
 
-	@include mx.maxMediaQuery(md) {
-	}
-	@include mx.maxMediaQuery(sm) {
-		margin: 20px 8px 0px 0px;
-	}
-	@include mx.maxMediaQuery(xs) {
-		min-width: 20px;
-	}
+    @include mx.maxMediaQuery(md) {
+    }
+    @include mx.maxMediaQuery(sm) {
+        margin: 20px 8px 0px 0px;
+    }
+    @include mx.maxMediaQuery(xs) {
+        min-width: 20px;
+    }
 }
 // Tag Icon
 .tagIconImgDiv {
-	$baseIconScale: 2.2;
-	transform: scale($baseIconScale);
+    $baseIconScale: 2.2;
+    transform: scale($baseIconScale);
 
-	// Icon Image
-	& svg {
-		transition: fill gvar.$colorTransitionTime;
-		fill: var(--color-text-primary-lesser);
-	}
+    // Icon Image
+    & svg {
+        transition: fill gvar.$colorTransitionTime;
+        fill: var(--color-text-primary-lesser);
+    }
 
-	@include mx.maxMediaQuery(md) {
-		transform: scale(#{$baseIconScale - 0.2});
-	}
-	@include mx.maxMediaQuery(sm) {
-		transform: scale(#{$baseIconScale - 0.5});
-	}
-	@include mx.maxMediaQuery(xs) {
-		transform: scale(#{$baseIconScale - 0.7});
-	}
+    @include mx.maxMediaQuery(md) {
+        transform: scale(#{$baseIconScale - 0.2});
+    }
+    @include mx.maxMediaQuery(sm) {
+        transform: scale(#{$baseIconScale - 0.5});
+    }
+    @include mx.maxMediaQuery(xs) {
+        transform: scale(#{$baseIconScale - 0.7});
+    }
 }
 // Tag Text
 .tagIconTxt {
-	transition: color gvar.$colorTransitionTime, opacity 0.3s;
-	color: var(--color-text-primary);
+    transition: color gvar.$colorTransitionTime, opacity 0.3s;
+    color: var(--color-text-primary);
 
-	opacity: var(--opacity-tagText);
-	$baseFontSize: 0.8rem;
-	font-size: $baseFontSize;
-	margin-top: 5px;
+    opacity: var(--opacity-tagText);
+    $baseFontSize: 0.8rem;
+    font-size: $baseFontSize;
+    margin-top: 5px;
 
-	@include mx.maxMediaQuery(md) {
-		margin-top: 3px;
-	}
-	@include mx.maxMediaQuery(sm) {
-		font-size: #{$baseFontSize - 0.1};
-	}
-	@include mx.maxMediaQuery(xs) {
-	}
+    @include mx.maxMediaQuery(md) {
+        margin-top: 3px;
+    }
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 0.1};
+    }
+    @include mx.maxMediaQuery(xs) {
+    }
 }
 
 // Image Div
 .imageDiv {
-	width: 400px;
-	height: 300px;
-	position: relative;
+    width: 400px;
+    height: 300px;
+    position: relative;
 
-	// Image
-	& span img {
-		object-fit: contain;
-	}
+    // Image
+    & span img {
+        object-fit: contain;
+    }
 
-	@include mx.maxMediaQuery(md) {
-		width: 100%;
-		height: 300px;
-		margin-top: 20px;
-	}
-	@include mx.maxMediaQuery(sm) {
-		// Width is so small that maintaining 16:9 aspect ratio is gonna make image TINY
-		// Switch to other than contain
-		& span img {
-			object-fit: cover !important;
-		}
-	}
-	@include mx.maxMediaQueryPX(400px) {
-	}
-	@include mx.maxMediaQuery(xs) {
-	}
+    @include mx.maxMediaQuery(md) {
+        width: 100%;
+        height: 300px;
+        margin-top: 20px;
+    }
+    @include mx.maxMediaQuery(sm) {
+        // Width is so small that maintaining 16:9 aspect ratio is gonna make image TINY
+        // Switch to other than contain
+        & span img {
+            object-fit: cover !important;
+        }
+    }
+    @include mx.maxMediaQueryPX(400px) {
+    }
+    @include mx.maxMediaQuery(xs) {
+    }
 
-	// // If want to completely style ownself
-	// // Disables absolute positions..
-	// & > span {
-	// 	position: inherit !important;
-	// 	// bottom: null;
-	// 	// top: null;
-	// 	// right: null;
-	// 	// left: null;
+    // // If want to completely style ownself
+    // // Disables absolute positions..
+    // & > span {
+    // 	position: inherit !important;
+    // 	// bottom: null;
+    // 	// top: null;
+    // 	// right: null;
+    // 	// left: null;
 
-	// 	& > img {
-	// 		position: inherit !important;
-	// 		width: inherit !important;
-	// 		height: inherit !important;
-	// 	}
-	// }
+    // 	& > img {
+    // 		position: inherit !important;
+    // 		width: inherit !important;
+    // 		height: inherit !important;
+    // 	}
+    // }
 }

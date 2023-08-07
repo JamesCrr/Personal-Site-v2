@@ -5,23 +5,23 @@
 @use "../projectComponents/ProjectFeatureView.module.scss" as pfv;
 
 .sectionContainer {
-	min-height: 500px;
-	padding: 0px 5% 90px 5%;
+    min-height: 500px;
+    padding: 0px 5% 90px 5%;
 }
 .sectionTitleDiv {
 }
 .sectionTitle {
-	@include mx.maxMediaQuery(xs) {
-		margin: 0%;
-		font-size: 2.3rem;
-	}
+    @include mx.maxMediaQuery(xs) {
+        margin: 0%;
+        // font-size: 2.3rem;
+    }
 }
 .sectionContentDiv {
-	padding: 0px 5%;
+    padding: 0px 5%;
 
-	@include mx.maxMediaQuery(md) {
-		padding: 0px;
-	}
+    @include mx.maxMediaQuery(md) {
+        padding: 0px;
+    }
 }
 
 // Experiences List Div
@@ -29,96 +29,97 @@
 }
 // Experience Item
 .experienceItemDiv {
-	margin-bottom: 50px;
+    margin-bottom: 50px;
 }
+
+$baseJobTitleFontSize: 1.7rem;
 // Job Title
 .jobTitle {
-	$baseFontSize: 2rem;
-	font-size: $baseFontSize;
-	color: var(--color-text-primary);
-	transition: color gvar.$colorTransitionTime;
-	// margin-bottom: 6px;
+    font-size: $baseJobTitleFontSize;
+    color: var(--color-text-primary);
+    transition: color gvar.$colorTransitionTime;
+    // margin-bottom: 6px;
 
-	// the @ Sign
-	& span {
-		color: var(--color-secondary);
-	}
+    // the @ Sign
+    & span {
+        color: var(--color-secondary);
+    }
 
-	@include mx.maxMediaQuery(md) {
-		font-size: #{$baseFontSize - 0.2};
-	}
-	@include mx.maxMediaQuery(sm) {
-		font-size: #{$baseFontSize - 0.4};
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 0.5};
-	}
+    @include mx.maxMediaQuery(md) {
+        font-size: #{$baseJobTitleFontSize - 0.2};
+    }
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseJobTitleFontSize - 0.4};
+    }
+    @include mx.maxMediaQuery(xs) {
+        font-size: #{$baseJobTitleFontSize - 0.5};
+    }
 }
 // Date
 .date {
-	$baseFontSize: 1.3rem;
-	font-size: $baseFontSize;
-	font-weight: 500;
-	margin-top: 1%;
-	margin-bottom: 30px;
+    $baseFontSize: #{$baseJobTitleFontSize - 0.4};
+    font-size: $baseFontSize;
+    font-weight: 500;
+    margin-top: 1%;
+    margin-bottom: 30px;
 
-	color: var(--color-text-primary-lesser);
-	transition: color gvar.$colorTransitionTime;
+    color: var(--color-text-primary-lesser);
+    transition: color gvar.$colorTransitionTime;
 
-	@include mx.maxMediaQuery(md) {
-		font-size: #{$baseFontSize - 0.2};
-	}
-	@include mx.maxMediaQuery(sm) {
-		font-size: #{$baseFontSize - 0.3};
-		margin-bottom: 20px;
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 0.3};
-	}
+    @include mx.maxMediaQuery(md) {
+        font-size: #{$baseFontSize - 0.2};
+    }
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseFontSize - 0.3};
+        margin-bottom: 20px;
+    }
+    @include mx.maxMediaQuery(xs) {
+        font-size: #{$baseFontSize - 0.3};
+    }
 }
 // Key Points
 .keypointsList {
-	list-style-type: none;
+    list-style-type: none;
 }
 .keypointItem {
-	$baseFontSize: 1.3rem;
-	font-size: $baseFontSize;
-	font-weight: 500;
+    $baseFontSize: #{$baseJobTitleFontSize - 0.6};
+    font-size: $baseFontSize;
+    font-weight: 400;
 
-	// width: 90%;
-	margin-bottom: 10px;
-	color: var(--color-text-primary-less);
-	transition: color gvar.$colorTransitionTime;
+    // width: 90%;
+    margin-bottom: 10px;
+    color: var(--color-text-primary-less);
+    transition: color gvar.$colorTransitionTime;
 
-	&::before {
-		content: "➤";
-		color: var(--color-primary);
-		transition: color gvar.$colorTransitionTime;
-		margin-right: 15px;
-	}
+    &::before {
+        content: "➤";
+        color: var(--color-primary);
+        transition: color gvar.$colorTransitionTime;
+        margin-right: 15px;
+    }
 
-	@include mx.maxMediaQuery(md) {
-		font-size: #{$baseFontSize - 0.2};
-	}
-	@include mx.maxMediaQuery(sm) {
-		font-size: #{$baseFontSize - 0.2};
-	}
-	@include mx.maxMediaQuery(xs) {
-		font-size: #{$baseFontSize - 0.3};
-	}
+    @include mx.maxMediaQuery(md) {
+        font-size: #{$baseJobTitleFontSize - 0.5};
+    }
+    @include mx.maxMediaQuery(sm) {
+        font-size: #{$baseJobTitleFontSize - 0.8};
+    }
+    @include mx.maxMediaQuery(xs) {
+        font-size: #{$baseJobTitleFontSize - 1};
+    }
 }
 // Built With
 .bwDiv {
-	padding-top: 5px;
-	border: none;
+    padding-top: 5px;
+    border: none;
 }
 .bwTxt {
 }
 // Tags
 .tagsListDiv {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 // Using ProjectFeatureView Tag Styling
 .tagIconDiv {
